@@ -138,7 +138,7 @@ class Window(QWidget, Ui_Form):
                                  ('Tower 4', 'StatusHealth', self.doubleSpinBox_8.value(), self.spinBox_7.value()),
                                  ('Tower 4', 'ArmorPhysical', self.doubleSpinBox_9.value(), self.spinBox_8.value()),
                                  ('Guys Fort', 'StatusHealth', self.doubleSpinBox_10.value(), self.spinBox_9.value()),
-                                 ('Guys Fort', 'StatusHealth', self.doubleSpinBox_11.value(), self.spinBox_10.value())]
+                                 ('Guys Fort', 'ArmorPhysical', self.doubleSpinBox_11.value(), self.spinBox_10.value())]
         for arg in arg_list:
             arg: tuple
             if arg[2] == 1 and arg[3] == 0:

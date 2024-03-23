@@ -773,7 +773,7 @@
        <item>
         <widget class="QLineEdit" name="lineEdit_5">
          <property name="text">
-          <string>1.4.0</string>
+          <string>1.4.1</string>
          </property>
          <property name="echoMode">
           <enum>QLineEdit::Normal</enum>
