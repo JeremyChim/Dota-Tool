@@ -29,10 +29,11 @@ class Window(QWidget, Ui_Form):
         self.pushButton_2.clicked.connect(self.get_file_content)
         self.pushButton_3.clicked.connect(self.save_file)
         self.pushButton_4.clicked.connect(self.update_xp_gold)
+        self.pushButton_5.clicked.connect(self.update_tower_data)
 
     def get_file_url(self):
         file_url, file_type = QFileDialog.getOpenFileName()  # GET THE URL
-        print(f'Get file url : {Fore.BLUE + file_url}')
+        print(f'Get file url : {Fore.LIGHTCYAN_EX + file_url}')
         self.lineEdit.setText(file_url)  # SENT THE URL
         self.file_url = file_url
 
@@ -40,56 +41,110 @@ class Window(QWidget, Ui_Form):
         try:
             with open(self.file_url, 'r') as f:
                 self.file_content = f.readlines()  # GET CONTENT
-                print(Fore.GREEN + 'Get file content success.', Fore.BLUE + f'Content len : {len(self.file_content)}')
+                print(Fore.LIGHTGREEN_EX + 'Get file content success.', Fore.LIGHTBLUE_EX + f'Content len : {len(self.file_content)}')
         except:
-            print(Fore.RED + 'Somthing is worry T_T')
+            print(Fore.LIGHTRED_EX + 'Somthing is worry T_T')
 
     def save_file(self):
         try:
             file_url, file_type = QFileDialog.getSaveFileName()
             with open(file_url, 'w') as f:
                 f.writelines(self.file_content)
-                print(Fore.GREEN + 'Write lines success.', Fore.BLUE + f'Len : {len(self.file_content)}')
-                print(Fore.GREEN + 'Save fine success.', Fore.BLUE + f'New file url : {file_url}')
+                print(Fore.LIGHTGREEN_EX + 'Write lines success.', Fore.LIGHTBLUE_EX + f'Len : {len(self.file_content)}')
+                print(Fore.LIGHTGREEN_EX + 'Save fine success.', Fore.LIGHTCYAN_EX + f'New file url : {file_url}')
         except:
-            print(Fore.RED + 'Somthing is worry T_T')
+            print(Fore.LIGHTRED_EX + 'Somthing is worry T_T')
 
     def update_xp_gold(self):
         try:
             self.file_content: list[str]
             factor: float = self.doubleSpinBox.value()
-            print(Fore.BLUE + f'factor : {factor}')
-            line_num: int = 1
+            print(Fore.LIGHTBLUE_EX + f'factor : {factor}')
+
+            line_num: int = 1  # MAKE LINE
             for one_line in self.file_content:
                 one_line: str
                 if 'BountyXP' in one_line:
-                    print(Fore.LIGHTWHITE_EX + str(line_num) + one_line, end='\r')
+                    print(Fore.LIGHTBLACK_EX + str(line_num) + one_line, end='\r')
                     one_list: list[str] = one_line.split('"')  # OLD DATA
                     one_list[3] = f'{float(one_list[3]) * factor:.0f}'  # CALC
                     one_line = '"'.join(one_list)  # NEW DATA
-                    print(Fore.LIGHTBLACK_EX + str(line_num) + one_line, end='\r')
-                    self.file_content[line_num - 1] = one_line
+                    print(Fore.LIGHTYELLOW_EX + str(line_num) + one_line, end='\r')
+                    self.file_content[line_num - 1] = one_line  # Write to Global
 
                 elif 'BountyGoldMin' in one_line:
-                    print(Fore.LIGHTWHITE_EX + str(line_num) + one_line, end='\r')
+                    print(Fore.LIGHTBLACK_EX + str(line_num) + one_line, end='\r')
                     one_list: list[str] = one_line.split('"')  # OLD DATA
                     one_list[3] = f'{float(one_list[3]) * factor:.0f}'  # CALC
                     one_line = '"'.join(one_list)  # NEW DATA
-                    print(Fore.LIGHTBLACK_EX + str(line_num) + one_line, end='\r')
-                    self.file_content[line_num - 1] = one_line
+                    print(Fore.LIGHTYELLOW_EX + str(line_num) + one_line, end='\r')
+                    self.file_content[line_num - 1] = one_line  # Write to Global
 
                 elif 'BountyGoldMax' in one_line:
-                    print(Fore.LIGHTWHITE_EX + str(line_num) + one_line, end='\r')
+                    print(Fore.LIGHTBLACK_EX + str(line_num) + one_line, end='\r')
                     one_list: list[str] = one_line.split('"')  # OLD DATA
                     one_list[3] = f'{float(one_list[3]) * factor:.0f}'  # CALC
                     one_line = '"'.join(one_list)  # NEW DATA
-                    print(Fore.LIGHTBLACK_EX + str(line_num) + one_line, end='\r')
-                    self.file_content[line_num - 1] = one_line
+                    print(Fore.LIGHTYELLOW_EX + str(line_num) + one_line, end='\r')
+                    self.file_content[line_num - 1] = one_line  # Write to Global
 
                 line_num += 1
-            print(Fore.GREEN + 'Update success.')
+            print(Fore.LIGHTGREEN_EX + 'Update success.')
         except:
-            print(Fore.RED + 'Somthing is worry T_T')
+            print(Fore.LIGHTRED_EX + 'Somthing is worry T_T')
+
+    def update_tower(self, keyword: str, keyword2: str, mul: float, add: int):
+        try:
+            self.file_content: list[str]
+            # mul: float = self.doubleSpinBox_2.value()
+            # add: int = self.spinBox.value()
+            print(Fore.LIGHTBLUE_EX + f'Update tower arg : ')
+            print(Fore.LIGHTBLUE_EX + f'- keyword : {keyword}')
+            print(Fore.LIGHTBLUE_EX + f'- keyword2 : {keyword2}')
+            print(Fore.LIGHTBLUE_EX + f'- mul : {mul}')
+            print(Fore.LIGHTBLUE_EX + f'- add : {add}')
+
+            line_num: int = 1  # MAKE LINE
+            for one_line in self.file_content:
+                one_line: str
+                if keyword in one_line:
+                    print(Fore.LIGHTMAGENTA_EX + str(line_num) + one_line, end='\r')
+                    key_line: str
+                    line_num2 = line_num + 1
+                    for key_line in self.file_content[line_num:]:
+                        if keyword2 in key_line:
+                            print(Fore.LIGHTBLACK_EX + str(line_num2) + key_line, end='\r')
+                            key_list: list[str] = key_line.split('"')  # OLD DATA
+                            key_list[3] = f'{float(key_list[3]) * mul + add:.0f}'  # CALC
+                            key_line = '"'.join(key_list)  # NEW DATA
+                            print(Fore.LIGHTYELLOW_EX + str(line_num2) + key_line, end='\r')
+                            self.file_content[line_num2 - 1] = key_line  # Write to Global
+                            break
+                        line_num2 += 1
+                line_num += 1
+        except:
+            print(Fore.LIGHTRED_EX + 'Somthing is worry T_T')
+
+    def update_tower_data(self):
+        # keyword: str = 'StatusHealth'
+        # mul: float = self.doubleSpinBox_2.value()
+        # add: int = self.spinBox.value()
+        arg_list: list[tuple] = [('Tower 1', 'StatusHealth', self.doubleSpinBox_2.value(), self.spinBox.value()),
+                                 ('Tower 1', 'ArmorPhysical', self.doubleSpinBox_3.value(), self.spinBox_2.value()),
+                                 ('Tower 2', 'StatusHealth', self.doubleSpinBox_4.value(), self.spinBox_3.value()),
+                                 ('Tower 2', 'ArmorPhysical', self.doubleSpinBox_5.value(), self.spinBox_4.value()),
+                                 ('Tower 3', 'StatusHealth', self.doubleSpinBox_6.value(), self.spinBox_5.value()),
+                                 ('Tower 3', 'ArmorPhysical', self.doubleSpinBox_7.value(), self.spinBox_6.value()),
+                                 ('Tower 4', 'StatusHealth', self.doubleSpinBox_8.value(), self.spinBox_7.value()),
+                                 ('Tower 4', 'ArmorPhysical', self.doubleSpinBox_9.value(), self.spinBox_8.value()),
+                                 ('Guys Fort', 'StatusHealth', self.doubleSpinBox_10.value(), self.spinBox_9.value()),
+                                 ('Guys Fort', 'StatusHealth', self.doubleSpinBox_11.value(), self.spinBox_10.value())]
+        for arg in arg_list:
+            arg: tuple
+            if arg[2] == 1 and arg[3] == 0:
+                pass
+            else:
+                self.update_tower(*arg)
 
 
 if __name__ == '__main__':
