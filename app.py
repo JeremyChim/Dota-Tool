@@ -30,18 +30,23 @@ class Window(QWidget, Ui_Form):
         self.pushButton_3.clicked.connect(self.save_file)
         self.pushButton_4.clicked.connect(self.update_xp_gold)
         self.pushButton_5.clicked.connect(self.update_tower_data)
+        self.pushButton_9.clicked.connect(self.ability_replace)
 
     def get_file_url(self):
         file_url, file_type = QFileDialog.getOpenFileName()  # GET THE URL
-        print(f'Get file url : {Fore.LIGHTCYAN_EX + file_url}')
-        self.lineEdit.setText(file_url)  # SENT THE URL
-        self.file_url = file_url
+        if file_url:
+            print(f'Get file url : {Fore.LIGHTCYAN_EX + file_url}')
+            self.lineEdit.setText(file_url)  # SENT THE URL
+            self.file_url = file_url
+        else:
+            print(Fore.LIGHTRED_EX + 'URL is empty T_T')
 
     def get_file_content(self):
         try:
             with open(self.file_url, 'r') as f:
                 self.file_content = f.readlines()  # GET CONTENT
-                print(Fore.LIGHTGREEN_EX + 'Get file content success.', Fore.LIGHTBLUE_EX + f'Content len : {len(self.file_content)}')
+                print(Fore.LIGHTGREEN_EX + 'Get file content success.',
+                      Fore.LIGHTBLUE_EX + f'Content len : {len(self.file_content)}')
         except:
             print(Fore.LIGHTRED_EX + 'Somthing is worry T_T')
 
@@ -50,7 +55,8 @@ class Window(QWidget, Ui_Form):
             file_url, file_type = QFileDialog.getSaveFileName()
             with open(file_url, 'w') as f:
                 f.writelines(self.file_content)
-                print(Fore.LIGHTGREEN_EX + 'Write lines success.', Fore.LIGHTBLUE_EX + f'Len : {len(self.file_content)}')
+                print(Fore.LIGHTGREEN_EX + 'Write lines success.',
+                      Fore.LIGHTBLUE_EX + f'Len : {len(self.file_content)}')
                 print(Fore.LIGHTGREEN_EX + 'Save fine success.', Fore.LIGHTCYAN_EX + f'New file url : {file_url}')
         except:
             print(Fore.LIGHTRED_EX + 'Somthing is worry T_T')
@@ -145,6 +151,26 @@ class Window(QWidget, Ui_Form):
                 pass
             else:
                 self.update_tower(*arg)
+
+    def ability_replace(self):
+        self.textEdit_3.clear()
+        mod: str = self.textEdit.toPlainText()
+        # old_ab: str = self.textEdit_2.toPlainText()
+        old_content: str = self.textEdit_2.toPlainText()
+        old_lines: list[str] = old_content.split('\n')
+
+        for old_ab in old_lines:
+            old_ab: str
+            # print(old_ab)
+            if old_ab:
+                old_ab_list: list[str] = old_ab.split('"')
+                new_ab: str = mod.replace('ab_name', old_ab_list[1]).replace('ab_value', old_ab_list[3])
+                self.textEdit_3.append(new_ab)
+                print(old_ab)
+                # print(mod)
+                print(Fore.LIGHTBLUE_EX + new_ab)
+            else:
+                print(Fore.LIGHTRED_EX + 'Empty ability T_T')
 
 
 if __name__ == '__main__':
