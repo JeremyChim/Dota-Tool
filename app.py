@@ -6,6 +6,7 @@ File:   app.py
 IDE:    PyCharm
 GitHub: https://github.com/JeremyChim
 """
+from PyQt6 import QtWidgets
 from PyQt6.QtWidgets import QApplication, QWidget, QFileDialog
 from PyQt6.QtGui import QIcon
 from untitled import Ui_Form
@@ -23,6 +24,8 @@ class Window(QWidget, Ui_Form):
         self.init_function()
         self.file_url: str = ''
         self.file_content: list[str] = ['']
+        self.hero_name_list: list[str] = []
+        self.hero_line_list: list[int] = []
 
     def init_function(self):
         self.pushButton.clicked.connect(self.get_file_url)
@@ -31,12 +34,19 @@ class Window(QWidget, Ui_Form):
         self.pushButton_4.clicked.connect(self.update_xp_gold)
         self.pushButton_5.clicked.connect(self.update_tower_data)
         self.pushButton_9.clicked.connect(self.ability_replace)
+        self.pushButton_11.clicked.connect(self.get_file_url)
+        self.pushButton_12.clicked.connect(self.get_file_content)
+        self.pushButton_13.clicked.connect(self.save_file)
+        self.pushButton_14.clicked.connect(self.get_hero_name)
+        self.pushButton_15.clicked.connect(self.get_hero_data)
+        self.pushButton_16.clicked.connect(self.update_hero_data)
 
     def get_file_url(self):
         file_url, file_type = QFileDialog.getOpenFileName()  # GET THE URL
         if file_url:
             print(f'Get file url : {Fore.LIGHTCYAN_EX + file_url}')
             self.lineEdit.setText(file_url)  # SENT THE URL
+            self.lineEdit_8.setText(file_url)  # SENT THE URL
             self.file_url = file_url
         else:
             print(Fore.LIGHTRED_EX + 'URL is empty T_T')
@@ -171,6 +181,65 @@ class Window(QWidget, Ui_Form):
                 print(Fore.LIGHTBLUE_EX + new_ab)
             else:
                 print(Fore.LIGHTRED_EX + 'Empty ability T_T')
+
+    def get_hero_name(self):
+
+        try:
+            hero_name_list: list[str] = []
+            hero_line_list: list[int] = []
+            line_num: int = 1  # MAKE LINE
+            for one_line in self.file_content:
+                one_line: str
+                if '\t"npc_dota_hero_' in one_line and one_line.split('"')[2] == '\n':
+                    print(Fore.LIGHTYELLOW_EX + str(line_num), one_line, end='\r')
+                    hero_name: str = one_line.split('"')[1]
+                    hero_name_list.append(hero_name)  # Get Name
+                    hero_line_list.append(line_num)  # Get Line Number
+                    self.comboBox.addItem(hero_name)
+                line_num += 1
+            print(Fore.LIGHTGREEN_EX + 'Read hero data success.', Fore.LIGHTBLUE_EX + f'hero : {len(hero_name_list)}')
+            self.hero_name_list = hero_name_list
+            self.hero_line_list = hero_line_list
+        except:
+            print(Fore.LIGHTRED_EX + 'Somthing is worry T_T')
+
+    def get_hero_data(self):
+        hero_name = self.comboBox.currentText()
+        hero_name_index = self.hero_name_list.index(hero_name)
+        hero_line: int = self.hero_line_list[hero_name_index]
+        print(f'index : {Fore.LIGHTBLUE_EX + str(hero_name_index)}')
+        print(f'name : {Fore.LIGHTMAGENTA_EX + hero_name}')
+        print(f'line : {Fore.LIGHTYELLOW_EX + str(hero_line)}')
+
+        widget_list: list[tuple] = [('MovementSpeed', self.doubleSpinBox_12)]
+
+        line_num: int = hero_line + 1
+        for one_line in self.file_content[hero_line:]:
+            one_line: str
+            if 'MovementSpeed' in one_line:
+                # print(Fore.LIGHTYELLOW_EX + str(line_num), one_line, end='\r')
+                one_list: list[str] = one_line.split('"')
+                value: float = float(one_list[3])
+                self.doubleSpinBox_12.setValue(value)
+                break
+            line_num += 1
+
+    def update_hero_data(self):
+        hero_name = self.comboBox.currentText()
+        hero_name_index = self.hero_name_list.index(hero_name)
+        hero_line: int = self.hero_line_list[hero_name_index]
+        line_num: int = hero_line + 1
+        for one_line in self.file_content[hero_line:]:
+            one_line: str
+            if 'MovementSpeed' in one_line:
+                print(Fore.LIGHTYELLOW_EX + str(line_num), one_line, end='\r')
+                one_list: list[str] = one_line.split('"')
+                one_list[3] = f'{self.doubleSpinBox_12.value():.0f}'
+                one_line = '"'.join(one_list)
+                print(Fore.LIGHTGREEN_EX + str(line_num), Fore.LIGHTGREEN_EX + one_line, end='\r')
+                self.file_content[line_num - 1] = one_line
+                break
+            line_num += 1
 
 
 if __name__ == '__main__':

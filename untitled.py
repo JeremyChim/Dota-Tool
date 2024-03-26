@@ -12,7 +12,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.resize(979, 789)
+        Form.resize(982, 789)
         self.tabWidget = QtWidgets.QTabWidget(parent=Form)
         self.tabWidget.setGeometry(QtCore.QRect(10, 10, 961, 771))
         self.tabWidget.setObjectName("tabWidget")
@@ -471,9 +471,74 @@ class Ui_Form(object):
         self.textEdit_3.setObjectName("textEdit_3")
         self.verticalLayout_10.addWidget(self.textEdit_3)
         self.tabWidget.addTab(self.tab_2, "")
+        self.tab_3 = QtWidgets.QWidget()
+        self.tab_3.setObjectName("tab_3")
+        self.groupBox_12 = QtWidgets.QGroupBox(parent=self.tab_3)
+        self.groupBox_12.setGeometry(QtCore.QRect(20, 10, 921, 71))
+        self.groupBox_12.setObjectName("groupBox_12")
+        self.layoutWidget_2 = QtWidgets.QWidget(parent=self.groupBox_12)
+        self.layoutWidget_2.setGeometry(QtCore.QRect(20, 30, 881, 28))
+        self.layoutWidget_2.setObjectName("layoutWidget_2")
+        self.horizontalLayout_20 = QtWidgets.QHBoxLayout(self.layoutWidget_2)
+        self.horizontalLayout_20.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_20.setObjectName("horizontalLayout_20")
+        self.label_20 = QtWidgets.QLabel(parent=self.layoutWidget_2)
+        self.label_20.setObjectName("label_20")
+        self.horizontalLayout_20.addWidget(self.label_20)
+        self.lineEdit_8 = QtWidgets.QLineEdit(parent=self.layoutWidget_2)
+        self.lineEdit_8.setObjectName("lineEdit_8")
+        self.horizontalLayout_20.addWidget(self.lineEdit_8)
+        self.pushButton_11 = QtWidgets.QPushButton(parent=self.layoutWidget_2)
+        self.pushButton_11.setObjectName("pushButton_11")
+        self.horizontalLayout_20.addWidget(self.pushButton_11)
+        self.pushButton_12 = QtWidgets.QPushButton(parent=self.layoutWidget_2)
+        self.pushButton_12.setObjectName("pushButton_12")
+        self.horizontalLayout_20.addWidget(self.pushButton_12)
+        self.pushButton_13 = QtWidgets.QPushButton(parent=self.layoutWidget_2)
+        self.pushButton_13.setObjectName("pushButton_13")
+        self.horizontalLayout_20.addWidget(self.pushButton_13)
+        self.horizontalLayout_20.setStretch(0, 1)
+        self.horizontalLayout_20.setStretch(1, 7)
+        self.horizontalLayout_20.setStretch(2, 1)
+        self.horizontalLayout_20.setStretch(3, 1)
+        self.horizontalLayout_20.setStretch(4, 1)
+        self.layoutWidget6 = QtWidgets.QWidget(parent=self.tab_3)
+        self.layoutWidget6.setGeometry(QtCore.QRect(40, 100, 431, 25))
+        self.layoutWidget6.setObjectName("layoutWidget6")
+        self.horizontalLayout_21 = QtWidgets.QHBoxLayout(self.layoutWidget6)
+        self.horizontalLayout_21.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_21.setObjectName("horizontalLayout_21")
+        self.comboBox = QtWidgets.QComboBox(parent=self.layoutWidget6)
+        self.comboBox.setObjectName("comboBox")
+        self.horizontalLayout_21.addWidget(self.comboBox)
+        self.pushButton_14 = QtWidgets.QPushButton(parent=self.layoutWidget6)
+        self.pushButton_14.setObjectName("pushButton_14")
+        self.horizontalLayout_21.addWidget(self.pushButton_14)
+        self.pushButton_15 = QtWidgets.QPushButton(parent=self.layoutWidget6)
+        self.pushButton_15.setObjectName("pushButton_15")
+        self.horizontalLayout_21.addWidget(self.pushButton_15)
+        self.pushButton_16 = QtWidgets.QPushButton(parent=self.layoutWidget6)
+        self.pushButton_16.setObjectName("pushButton_16")
+        self.horizontalLayout_21.addWidget(self.pushButton_16)
+        self.horizontalLayout_21.setStretch(0, 1)
+        self.layoutWidget7 = QtWidgets.QWidget(parent=self.tab_3)
+        self.layoutWidget7.setGeometry(QtCore.QRect(40, 140, 233, 25))
+        self.layoutWidget7.setObjectName("layoutWidget7")
+        self.horizontalLayout_22 = QtWidgets.QHBoxLayout(self.layoutWidget7)
+        self.horizontalLayout_22.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_22.setObjectName("horizontalLayout_22")
+        self.label_21 = QtWidgets.QLabel(parent=self.layoutWidget7)
+        self.label_21.setObjectName("label_21")
+        self.horizontalLayout_22.addWidget(self.label_21)
+        self.doubleSpinBox_12 = QtWidgets.QDoubleSpinBox(parent=self.layoutWidget7)
+        self.doubleSpinBox_12.setDecimals(0)
+        self.doubleSpinBox_12.setMaximum(999999.0)
+        self.doubleSpinBox_12.setObjectName("doubleSpinBox_12")
+        self.horizontalLayout_22.addWidget(self.doubleSpinBox_12)
+        self.tabWidget.addTab(self.tab_3, "")
 
         self.retranslateUi(Form)
-        self.tabWidget.setCurrentIndex(1)
+        self.tabWidget.setCurrentIndex(2)
         self.pushButton_7.clicked.connect(self.lineEdit_7.selectAll) # type: ignore
         self.pushButton_6.clicked.connect(self.lineEdit_6.selectAll) # type: ignore
         self.pushButton_7.clicked.connect(self.lineEdit_7.copy) # type: ignore
@@ -518,9 +583,9 @@ class Ui_Form(object):
         self.label_14.setText(_translate("Form", "创建时间"))
         self.lineEdit_3.setText(_translate("Form", "2024/03/23"))
         self.label_15.setText(_translate("Form", "更新时间"))
-        self.lineEdit_4.setText(_translate("Form", "2024/03/24"))
+        self.lineEdit_4.setText(_translate("Form", "2024/03/26"))
         self.label_16.setText(_translate("Form", "版本号"))
-        self.lineEdit_5.setText(_translate("Form", "1.5.0"))
+        self.lineEdit_5.setText(_translate("Form", "1.6.0"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), _translate("Form", "单位"))
         self.groupBox_10.setTitle(_translate("Form", "模版"))
         self.label_17.setText(_translate("Form", "魔晶"))
@@ -531,35 +596,36 @@ class Ui_Form(object):
         self.pushButton_7.setText(_translate("Form", "复制"))
         self.label_19.setText(_translate("Form", "技能替换模版"))
         self.textEdit.setHtml(_translate("Form", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
 "</style></head><body style=\" font-family:\'Consolas\'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">&quot;ab_name&quot;</p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">            {</p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">                &quot;value&quot;                &quot;ab_value&quot;</p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">                &quot;special_bonus_shard&quot;            &quot;=0&quot;</p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">            }</p></body></html>"))
-        self.groupBox_11.setTitle(_translate("Form", "替换"))
+        self.groupBox_11.setTitle(_translate("Form", "控制台"))
         self.textEdit_2.setHtml(_translate("Form", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
 "</style></head><body style=\" font-family:\'Consolas\'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:\'苹方 粗体\'; font-size:9.75pt;\"><br /></p></body></html>"))
         self.pushButton_8.setText(_translate("Form", "清空"))
         self.pushButton_9.setText(_translate("Form", "替换"))
         self.pushButton_10.setText(_translate("Form", "复制"))
         self.textEdit_3.setHtml(_translate("Form", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
 "</style></head><body style=\" font-family:\'Consolas\'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:\'苹方 粗体\'; font-size:9.75pt;\"><br /></p></body></html>"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), _translate("Form", "技能"))
+        self.groupBox_12.setTitle(_translate("Form", "文件"))
+        self.label_20.setText(_translate("Form", "路径"))
+        self.pushButton_11.setText(_translate("Form", "浏览"))
+        self.pushButton_12.setText(_translate("Form", "加载"))
+        self.pushButton_13.setText(_translate("Form", "保存"))
+        self.pushButton_14.setText(_translate("Form", "载入"))
+        self.pushButton_15.setText(_translate("Form", "读取"))
+        self.pushButton_16.setText(_translate("Form", "写入"))
+        self.label_21.setText(_translate("Form", "MovementSpeed"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), _translate("Form", "英雄"))
