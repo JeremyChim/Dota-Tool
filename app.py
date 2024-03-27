@@ -48,6 +48,7 @@ class Window(QWidget, Ui_Form):
             self.lineEdit.setText(file_url)  # SENT THE URL
             self.lineEdit_8.setText(file_url)  # SENT THE URL
             self.file_url = file_url
+            self.get_file_content()
         else:
             print(Fore.LIGHTRED_EX + 'URL is empty T_T')
 
@@ -204,42 +205,60 @@ class Window(QWidget, Ui_Form):
             print(Fore.LIGHTRED_EX + 'Somthing is worry T_T')
 
     def get_hero_data(self):
-        hero_name = self.comboBox.currentText()
-        hero_name_index = self.hero_name_list.index(hero_name)
-        hero_line: int = self.hero_line_list[hero_name_index]
-        print(f'index : {Fore.LIGHTBLUE_EX + str(hero_name_index)}')
-        print(f'name : {Fore.LIGHTMAGENTA_EX + hero_name}')
-        print(f'line : {Fore.LIGHTYELLOW_EX + str(hero_line)}')
+        try:
+            hero_name = self.comboBox.currentText()
+            hero_name_index = self.hero_name_list.index(hero_name)
+            hero_line: int = self.hero_line_list[hero_name_index]
+            print(f'index : {Fore.LIGHTBLUE_EX + str(hero_name_index)}')
+            print(f'name : {Fore.LIGHTMAGENTA_EX + hero_name}')
+            print(f'line : {Fore.LIGHTYELLOW_EX + str(hero_line)}')
 
-        widget_list: list[tuple] = [('MovementSpeed', self.doubleSpinBox_12)]
+            function_list: list[tuple] = [('MovementSpeed', lambda: self.doubleSpinBox_12.setValue(value)),
+                                          ('AttackDamageMin', lambda: self.doubleSpinBox_13.setValue(value)),
+                                          ('AttackDamageMax', lambda: self.doubleSpinBox_14.setValue(value)),
+                                          ('AttackRate', lambda: self.doubleSpinBox_15.setValue(value)),
+                                          ('AttackAnimationPoint', lambda: self.doubleSpinBox_16.setValue(value)),
+                                          ('AttackRange', lambda: self.doubleSpinBox_17.setValue(value)),
+                                          ('AttributeBaseStrength', lambda: self.doubleSpinBox_18.setValue(value)),
+                                          ('AttributeStrengthGain', lambda: self.doubleSpinBox_19.setValue(value)),
+                                          ('AttributeBaseIntelligence', lambda: self.doubleSpinBox_20.setValue(value)),
+                                          ('AttributeIntelligenceGain', lambda: self.doubleSpinBox_21.setValue(value)),
+                                          ('AttributeBaseAgility', lambda: self.doubleSpinBox_22.setValue(value)),
+                                          ('AttributeAgilityGain', lambda: self.doubleSpinBox_23.setValue(value)),
+                                          ('ProjectileSpeed', lambda: self.doubleSpinBox_24.setValue(value))]
 
-        line_num: int = hero_line + 1
-        for one_line in self.file_content[hero_line:]:
-            one_line: str
-            if 'MovementSpeed' in one_line:
-                # print(Fore.LIGHTYELLOW_EX + str(line_num), one_line, end='\r')
-                one_list: list[str] = one_line.split('"')
-                value: float = float(one_list[3])
-                self.doubleSpinBox_12.setValue(value)
-                break
-            line_num += 1
+            line_num: int = hero_line + 1
+            for keyword, function in function_list:
+                for one_line in self.file_content[hero_line:]:
+                    one_line: str
+                    if keyword in one_line:
+                        one_list: list[str] = one_line.split('"')
+                        value: float = float(one_list[3])
+                        function()
+                        break
+                    line_num += 1
+        except:
+            print(Fore.LIGHTRED_EX + 'Somthing is worry T_T')
 
     def update_hero_data(self):
-        hero_name = self.comboBox.currentText()
-        hero_name_index = self.hero_name_list.index(hero_name)
-        hero_line: int = self.hero_line_list[hero_name_index]
-        line_num: int = hero_line + 1
-        for one_line in self.file_content[hero_line:]:
-            one_line: str
-            if 'MovementSpeed' in one_line:
-                print(Fore.LIGHTYELLOW_EX + str(line_num), one_line, end='\r')
-                one_list: list[str] = one_line.split('"')
-                one_list[3] = f'{self.doubleSpinBox_12.value():.0f}'
-                one_line = '"'.join(one_list)
-                print(Fore.LIGHTGREEN_EX + str(line_num), Fore.LIGHTGREEN_EX + one_line, end='\r')
-                self.file_content[line_num - 1] = one_line
-                break
-            line_num += 1
+        try:
+            hero_name = self.comboBox.currentText()
+            hero_name_index = self.hero_name_list.index(hero_name)
+            hero_line: int = self.hero_line_list[hero_name_index]
+            line_num: int = hero_line + 1
+            for one_line in self.file_content[hero_line:]:
+                one_line: str
+                if 'MovementSpeed' in one_line:
+                    print(Fore.LIGHTYELLOW_EX + str(line_num), one_line, end='\r')
+                    one_list: list[str] = one_line.split('"')
+                    one_list[3] = f'{self.doubleSpinBox_12.value():.0f}'
+                    one_line = '"'.join(one_list)
+                    print(Fore.LIGHTGREEN_EX + str(line_num), Fore.LIGHTGREEN_EX + one_line, end='\r')
+                    self.file_content[line_num - 1] = one_line
+                    break
+                line_num += 1
+        except:
+            print(Fore.LIGHTRED_EX + 'Somthing is worry T_T')
 
 
 if __name__ == '__main__':
