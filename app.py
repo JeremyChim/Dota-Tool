@@ -6,8 +6,11 @@ File:   app.py
 IDE:    PyCharm
 GitHub: https://github.com/JeremyChim
 """
+import sys
+
 from PyQt6.QtGui import QIcon
 from PyQt6.QtWidgets import QApplication, QWidget, QFileDialog
+from PyQt6.QtCore import Qt
 from colorama import init, Fore
 
 from untitled import Ui_Form
@@ -18,14 +21,20 @@ init(autoreset=True)
 class Window(QWidget, Ui_Form):
     def __init__(self):
         super().__init__()
-        self.setupUi(self)
-        self.setWindowTitle('Dota Tool')
-        self.setWindowIcon(QIcon('app.ico'))
+        self.init_ui()
         self.init_function()
+
         self.file_url: str = ''
         self.file_content: list[str] = ['']
         self.hero_name_list: list[str] = []
         self.hero_line_list: list[int] = []
+
+    def init_ui(self):
+        self.setupUi(self)
+        self.setWindowTitle('Dota Tool')
+        self.setWindowIcon(QIcon('app.ico'))
+        self.lineEdit_4.setText('2024/03/29')
+        self.lineEdit_5.setText('1.6.3')
 
     def init_function(self):
         self.pushButton.clicked.connect(self.get_file_url)
@@ -40,6 +49,7 @@ class Window(QWidget, Ui_Form):
         self.pushButton_14.clicked.connect(self.get_hero_name)
         self.pushButton_15.clicked.connect(self.get_hero_data)
         self.pushButton_16.clicked.connect(self.update_hero_data)
+        self.checkBox.clicked.connect(self.set_to_top)
 
     def get_file_url(self):
         file_url, file_type = QFileDialog.getOpenFileName()  # GET THE URL
@@ -289,9 +299,16 @@ class Window(QWidget, Ui_Form):
         except:
             print(Fore.LIGHTRED_EX + 'Somthing is worry T_T')
 
+    def set_to_top(self):
+        if self.checkBox.isChecked() is True:
+            self.setWindowFlags(self.windowFlags() | Qt.WindowType.WindowStaysOnTopHint)  # window top
+        else:
+            self.setWindowFlags(self.windowFlags() & ~Qt.WindowType.WindowStaysOnTopHint)
+        self.show()
+
 
 if __name__ == '__main__':
-    app = QApplication([])
+    app = QApplication(sys.argv)
     win = Window()
     win.show()
-    app.exec()
+    sys.exit(app.exec())
