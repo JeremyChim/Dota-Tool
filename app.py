@@ -33,8 +33,8 @@ class Window(QWidget, Ui_Form):
         self.setupUi(self)
         self.setWindowTitle('Dota Tool')
         self.setWindowIcon(QIcon('app.ico'))
-        self.lineEdit_4.setText('2024/03/29')
-        self.lineEdit_5.setText('1.6.3')
+        self.lineEdit_4.setText('2024/03/31')
+        self.lineEdit_5.setText('1.7.0')
 
     def init_function(self):
         self.pushButton.clicked.connect(self.get_file_url)

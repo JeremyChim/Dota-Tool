@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>3</number>
    </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
@@ -775,8 +775,11 @@
            </property>
            <property name="html">
             <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Consolas'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&amp;quot;ab_name&amp;quot;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;			{&lt;/p&gt;
@@ -823,8 +826,11 @@ p, li { white-space: pre-wrap; }
          </property>
          <property name="html">
           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Consolas'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'苹方 粗体'; font-size:9.75pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
@@ -865,8 +871,11 @@ p, li { white-space: pre-wrap; }
          </property>
          <property name="html">
           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Consolas'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'苹方 粗体'; font-size:9.75pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
@@ -1287,6 +1296,42 @@ p, li { white-space: pre-wrap; }
      <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
+        <x>20</x>
+        <y>30</y>
+        <width>591</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_21" stretch="1,0,0,0">
+       <item>
+        <widget class="QComboBox" name="comboBox"/>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_14">
+         <property name="text">
+          <string>载入</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_15">
+         <property name="text">
+          <string>读取</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_16">
+         <property name="text">
+          <string>写入</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="layoutWidget">
+      <property name="geometry">
+       <rect>
         <x>620</x>
         <y>70</y>
         <width>289</width>
@@ -1319,39 +1364,610 @@ p, li { white-space: pre-wrap; }
        </item>
       </layout>
      </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_4">
+    <attribute name="title">
+     <string>指令</string>
+    </attribute>
+    <widget class="QGroupBox" name="groupBox_14">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>10</y>
+       <width>661</width>
+       <height>351</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>操作</string>
+     </property>
      <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
         <x>20</x>
         <y>30</y>
-        <width>591</width>
-        <height>28</height>
+        <width>301</width>
+        <height>302</height>
        </rect>
       </property>
-      <layout class="QHBoxLayout" name="horizontalLayout_21" stretch="1,0,0,0">
+      <layout class="QVBoxLayout" name="verticalLayout_13">
        <item>
-        <widget class="QComboBox" name="comboBox"/>
+        <layout class="QHBoxLayout" name="horizontalLayout_35">
+         <item>
+          <widget class="QPushButton" name="pushButton_17">
+           <property name="text">
+            <string>升5级</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_9">
+           <property name="text">
+            <string>-lvlup 5</string>
+           </property>
+           <property name="echoMode">
+            <enum>QLineEdit::Normal</enum>
+           </property>
+           <property name="dragEnabled">
+            <bool>false</bool>
+           </property>
+           <property name="readOnly">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton_14">
-         <property name="text">
-          <string>载入</string>
-         </property>
-        </widget>
+        <layout class="QHBoxLayout" name="horizontalLayout_36">
+         <item>
+          <widget class="QPushButton" name="pushButton_18">
+           <property name="text">
+            <string>升bot5级</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_10">
+           <property name="text">
+            <string>-levelbots 5</string>
+           </property>
+           <property name="echoMode">
+            <enum>QLineEdit::Normal</enum>
+           </property>
+           <property name="dragEnabled">
+            <bool>false</bool>
+           </property>
+           <property name="readOnly">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton_15">
-         <property name="text">
-          <string>读取</string>
-         </property>
-        </widget>
+        <layout class="QHBoxLayout" name="horizontalLayout_37">
+         <item>
+          <widget class="QPushButton" name="pushButton_19">
+           <property name="text">
+            <string>+1000金钱</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_11">
+           <property name="text">
+            <string>-gold 1000</string>
+           </property>
+           <property name="echoMode">
+            <enum>QLineEdit::Normal</enum>
+           </property>
+           <property name="dragEnabled">
+            <bool>false</bool>
+           </property>
+           <property name="readOnly">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton_16">
-         <property name="text">
-          <string>写入</string>
-         </property>
-        </widget>
+        <layout class="QHBoxLayout" name="horizontalLayout_38">
+         <item>
+          <widget class="QPushButton" name="pushButton_20">
+           <property name="text">
+            <string>刷新</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_12">
+           <property name="text">
+            <string>-refresh</string>
+           </property>
+           <property name="echoMode">
+            <enum>QLineEdit::Normal</enum>
+           </property>
+           <property name="dragEnabled">
+            <bool>false</bool>
+           </property>
+           <property name="readOnly">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_39">
+         <item>
+          <widget class="QPushButton" name="pushButton_21">
+           <property name="text">
+            <string>复活</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_13">
+           <property name="text">
+            <string>-respawn</string>
+           </property>
+           <property name="echoMode">
+            <enum>QLineEdit::Normal</enum>
+           </property>
+           <property name="dragEnabled">
+            <bool>false</bool>
+           </property>
+           <property name="readOnly">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_40">
+         <item>
+          <widget class="QPushButton" name="pushButton_22">
+           <property name="text">
+            <string>显示AI状态</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_14">
+           <property name="text">
+            <string>-dumpbots</string>
+           </property>
+           <property name="echoMode">
+            <enum>QLineEdit::Normal</enum>
+           </property>
+           <property name="dragEnabled">
+            <bool>false</bool>
+           </property>
+           <property name="readOnly">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_41">
+         <item>
+          <widget class="QPushButton" name="pushButton_23">
+           <property name="text">
+            <string>自杀</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_15">
+           <property name="text">
+            <string>-suicide</string>
+           </property>
+           <property name="echoMode">
+            <enum>QLineEdit::Normal</enum>
+           </property>
+           <property name="dragEnabled">
+            <bool>false</bool>
+           </property>
+           <property name="readOnly">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_44">
+         <item>
+          <widget class="QPushButton" name="pushButton_26">
+           <property name="text">
+            <string>魔方</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_18">
+           <property name="text">
+            <string>-createhero miniboss enemy</string>
+           </property>
+           <property name="echoMode">
+            <enum>QLineEdit::Normal</enum>
+           </property>
+           <property name="dragEnabled">
+            <bool>false</bool>
+           </property>
+           <property name="readOnly">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_45">
+         <item>
+          <widget class="QPushButton" name="pushButton_27">
+           <property name="text">
+            <string>肉山</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_19">
+           <property name="text">
+            <string>-createhero roshan enemy</string>
+           </property>
+           <property name="echoMode">
+            <enum>QLineEdit::Normal</enum>
+           </property>
+           <property name="dragEnabled">
+            <bool>false</bool>
+           </property>
+           <property name="readOnly">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="layoutWidget_22">
+      <property name="geometry">
+       <rect>
+        <x>340</x>
+        <y>30</y>
+        <width>301</width>
+        <height>171</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_15">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_50">
+         <item>
+          <widget class="QPushButton" name="pushButton_32">
+           <property name="text">
+            <string>范围圈</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_24">
+           <property name="text">
+            <string>dota_range_display 800</string>
+           </property>
+           <property name="echoMode">
+            <enum>QLineEdit::Normal</enum>
+           </property>
+           <property name="dragEnabled">
+            <bool>false</bool>
+           </property>
+           <property name="readOnly">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_51">
+         <item>
+          <widget class="QPushButton" name="pushButton_33">
+           <property name="text">
+            <string>视距</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_25">
+           <property name="text">
+            <string>dota_camera_distance 1800</string>
+           </property>
+           <property name="echoMode">
+            <enum>QLineEdit::Normal</enum>
+           </property>
+           <property name="dragEnabled">
+            <bool>false</bool>
+           </property>
+           <property name="readOnly">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_52">
+         <item>
+          <widget class="QPushButton" name="pushButton_34">
+           <property name="text">
+            <string>无敌</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_26">
+           <property name="text">
+            <string>dota_hero_god_mode 1</string>
+           </property>
+           <property name="echoMode">
+            <enum>QLineEdit::Normal</enum>
+           </property>
+           <property name="dragEnabled">
+            <bool>false</bool>
+           </property>
+           <property name="readOnly">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_53">
+         <item>
+          <widget class="QPushButton" name="pushButton_35">
+           <property name="text">
+            <string>刷新肉山</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_27">
+           <property name="text">
+            <string>dota_respawn_roshan</string>
+           </property>
+           <property name="echoMode">
+            <enum>QLineEdit::Normal</enum>
+           </property>
+           <property name="dragEnabled">
+            <bool>false</bool>
+           </property>
+           <property name="readOnly">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_54">
+         <item>
+          <widget class="QPushButton" name="pushButton_36">
+           <property name="text">
+            <string>hud开关</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_28">
+           <property name="text">
+            <string>hud_toggle_visibility</string>
+           </property>
+           <property name="echoMode">
+            <enum>QLineEdit::Normal</enum>
+           </property>
+           <property name="dragEnabled">
+            <bool>false</bool>
+           </property>
+           <property name="readOnly">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_15">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>370</y>
+       <width>341</width>
+       <height>351</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>物品</string>
+     </property>
+     <widget class="QWidget" name="layoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>30</y>
+        <width>301</width>
+        <height>200</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_14">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_43">
+         <item>
+          <widget class="QPushButton" name="pushButton_25">
+           <property name="text">
+            <string>给bot跳刀</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_17">
+           <property name="text">
+            <string>-givebots blink</string>
+           </property>
+           <property name="echoMode">
+            <enum>QLineEdit::Normal</enum>
+           </property>
+           <property name="dragEnabled">
+            <bool>false</bool>
+           </property>
+           <property name="readOnly">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_42">
+         <item>
+          <widget class="QPushButton" name="pushButton_24">
+           <property name="text">
+            <string>跳刀</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_16">
+           <property name="text">
+            <string>-item blink</string>
+           </property>
+           <property name="echoMode">
+            <enum>QLineEdit::Normal</enum>
+           </property>
+           <property name="dragEnabled">
+            <bool>false</bool>
+           </property>
+           <property name="readOnly">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_46">
+         <item>
+          <widget class="QPushButton" name="pushButton_28">
+           <property name="text">
+            <string>不朽盾</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_20">
+           <property name="text">
+            <string>-item aegis</string>
+           </property>
+           <property name="echoMode">
+            <enum>QLineEdit::Normal</enum>
+           </property>
+           <property name="dragEnabled">
+            <bool>false</bool>
+           </property>
+           <property name="readOnly">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_49">
+         <item>
+          <widget class="QPushButton" name="pushButton_31">
+           <property name="text">
+            <string>奶酪</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_23">
+           <property name="text">
+            <string>-item cheese</string>
+           </property>
+           <property name="echoMode">
+            <enum>QLineEdit::Normal</enum>
+           </property>
+           <property name="dragEnabled">
+            <bool>false</bool>
+           </property>
+           <property name="readOnly">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_47">
+         <item>
+          <widget class="QPushButton" name="pushButton_29">
+           <property name="text">
+            <string>刷新碎片</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_21">
+           <property name="text">
+            <string>-item refresher_shard</string>
+           </property>
+           <property name="echoMode">
+            <enum>QLineEdit::Normal</enum>
+           </property>
+           <property name="dragEnabled">
+            <bool>false</bool>
+           </property>
+           <property name="readOnly">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_48">
+         <item>
+          <widget class="QPushButton" name="pushButton_30">
+           <property name="text">
+            <string>阿哈利姆</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_22">
+           <property name="text">
+            <string>-item ultimate_scepter_2</string>
+           </property>
+           <property name="echoMode">
+            <enum>QLineEdit::Normal</enum>
+           </property>
+           <property name="dragEnabled">
+            <bool>false</bool>
+           </property>
+           <property name="readOnly">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </item>
       </layout>
      </widget>
@@ -1527,11 +2143,11 @@ p, li { white-space: pre-wrap; }
    <hints>
     <hint type="sourcelabel">
      <x>930</x>
-     <y>125</y>
+     <y>137</y>
     </hint>
     <hint type="destinationlabel">
-     <x>293</x>
-     <y>123</y>
+     <x>291</x>
+     <y>134</y>
     </hint>
    </hints>
   </connection>
@@ -1543,11 +2159,11 @@ p, li { white-space: pre-wrap; }
    <hints>
     <hint type="sourcelabel">
      <x>930</x>
-     <y>94</y>
+     <y>103</y>
     </hint>
     <hint type="destinationlabel">
-     <x>293</x>
-     <y>93</y>
+     <x>291</x>
+     <y>100</y>
     </hint>
    </hints>
   </connection>
@@ -1559,11 +2175,11 @@ p, li { white-space: pre-wrap; }
    <hints>
     <hint type="sourcelabel">
      <x>930</x>
-     <y>125</y>
+     <y>137</y>
     </hint>
     <hint type="destinationlabel">
-     <x>293</x>
-     <y>123</y>
+     <x>291</x>
+     <y>134</y>
     </hint>
    </hints>
   </connection>
@@ -1575,11 +2191,11 @@ p, li { white-space: pre-wrap; }
    <hints>
     <hint type="sourcelabel">
      <x>930</x>
-     <y>94</y>
+     <y>103</y>
     </hint>
     <hint type="destinationlabel">
-     <x>293</x>
-     <y>93</y>
+     <x>291</x>
+     <y>100</y>
     </hint>
    </hints>
   </connection>
@@ -1590,8 +2206,8 @@ p, li { white-space: pre-wrap; }
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>155</x>
-     <y>542</y>
+     <x>153</x>
+     <y>549</y>
     </hint>
     <hint type="destinationlabel">
      <x>151</x>
@@ -1606,12 +2222,12 @@ p, li { white-space: pre-wrap; }
    <slot>selectAll()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>744</x>
-     <y>542</y>
+     <x>742</x>
+     <y>549</y>
     </hint>
     <hint type="destinationlabel">
-     <x>154</x>
-     <y>600</y>
+     <x>152</x>
+     <y>586</y>
     </hint>
    </hints>
   </connection>
@@ -1622,12 +2238,12 @@ p, li { white-space: pre-wrap; }
    <slot>copy()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>744</x>
-     <y>542</y>
+     <x>742</x>
+     <y>549</y>
     </hint>
     <hint type="destinationlabel">
-     <x>154</x>
-     <y>600</y>
+     <x>152</x>
+     <y>586</y>
     </hint>
    </hints>
   </connection>
@@ -1638,12 +2254,652 @@ p, li { white-space: pre-wrap; }
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>155</x>
-     <y>542</y>
+     <x>153</x>
+     <y>549</y>
     </hint>
     <hint type="destinationlabel">
-     <x>154</x>
-     <y>600</y>
+     <x>152</x>
+     <y>586</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_17</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_9</receiver>
+   <slot>selectAll()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>112</x>
+     <y>92</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>197</x>
+     <y>92</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_17</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_9</receiver>
+   <slot>copy()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>100</x>
+     <y>93</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>219</x>
+     <y>92</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_18</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_10</receiver>
+   <slot>selectAll()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>107</x>
+     <y>125</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>236</x>
+     <y>129</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_18</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_10</receiver>
+   <slot>copy()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>112</x>
+     <y>127</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>233</x>
+     <y>128</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_19</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_11</receiver>
+   <slot>selectAll()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>118</x>
+     <y>161</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>218</x>
+     <y>161</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_19</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_11</receiver>
+   <slot>copy()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>80</x>
+     <y>157</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>284</x>
+     <y>160</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_20</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_12</receiver>
+   <slot>selectAll()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>99</x>
+     <y>193</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>265</x>
+     <y>202</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_20</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_12</receiver>
+   <slot>copy()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>104</x>
+     <y>193</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>280</x>
+     <y>194</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_21</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_13</receiver>
+   <slot>selectAll()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>111</x>
+     <y>229</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>214</x>
+     <y>232</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_21</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_13</receiver>
+   <slot>copy()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>107</x>
+     <y>225</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>225</x>
+     <y>228</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_22</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_14</receiver>
+   <slot>selectAll()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>102</x>
+     <y>263</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>198</x>
+     <y>261</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_22</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_14</receiver>
+   <slot>copy()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>101</x>
+     <y>265</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>222</x>
+     <y>263</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_23</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_15</receiver>
+   <slot>selectAll()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>111</x>
+     <y>302</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>149</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_23</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_15</receiver>
+   <slot>copy()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>115</x>
+     <y>293</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>169</x>
+     <y>296</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_24</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_16</receiver>
+   <slot>selectAll()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>113</x>
+     <y>493</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>175</x>
+     <y>494</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_24</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_16</receiver>
+   <slot>copy()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>114</x>
+     <y>481</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>174</x>
+     <y>485</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_25</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_17</receiver>
+   <slot>selectAll()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>106</x>
+     <y>450</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>137</x>
+     <y>450</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_25</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_17</receiver>
+   <slot>copy()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>112</x>
+     <y>451</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>211</x>
+     <y>451</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_26</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_18</receiver>
+   <slot>selectAll()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>119</x>
+     <y>334</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>173</x>
+     <y>333</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_26</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_18</receiver>
+   <slot>copy()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>110</x>
+     <y>327</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>177</x>
+     <y>328</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_27</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_19</receiver>
+   <slot>selectAll()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>102</x>
+     <y>356</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>167</x>
+     <y>365</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_27</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_19</receiver>
+   <slot>copy()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>91</x>
+     <y>363</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>181</x>
+     <y>367</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_28</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_20</receiver>
+   <slot>selectAll()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>117</x>
+     <y>521</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>152</x>
+     <y>519</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_28</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_20</receiver>
+   <slot>copy()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>65</x>
+     <y>518</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>210</x>
+     <y>520</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_31</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_23</receiver>
+   <slot>selectAll()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>100</x>
+     <y>551</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>204</x>
+     <y>562</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_29</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_21</receiver>
+   <slot>selectAll()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>119</x>
+     <y>588</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>173</x>
+     <y>591</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_31</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_23</receiver>
+   <slot>copy()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>104</x>
+     <y>554</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>186</x>
+     <y>554</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_29</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_21</receiver>
+   <slot>copy()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>117</x>
+     <y>591</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>175</x>
+     <y>590</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_30</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_22</receiver>
+   <slot>selectAll()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>128</x>
+     <y>622</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>158</x>
+     <y>622</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_30</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_22</receiver>
+   <slot>copy()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>63</x>
+     <y>622</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>177</x>
+     <y>625</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_32</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_24</receiver>
+   <slot>selectAll()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>440</x>
+     <y>91</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>493</x>
+     <y>93</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_32</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_24</receiver>
+   <slot>copy()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>385</x>
+     <y>91</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>502</x>
+     <y>96</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_33</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_25</receiver>
+   <slot>selectAll()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>412</x>
+     <y>129</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>488</x>
+     <y>132</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_33</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_25</receiver>
+   <slot>copy()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>382</x>
+     <y>127</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>510</x>
+     <y>126</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_34</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_26</receiver>
+   <slot>selectAll()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>426</x>
+     <y>164</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>492</x>
+     <y>163</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_34</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_26</receiver>
+   <slot>copy()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>421</x>
+     <y>154</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>509</x>
+     <y>162</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_35</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_27</receiver>
+   <slot>selectAll()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>416</x>
+     <y>198</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>478</x>
+     <y>203</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_35</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_27</receiver>
+   <slot>copy()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>404</x>
+     <y>194</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>494</x>
+     <y>201</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_36</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_28</receiver>
+   <slot>selectAll()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>411</x>
+     <y>231</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>501</x>
+     <y>240</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_36</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_28</receiver>
+   <slot>copy()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>425</x>
+     <y>227</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>482</x>
+     <y>233</y>
     </hint>
    </hints>
   </connection>
