@@ -22,7 +22,8 @@ class Window(QWidget, Ui_Form):
     def __init__(self):
         super().__init__()
         self.init_ui()
-        self.init_function()
+        self.init_button()
+        self.init_attr_button()
 
         self.file_url: str = ''
         self.file_content: list[str] = ['']
@@ -33,10 +34,10 @@ class Window(QWidget, Ui_Form):
         self.setupUi(self)
         self.setWindowTitle('Dota Tool')
         self.setWindowIcon(QIcon('app.ico'))
-        self.lineEdit_4.setText('2024/03/31')
-        self.lineEdit_5.setText('1.7.0')
+        self.lineEdit_4.setText('2024/04/01')
+        self.lineEdit_5.setText('1.7.1')
 
-    def init_function(self):
+    def init_button(self):
         self.pushButton.clicked.connect(self.get_file_url)
         self.pushButton_2.clicked.connect(self.get_file_content)
         self.pushButton_3.clicked.connect(self.save_file)
@@ -303,8 +304,50 @@ class Window(QWidget, Ui_Form):
         if self.checkBox.isChecked() is True:
             self.setWindowFlags(self.windowFlags() | Qt.WindowType.WindowStaysOnTopHint)  # window top
         else:
-            self.setWindowFlags(self.windowFlags() & ~Qt.WindowType.WindowStaysOnTopHint)
+            self.setWindowFlags(self.windowFlags() & ~Qt.WindowType.WindowStaysOnTopHint)  # cancel
         self.show()
+
+    def init_attr_button(self):
+        self.pushButton_37.clicked.connect(lambda: self.add_attr('base'))
+        self.pushButton_38.clicked.connect(lambda: self.add_attr('gain'))
+        self.pushButton_39.clicked.connect(lambda: self.add_attr('move'))
+        self.pushButton_40.clicked.connect(lambda: self.add_attr('rate'))
+        self.pushButton_41.clicked.connect(lambda: self.add_attr('anim'))
+        self.pushButton_42.clicked.connect(lambda: self.add_attr('range'))
+        self.pushButton_43.clicked.connect(lambda: self.add_attr('speed'))
+        self.pushButton_44.clicked.connect(lambda: self.add_attr('attack'))
+
+    def add_attr(self, x):
+        match x:
+            case 'base':
+                self.doubleSpinBox_18.setValue(self.doubleSpinBox_18.value() + 1)
+                self.doubleSpinBox_20.setValue(self.doubleSpinBox_20.value() + 1)
+                self.doubleSpinBox_22.setValue(self.doubleSpinBox_22.value() + 1)
+                print(self.pushButton_37.text())
+            case 'gain':
+                self.doubleSpinBox_19.setValue(self.doubleSpinBox_19.value() + 1)
+                self.doubleSpinBox_21.setValue(self.doubleSpinBox_21.value() + 1)
+                self.doubleSpinBox_23.setValue(self.doubleSpinBox_23.value() + 1)
+                print(self.pushButton_38.text())
+            case 'move':
+                self.doubleSpinBox_12.setValue(self.doubleSpinBox_12.value() + 10)
+                print(self.pushButton_39.text())
+            case 'rate':
+                self.doubleSpinBox_15.setValue(self.doubleSpinBox_15.value() - 0.1)
+                print(self.pushButton_40.text())
+            case 'anim':
+                self.doubleSpinBox_16.setValue(self.doubleSpinBox_16.value() - 0.1)
+                print(self.pushButton_41.text())
+            case 'range':
+                self.doubleSpinBox_17.setValue(self.doubleSpinBox_17.value() + 100)
+                print(self.pushButton_42.text())
+            case 'speed':
+                self.doubleSpinBox_24.setValue(self.doubleSpinBox_24.value() + 100)
+                print(self.pushButton_43.text())
+            case 'attack':
+                self.doubleSpinBox_13.setValue(self.doubleSpinBox_13.value() + 10)
+                self.doubleSpinBox_14.setValue(self.doubleSpinBox_14.value() + 10)
+                print(self.pushButton_44.text())
 
 
 if __name__ == '__main__':

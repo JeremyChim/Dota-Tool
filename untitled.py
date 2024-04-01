@@ -451,7 +451,7 @@ class Ui_Form(object):
         self.doubleSpinBox_13.setDecimals(0)
         self.doubleSpinBox_13.setMinimum(-100000.0)
         self.doubleSpinBox_13.setMaximum(100000.0)
-        self.doubleSpinBox_13.setSingleStep(10.0)
+        self.doubleSpinBox_13.setSingleStep(1.0)
         self.doubleSpinBox_13.setObjectName("doubleSpinBox_13")
         self.horizontalLayout_23.addWidget(self.doubleSpinBox_13)
         self.verticalLayout_11.addLayout(self.horizontalLayout_23)
@@ -464,7 +464,7 @@ class Ui_Form(object):
         self.doubleSpinBox_14.setDecimals(0)
         self.doubleSpinBox_14.setMinimum(-100000.0)
         self.doubleSpinBox_14.setMaximum(100000.0)
-        self.doubleSpinBox_14.setSingleStep(10.0)
+        self.doubleSpinBox_14.setSingleStep(1.0)
         self.doubleSpinBox_14.setObjectName("doubleSpinBox_14")
         self.horizontalLayout_24.addWidget(self.doubleSpinBox_14)
         self.verticalLayout_11.addLayout(self.horizontalLayout_24)
@@ -489,7 +489,7 @@ class Ui_Form(object):
         self.doubleSpinBox_16 = QtWidgets.QDoubleSpinBox(parent=self.layoutWidget5)
         self.doubleSpinBox_16.setDecimals(2)
         self.doubleSpinBox_16.setMaximum(100000.0)
-        self.doubleSpinBox_16.setSingleStep(0.1)
+        self.doubleSpinBox_16.setSingleStep(0.01)
         self.doubleSpinBox_16.setObjectName("doubleSpinBox_16")
         self.horizontalLayout_26.addWidget(self.doubleSpinBox_16)
         self.verticalLayout_11.addLayout(self.horizontalLayout_26)
@@ -501,7 +501,7 @@ class Ui_Form(object):
         self.doubleSpinBox_17 = QtWidgets.QDoubleSpinBox(parent=self.layoutWidget5)
         self.doubleSpinBox_17.setDecimals(0)
         self.doubleSpinBox_17.setMaximum(100000.0)
-        self.doubleSpinBox_17.setSingleStep(100.0)
+        self.doubleSpinBox_17.setSingleStep(1.0)
         self.doubleSpinBox_17.setObjectName("doubleSpinBox_17")
         self.horizontalLayout_28.addWidget(self.doubleSpinBox_17)
         self.verticalLayout_11.addLayout(self.horizontalLayout_28)
@@ -514,7 +514,7 @@ class Ui_Form(object):
         self.doubleSpinBox_24.setDecimals(0)
         self.doubleSpinBox_24.setMinimum(0.0)
         self.doubleSpinBox_24.setMaximum(100000.0)
-        self.doubleSpinBox_24.setSingleStep(100.0)
+        self.doubleSpinBox_24.setSingleStep(1.0)
         self.doubleSpinBox_24.setObjectName("doubleSpinBox_24")
         self.horizontalLayout_34.addWidget(self.doubleSpinBox_24)
         self.verticalLayout_11.addLayout(self.horizontalLayout_34)
@@ -533,7 +533,7 @@ class Ui_Form(object):
         self.doubleSpinBox_18.setDecimals(0)
         self.doubleSpinBox_18.setMinimum(0.0)
         self.doubleSpinBox_18.setMaximum(100000.0)
-        self.doubleSpinBox_18.setSingleStep(2.0)
+        self.doubleSpinBox_18.setSingleStep(1.0)
         self.doubleSpinBox_18.setObjectName("doubleSpinBox_18")
         self.horizontalLayout_27.addWidget(self.doubleSpinBox_18)
         self.verticalLayout_12.addLayout(self.horizontalLayout_27)
@@ -546,7 +546,7 @@ class Ui_Form(object):
         self.doubleSpinBox_19.setDecimals(1)
         self.doubleSpinBox_19.setMinimum(0.0)
         self.doubleSpinBox_19.setMaximum(100000.0)
-        self.doubleSpinBox_19.setSingleStep(0.2)
+        self.doubleSpinBox_19.setSingleStep(0.1)
         self.doubleSpinBox_19.setObjectName("doubleSpinBox_19")
         self.horizontalLayout_29.addWidget(self.doubleSpinBox_19)
         self.verticalLayout_12.addLayout(self.horizontalLayout_29)
@@ -559,7 +559,7 @@ class Ui_Form(object):
         self.doubleSpinBox_20.setDecimals(0)
         self.doubleSpinBox_20.setMinimum(0.0)
         self.doubleSpinBox_20.setMaximum(100000.0)
-        self.doubleSpinBox_20.setSingleStep(2.0)
+        self.doubleSpinBox_20.setSingleStep(1.0)
         self.doubleSpinBox_20.setObjectName("doubleSpinBox_20")
         self.horizontalLayout_30.addWidget(self.doubleSpinBox_20)
         self.verticalLayout_12.addLayout(self.horizontalLayout_30)
@@ -571,7 +571,7 @@ class Ui_Form(object):
         self.doubleSpinBox_21 = QtWidgets.QDoubleSpinBox(parent=self.layoutWidget_7)
         self.doubleSpinBox_21.setDecimals(1)
         self.doubleSpinBox_21.setMaximum(100000.0)
-        self.doubleSpinBox_21.setSingleStep(0.2)
+        self.doubleSpinBox_21.setSingleStep(0.1)
         self.doubleSpinBox_21.setObjectName("doubleSpinBox_21")
         self.horizontalLayout_31.addWidget(self.doubleSpinBox_21)
         self.verticalLayout_12.addLayout(self.horizontalLayout_31)
@@ -583,7 +583,7 @@ class Ui_Form(object):
         self.doubleSpinBox_22 = QtWidgets.QDoubleSpinBox(parent=self.layoutWidget_7)
         self.doubleSpinBox_22.setDecimals(0)
         self.doubleSpinBox_22.setMaximum(100000.0)
-        self.doubleSpinBox_22.setSingleStep(2.0)
+        self.doubleSpinBox_22.setSingleStep(1.0)
         self.doubleSpinBox_22.setObjectName("doubleSpinBox_22")
         self.horizontalLayout_32.addWidget(self.doubleSpinBox_22)
         self.verticalLayout_12.addLayout(self.horizontalLayout_32)
@@ -596,7 +596,7 @@ class Ui_Form(object):
         self.doubleSpinBox_23.setDecimals(1)
         self.doubleSpinBox_23.setMinimum(0.0)
         self.doubleSpinBox_23.setMaximum(100000.0)
-        self.doubleSpinBox_23.setSingleStep(0.2)
+        self.doubleSpinBox_23.setSingleStep(0.1)
         self.doubleSpinBox_23.setObjectName("doubleSpinBox_23")
         self.horizontalLayout_33.addWidget(self.doubleSpinBox_23)
         self.verticalLayout_12.addLayout(self.horizontalLayout_33)
@@ -620,10 +620,37 @@ class Ui_Form(object):
         self.horizontalLayout_21.addWidget(self.pushButton_16)
         self.horizontalLayout_21.setStretch(0, 1)
         self.layoutWidget7 = QtWidgets.QWidget(parent=self.groupBox_13)
-        self.layoutWidget7.setGeometry(QtCore.QRect(620, 70, 289, 26))
+        self.layoutWidget7.setGeometry(QtCore.QRect(620, 30, 291, 232))
         self.layoutWidget7.setObjectName("layoutWidget7")
-        self.horizontalLayout_22 = QtWidgets.QHBoxLayout(self.layoutWidget7)
-        self.horizontalLayout_22.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_16 = QtWidgets.QVBoxLayout(self.layoutWidget7)
+        self.verticalLayout_16.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_16.setSpacing(2)
+        self.verticalLayout_16.setObjectName("verticalLayout_16")
+        self.pushButton_37 = QtWidgets.QPushButton(parent=self.layoutWidget7)
+        self.pushButton_37.setObjectName("pushButton_37")
+        self.verticalLayout_16.addWidget(self.pushButton_37)
+        self.pushButton_38 = QtWidgets.QPushButton(parent=self.layoutWidget7)
+        self.pushButton_38.setObjectName("pushButton_38")
+        self.verticalLayout_16.addWidget(self.pushButton_38)
+        self.pushButton_39 = QtWidgets.QPushButton(parent=self.layoutWidget7)
+        self.pushButton_39.setObjectName("pushButton_39")
+        self.verticalLayout_16.addWidget(self.pushButton_39)
+        self.pushButton_40 = QtWidgets.QPushButton(parent=self.layoutWidget7)
+        self.pushButton_40.setObjectName("pushButton_40")
+        self.verticalLayout_16.addWidget(self.pushButton_40)
+        self.pushButton_41 = QtWidgets.QPushButton(parent=self.layoutWidget7)
+        self.pushButton_41.setObjectName("pushButton_41")
+        self.verticalLayout_16.addWidget(self.pushButton_41)
+        self.pushButton_42 = QtWidgets.QPushButton(parent=self.layoutWidget7)
+        self.pushButton_42.setObjectName("pushButton_42")
+        self.verticalLayout_16.addWidget(self.pushButton_42)
+        self.pushButton_43 = QtWidgets.QPushButton(parent=self.layoutWidget7)
+        self.pushButton_43.setObjectName("pushButton_43")
+        self.verticalLayout_16.addWidget(self.pushButton_43)
+        self.pushButton_44 = QtWidgets.QPushButton(parent=self.layoutWidget7)
+        self.pushButton_44.setObjectName("pushButton_44")
+        self.verticalLayout_16.addWidget(self.pushButton_44)
+        self.horizontalLayout_22 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_22.setObjectName("horizontalLayout_22")
         self.label_21 = QtWidgets.QLabel(parent=self.layoutWidget7)
         self.label_21.setObjectName("label_21")
@@ -632,9 +659,10 @@ class Ui_Form(object):
         self.doubleSpinBox_12.setDecimals(0)
         self.doubleSpinBox_12.setMinimum(0.0)
         self.doubleSpinBox_12.setMaximum(100000.0)
-        self.doubleSpinBox_12.setSingleStep(20.0)
+        self.doubleSpinBox_12.setSingleStep(1.0)
         self.doubleSpinBox_12.setObjectName("doubleSpinBox_12")
         self.horizontalLayout_22.addWidget(self.doubleSpinBox_12)
+        self.verticalLayout_16.addLayout(self.horizontalLayout_22)
         self.tabWidget.addTab(self.tab_3, "")
         self.tab_4 = QtWidgets.QWidget()
         self.tab_4.setObjectName("tab_4")
@@ -977,7 +1005,7 @@ class Ui_Form(object):
         self.verticalLayout_7.addLayout(self.horizontalLayout_16)
 
         self.retranslateUi(Form)
-        self.tabWidget.setCurrentIndex(3)
+        self.tabWidget.setCurrentIndex(2)
         self.pushButton_7.clicked.connect(self.lineEdit_7.selectAll) # type: ignore
         self.pushButton_6.clicked.connect(self.lineEdit_6.selectAll) # type: ignore
         self.pushButton_7.clicked.connect(self.lineEdit_7.copy) # type: ignore
@@ -1066,11 +1094,8 @@ class Ui_Form(object):
         self.pushButton_7.setText(_translate("Form", "复制"))
         self.label_19.setText(_translate("Form", "技能替换模版"))
         self.textEdit.setHtml(_translate("Form", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
 "</style></head><body style=\" font-family:\'Consolas\'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">&quot;ab_name&quot;</p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">            {</p>\n"
@@ -1079,22 +1104,16 @@ class Ui_Form(object):
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">            }</p></body></html>"))
         self.groupBox_11.setTitle(_translate("Form", "控制台"))
         self.textEdit_2.setHtml(_translate("Form", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
 "</style></head><body style=\" font-family:\'Consolas\'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:\'苹方 粗体\'; font-size:9.75pt;\"><br /></p></body></html>"))
         self.pushButton_8.setText(_translate("Form", "清空"))
         self.pushButton_9.setText(_translate("Form", "替换"))
         self.pushButton_10.setText(_translate("Form", "复制"))
         self.textEdit_3.setHtml(_translate("Form", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
 "</style></head><body style=\" font-family:\'Consolas\'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:\'苹方 粗体\'; font-size:9.75pt;\"><br /></p></body></html>"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), _translate("Form", "技能"))
@@ -1119,6 +1138,14 @@ class Ui_Form(object):
         self.pushButton_14.setText(_translate("Form", "载入"))
         self.pushButton_15.setText(_translate("Form", "读取"))
         self.pushButton_16.setText(_translate("Form", "写入"))
+        self.pushButton_37.setText(_translate("Form", "全属性+1"))
+        self.pushButton_38.setText(_translate("Form", "全成长+1"))
+        self.pushButton_39.setText(_translate("Form", "移速+10"))
+        self.pushButton_40.setText(_translate("Form", "攻击速率-0.1"))
+        self.pushButton_41.setText(_translate("Form", "攻击前摇-0.1"))
+        self.pushButton_42.setText(_translate("Form", "攻击范围+100"))
+        self.pushButton_43.setText(_translate("Form", "弹道速度+100"))
+        self.pushButton_44.setText(_translate("Form", "攻击+10"))
         self.label_21.setText(_translate("Form", "MovementSpeed"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), _translate("Form", "英雄"))
         self.groupBox_14.setTitle(_translate("Form", "操作"))
