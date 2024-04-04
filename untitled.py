@@ -19,10 +19,10 @@ class Ui_Form(object):
         self.tab = QtWidgets.QWidget()
         self.tab.setObjectName("tab")
         self.groupBox_2 = QtWidgets.QGroupBox(parent=self.tab)
-        self.groupBox_2.setGeometry(QtCore.QRect(20, 90, 411, 101))
+        self.groupBox_2.setGeometry(QtCore.QRect(20, 90, 451, 171))
         self.groupBox_2.setObjectName("groupBox_2")
         self.layoutWidget = QtWidgets.QWidget(parent=self.groupBox_2)
-        self.layoutWidget.setGeometry(QtCore.QRect(20, 30, 371, 60))
+        self.layoutWidget.setGeometry(QtCore.QRect(20, 30, 411, 124))
         self.layoutWidget.setObjectName("layoutWidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.layoutWidget)
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
@@ -42,6 +42,12 @@ class Ui_Form(object):
         self.horizontalLayout_2.setStretch(0, 3)
         self.horizontalLayout_2.setStretch(1, 1)
         self.verticalLayout.addLayout(self.horizontalLayout_2)
+        self.pushButton_45 = QtWidgets.QPushButton(parent=self.layoutWidget)
+        self.pushButton_45.setObjectName("pushButton_45")
+        self.verticalLayout.addWidget(self.pushButton_45)
+        self.pushButton_46 = QtWidgets.QPushButton(parent=self.layoutWidget)
+        self.pushButton_46.setObjectName("pushButton_46")
+        self.verticalLayout.addWidget(self.pushButton_46)
         self.pushButton_4 = QtWidgets.QPushButton(parent=self.layoutWidget)
         self.pushButton_4.setObjectName("pushButton_4")
         self.verticalLayout.addWidget(self.pushButton_4)
@@ -75,7 +81,7 @@ class Ui_Form(object):
         self.horizontalLayout.setStretch(3, 1)
         self.horizontalLayout.setStretch(4, 1)
         self.groupBox_7 = QtWidgets.QGroupBox(parent=self.tab)
-        self.groupBox_7.setGeometry(QtCore.QRect(20, 200, 921, 301))
+        self.groupBox_7.setGeometry(QtCore.QRect(20, 280, 921, 301))
         self.groupBox_7.setObjectName("groupBox_7")
         self.groupBox_6 = QtWidgets.QGroupBox(parent=self.groupBox_7)
         self.groupBox_6.setGeometry(QtCore.QRect(20, 170, 281, 121))
@@ -434,7 +440,7 @@ class Ui_Form(object):
         self.horizontalLayout_20.setStretch(3, 1)
         self.horizontalLayout_20.setStretch(4, 1)
         self.groupBox_13 = QtWidgets.QGroupBox(parent=self.tab_3)
-        self.groupBox_13.setGeometry(QtCore.QRect(20, 90, 921, 271))
+        self.groupBox_13.setGeometry(QtCore.QRect(20, 90, 921, 291))
         self.groupBox_13.setObjectName("groupBox_13")
         self.layoutWidget5 = QtWidgets.QWidget(parent=self.groupBox_13)
         self.layoutWidget5.setGeometry(QtCore.QRect(20, 70, 291, 188))
@@ -620,21 +626,15 @@ class Ui_Form(object):
         self.horizontalLayout_21.addWidget(self.pushButton_16)
         self.horizontalLayout_21.setStretch(0, 1)
         self.layoutWidget7 = QtWidgets.QWidget(parent=self.groupBox_13)
-        self.layoutWidget7.setGeometry(QtCore.QRect(620, 30, 291, 232))
+        self.layoutWidget7.setGeometry(QtCore.QRect(620, 30, 291, 252))
         self.layoutWidget7.setObjectName("layoutWidget7")
         self.verticalLayout_16 = QtWidgets.QVBoxLayout(self.layoutWidget7)
         self.verticalLayout_16.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_16.setSpacing(2)
         self.verticalLayout_16.setObjectName("verticalLayout_16")
-        self.pushButton_37 = QtWidgets.QPushButton(parent=self.layoutWidget7)
-        self.pushButton_37.setObjectName("pushButton_37")
-        self.verticalLayout_16.addWidget(self.pushButton_37)
-        self.pushButton_38 = QtWidgets.QPushButton(parent=self.layoutWidget7)
-        self.pushButton_38.setObjectName("pushButton_38")
-        self.verticalLayout_16.addWidget(self.pushButton_38)
-        self.pushButton_39 = QtWidgets.QPushButton(parent=self.layoutWidget7)
-        self.pushButton_39.setObjectName("pushButton_39")
-        self.verticalLayout_16.addWidget(self.pushButton_39)
+        self.pushButton_44 = QtWidgets.QPushButton(parent=self.layoutWidget7)
+        self.pushButton_44.setObjectName("pushButton_44")
+        self.verticalLayout_16.addWidget(self.pushButton_44)
         self.pushButton_40 = QtWidgets.QPushButton(parent=self.layoutWidget7)
         self.pushButton_40.setObjectName("pushButton_40")
         self.verticalLayout_16.addWidget(self.pushButton_40)
@@ -647,9 +647,15 @@ class Ui_Form(object):
         self.pushButton_43 = QtWidgets.QPushButton(parent=self.layoutWidget7)
         self.pushButton_43.setObjectName("pushButton_43")
         self.verticalLayout_16.addWidget(self.pushButton_43)
-        self.pushButton_44 = QtWidgets.QPushButton(parent=self.layoutWidget7)
-        self.pushButton_44.setObjectName("pushButton_44")
-        self.verticalLayout_16.addWidget(self.pushButton_44)
+        self.pushButton_37 = QtWidgets.QPushButton(parent=self.layoutWidget7)
+        self.pushButton_37.setObjectName("pushButton_37")
+        self.verticalLayout_16.addWidget(self.pushButton_37)
+        self.pushButton_38 = QtWidgets.QPushButton(parent=self.layoutWidget7)
+        self.pushButton_38.setObjectName("pushButton_38")
+        self.verticalLayout_16.addWidget(self.pushButton_38)
+        self.pushButton_39 = QtWidgets.QPushButton(parent=self.layoutWidget7)
+        self.pushButton_39.setObjectName("pushButton_39")
+        self.verticalLayout_16.addWidget(self.pushButton_39)
         self.horizontalLayout_22 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_22.setObjectName("horizontalLayout_22")
         self.label_21 = QtWidgets.QLabel(parent=self.layoutWidget7)
@@ -1005,7 +1011,7 @@ class Ui_Form(object):
         self.verticalLayout_7.addLayout(self.horizontalLayout_16)
 
         self.retranslateUi(Form)
-        self.tabWidget.setCurrentIndex(2)
+        self.tabWidget.setCurrentIndex(0)
         self.pushButton_7.clicked.connect(self.lineEdit_7.selectAll) # type: ignore
         self.pushButton_6.clicked.connect(self.lineEdit_6.selectAll) # type: ignore
         self.pushButton_7.clicked.connect(self.lineEdit_7.copy) # type: ignore
@@ -1061,7 +1067,9 @@ class Ui_Form(object):
         Form.setWindowTitle(_translate("Form", "Form"))
         self.groupBox_2.setTitle(_translate("Form", "经验金钱"))
         self.label_2.setText(_translate("Form", "BountyXP / BountyGoldMin / BountyGoldMax"))
-        self.pushButton_4.setText(_translate("Form", "更新"))
+        self.pushButton_45.setText(_translate("Form", "天辉小兵"))
+        self.pushButton_46.setText(_translate("Form", "夜魇小兵"))
+        self.pushButton_4.setText(_translate("Form", "其他单位"))
         self.groupBox.setTitle(_translate("Form", "文件"))
         self.label.setText(_translate("Form", "路径"))
         self.pushButton.setText(_translate("Form", "浏览"))
@@ -1094,8 +1102,11 @@ class Ui_Form(object):
         self.pushButton_7.setText(_translate("Form", "复制"))
         self.label_19.setText(_translate("Form", "技能替换模版"))
         self.textEdit.setHtml(_translate("Form", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
 "</style></head><body style=\" font-family:\'Consolas\'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">&quot;ab_name&quot;</p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">            {</p>\n"
@@ -1104,16 +1115,22 @@ class Ui_Form(object):
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">            }</p></body></html>"))
         self.groupBox_11.setTitle(_translate("Form", "控制台"))
         self.textEdit_2.setHtml(_translate("Form", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
 "</style></head><body style=\" font-family:\'Consolas\'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:\'苹方 粗体\'; font-size:9.75pt;\"><br /></p></body></html>"))
         self.pushButton_8.setText(_translate("Form", "清空"))
         self.pushButton_9.setText(_translate("Form", "替换"))
         self.pushButton_10.setText(_translate("Form", "复制"))
         self.textEdit_3.setHtml(_translate("Form", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
 "</style></head><body style=\" font-family:\'Consolas\'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:\'苹方 粗体\'; font-size:9.75pt;\"><br /></p></body></html>"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), _translate("Form", "技能"))
@@ -1138,14 +1155,14 @@ class Ui_Form(object):
         self.pushButton_14.setText(_translate("Form", "载入"))
         self.pushButton_15.setText(_translate("Form", "读取"))
         self.pushButton_16.setText(_translate("Form", "写入"))
-        self.pushButton_37.setText(_translate("Form", "全属性+1"))
-        self.pushButton_38.setText(_translate("Form", "全成长+1"))
-        self.pushButton_39.setText(_translate("Form", "移速+10"))
+        self.pushButton_44.setText(_translate("Form", "攻击+10"))
         self.pushButton_40.setText(_translate("Form", "攻击速率-0.1"))
         self.pushButton_41.setText(_translate("Form", "攻击前摇-0.1"))
         self.pushButton_42.setText(_translate("Form", "攻击范围+100"))
         self.pushButton_43.setText(_translate("Form", "弹道速度+100"))
-        self.pushButton_44.setText(_translate("Form", "攻击+10"))
+        self.pushButton_37.setText(_translate("Form", "全属性+1"))
+        self.pushButton_38.setText(_translate("Form", "全成长+1"))
+        self.pushButton_39.setText(_translate("Form", "移速+10"))
         self.label_21.setText(_translate("Form", "MovementSpeed"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), _translate("Form", "英雄"))
         self.groupBox_14.setTitle(_translate("Form", "操作"))

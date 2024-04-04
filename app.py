@@ -29,19 +29,25 @@ class Window(QWidget, Ui_Form):
         self.file_content: list[str] = ['']
         self.hero_name_list: list[str] = []
         self.hero_line_list: list[int] = []
+        self.good_list: list[int] = [511, 602, 693,
+                                     1327, 1418, 1509, 1599, 1689, 1779,
+                                     5938, 6031, 6124]
+        self.bad_list: list[int] = [238, 329, 420,
+                                    784, 875, 966, 1057, 1147, 1237,
+                                    5659, 5752, 5845]
 
     def init_ui(self):
         self.setupUi(self)
         self.setWindowTitle('Dota Tool')
         self.setWindowIcon(QIcon('app.ico'))
-        self.lineEdit_4.setText('2024/04/01')
-        self.lineEdit_5.setText('1.7.1')
+        self.lineEdit_4.setText('2024/04/04')
+        self.lineEdit_5.setText('1.7.2')
 
     def init_button(self):
         self.pushButton.clicked.connect(self.get_file_url)
         self.pushButton_2.clicked.connect(self.get_file_content)
         self.pushButton_3.clicked.connect(self.save_file)
-        self.pushButton_4.clicked.connect(self.update_xp_gold)
+        self.pushButton_4.clicked.connect(self.update_xp_other)
         self.pushButton_5.clicked.connect(self.update_tower_data)
         self.pushButton_9.clicked.connect(self.ability_replace)
         self.pushButton_11.clicked.connect(self.get_file_url)
@@ -51,6 +57,8 @@ class Window(QWidget, Ui_Form):
         self.pushButton_15.clicked.connect(self.get_hero_data)
         self.pushButton_16.clicked.connect(self.update_hero_data)
         self.checkBox.clicked.connect(self.set_to_top)
+        self.pushButton_45.clicked.connect(self.update_xp_good)
+        self.pushButton_46.clicked.connect(self.update_xp_bad)
 
     def get_file_url(self):
         file_url, file_type = QFileDialog.getOpenFileName()  # GET THE URL
@@ -83,7 +91,7 @@ class Window(QWidget, Ui_Form):
         except:
             print(Fore.LIGHTRED_EX + 'Somthing is worry T_T')
 
-    def update_xp_gold(self):
+    def update_xp_good(self):
         try:
             self.file_content: list[str]
             factor: float = self.doubleSpinBox.value()
@@ -92,29 +100,81 @@ class Window(QWidget, Ui_Form):
             line_num: int = 1  # MAKE LINE
             for one_line in self.file_content:
                 one_line: str
-                if 'BountyXP' in one_line:
-                    print(Fore.LIGHTBLACK_EX + str(line_num) + one_line, end='\r')
-                    one_list: list[str] = one_line.split('"')  # OLD DATA
-                    one_list[3] = f'{float(one_list[3]) * factor:.0f}'  # CALC
-                    one_line = '"'.join(one_list)  # NEW DATA
-                    print(Fore.LIGHTYELLOW_EX + str(line_num) + one_line, end='\r')
-                    self.file_content[line_num - 1] = one_line  # Write to Global
 
-                elif 'BountyGoldMin' in one_line:
-                    print(Fore.LIGHTBLACK_EX + str(line_num) + one_line, end='\r')
-                    one_list: list[str] = one_line.split('"')  # OLD DATA
-                    one_list[3] = f'{float(one_list[3]) * factor:.0f}'  # CALC
-                    one_line = '"'.join(one_list)  # NEW DATA
-                    print(Fore.LIGHTYELLOW_EX + str(line_num) + one_line, end='\r')
-                    self.file_content[line_num - 1] = one_line  # Write to Global
+                if line_num in self.good_list or line_num - 1 in self.good_list or line_num - 2 in self.good_list:
+                    if 'BountyXP' in one_line or 'BountyGoldMin' in one_line or 'BountyGoldMax' in one_line:
+                        print(Fore.LIGHTBLACK_EX + str(line_num) + one_line, end='\r')
+                        one_list: list[str] = one_line.split('"')  # OLD DATA
+                        one_list[3] = f'{float(one_list[3]) * factor:.0f}'  # CALC
+                        one_line = '"'.join(one_list)  # NEW DATA
+                        print(Fore.LIGHTYELLOW_EX + str(line_num) + one_line, end='\r')
+                        self.file_content[line_num - 1] = one_line  # Write to Global
 
-                elif 'BountyGoldMax' in one_line:
-                    print(Fore.LIGHTBLACK_EX + str(line_num) + one_line, end='\r')
-                    one_list: list[str] = one_line.split('"')  # OLD DATA
-                    one_list[3] = f'{float(one_list[3]) * factor:.0f}'  # CALC
-                    one_line = '"'.join(one_list)  # NEW DATA
-                    print(Fore.LIGHTYELLOW_EX + str(line_num) + one_line, end='\r')
-                    self.file_content[line_num - 1] = one_line  # Write to Global
+                elif line_num in self.bad_list or line_num - 1 in self.bad_list or line_num - 2 in self.bad_list:
+                    pass
+
+                else:
+                    pass
+
+                line_num += 1
+            print(Fore.LIGHTGREEN_EX + 'Update success.')
+        except:
+            print(Fore.LIGHTRED_EX + 'Somthing is worry T_T')
+
+    def update_xp_bad(self):
+        try:
+            self.file_content: list[str]
+            factor: float = self.doubleSpinBox.value()
+            print(Fore.LIGHTBLUE_EX + f'factor : {factor}')
+
+            line_num: int = 1  # MAKE LINE
+            for one_line in self.file_content:
+                one_line: str
+
+                if line_num in self.good_list or line_num - 1 in self.good_list or line_num - 2 in self.good_list:
+                    pass
+
+                elif line_num in self.bad_list or line_num - 1 in self.bad_list or line_num - 2 in self.bad_list:
+                    if 'BountyXP' in one_line or 'BountyGoldMin' in one_line or 'BountyGoldMax' in one_line:
+                        print(Fore.LIGHTBLACK_EX + str(line_num) + one_line, end='\r')
+                        one_list: list[str] = one_line.split('"')  # OLD DATA
+                        one_list[3] = f'{float(one_list[3]) * factor:.0f}'  # CALC
+                        one_line = '"'.join(one_list)  # NEW DATA
+                        print(Fore.LIGHTYELLOW_EX + str(line_num) + one_line, end='\r')
+                        self.file_content[line_num - 1] = one_line  # Write to Global
+
+                else:
+                    pass
+
+                line_num += 1
+            print(Fore.LIGHTGREEN_EX + 'Update success.')
+        except:
+            print(Fore.LIGHTRED_EX + 'Somthing is worry T_T')
+
+    def update_xp_other(self):
+        try:
+            self.file_content: list[str]
+            factor: float = self.doubleSpinBox.value()
+            print(Fore.LIGHTBLUE_EX + f'factor : {factor}')
+
+            line_num: int = 1  # MAKE LINE
+            for one_line in self.file_content:
+                one_line: str
+
+                if line_num in self.good_list or line_num - 1 in self.good_list or line_num - 2 in self.good_list:
+                    pass
+
+                elif line_num in self.bad_list or line_num - 1 in self.bad_list or line_num - 2 in self.bad_list:
+                    pass
+
+                else:
+                    if 'BountyXP' in one_line or 'BountyGoldMin' in one_line or 'BountyGoldMax' in one_line:
+                        print(Fore.LIGHTBLACK_EX + str(line_num) + one_line, end='\r')
+                        one_list: list[str] = one_line.split('"')  # OLD DATA
+                        one_list[3] = f'{float(one_list[3]) * factor:.0f}'  # CALC
+                        one_line = '"'.join(one_list)  # NEW DATA
+                        print(Fore.LIGHTYELLOW_EX + str(line_num) + one_line, end='\r')
+                        self.file_content[line_num - 1] = one_line  # Write to Global
 
                 line_num += 1
             print(Fore.LIGHTGREEN_EX + 'Update success.')
