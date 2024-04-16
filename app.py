@@ -42,7 +42,7 @@ class Window(QWidget, Ui_Form):
         self.setWindowTitle('Dota Tool')
         self.setWindowIcon(QIcon('app.ico'))
         self.lineEdit_4.setText('2024/04/16')
-        self.lineEdit_5.setText('1.8.1')
+        self.lineEdit_5.setText('1.8.2')
 
     def init_button(self):
         self.pushButton.clicked.connect(self.get_file_url)
@@ -301,7 +301,7 @@ class Window(QWidget, Ui_Form):
                                           ('AttributeBaseAgility', lambda: self.doubleSpinBox_22.setValue(value)),
                                           ('AttributeAgilityGain', lambda: self.doubleSpinBox_23.setValue(value)),
                                           ('MovementSpeed', lambda: self.doubleSpinBox_12.setValue(value)),
-                                          ('ArmorPhysical', lambda: self.doubleSpinBox_25.setValue(value)),]
+                                          ('ArmorPhysical', lambda: self.doubleSpinBox_25.setValue(value))]
 
             for keyword, function in function_list:
                 keyword: str
@@ -382,6 +382,7 @@ class Window(QWidget, Ui_Form):
         self.pushButton_42.clicked.connect(lambda: self.add_attr('range'))
         self.pushButton_43.clicked.connect(lambda: self.add_attr('speed'))
         self.pushButton_44.clicked.connect(lambda: self.add_attr('attack'))
+        self.pushButton_57.clicked.connect(lambda: self.add_attr('armor'))
 
     def add_attr(self, x):
         match x:
@@ -414,6 +415,9 @@ class Window(QWidget, Ui_Form):
                 self.doubleSpinBox_13.setValue(self.doubleSpinBox_13.value() + 10)
                 self.doubleSpinBox_14.setValue(self.doubleSpinBox_14.value() + 10)
                 print(self.pushButton_44.text())
+            case 'armor':
+                self.doubleSpinBox_25.setValue(self.doubleSpinBox_25.value() + 1)
+                print(self.pushButton_57.text())
 
     @staticmethod
     def open_vpk_file():
@@ -436,6 +440,7 @@ class Window(QWidget, Ui_Form):
         self.pushButton_37.click()  # 全属性+1
         self.pushButton_38.click()  # 全成长+1
         self.pushButton_39.click(), self.pushButton_39.click()  # 移速+20
+        self.pushButton_57.click()  # 护甲+1
 
 
 if __name__ == '__main__':
