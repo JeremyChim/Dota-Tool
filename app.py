@@ -7,6 +7,7 @@ IDE:    PyCharm
 GitHub: https://github.com/JeremyChim
 """
 import sys
+import os
 
 from PyQt6.QtGui import QIcon
 from PyQt6.QtWidgets import QApplication, QWidget, QFileDialog
@@ -40,8 +41,8 @@ class Window(QWidget, Ui_Form):
         self.setupUi(self)
         self.setWindowTitle('Dota Tool')
         self.setWindowIcon(QIcon('app.ico'))
-        self.lineEdit_4.setText('2024/04/04')
-        self.lineEdit_5.setText('1.7.2')
+        self.lineEdit_4.setText('2024/04/15')
+        self.lineEdit_5.setText('1.8.0')
 
     def init_button(self):
         self.pushButton.clicked.connect(self.get_file_url)
@@ -59,6 +60,9 @@ class Window(QWidget, Ui_Form):
         self.checkBox.clicked.connect(self.set_to_top)
         self.pushButton_45.clicked.connect(self.update_xp_good)
         self.pushButton_46.clicked.connect(self.update_xp_bad)
+        self.pushButton_47.clicked.connect(self.open_vpk_file)
+        self.pushButton_48.clicked.connect(self.run_vpk_script)
+        self.pushButton_56.clicked.connect(self.add_attr_2)
 
     def get_file_url(self):
         file_url, file_type = QFileDialog.getOpenFileName()  # GET THE URL
@@ -296,7 +300,8 @@ class Window(QWidget, Ui_Form):
                                           ('AttributeIntelligenceGain', lambda: self.doubleSpinBox_21.setValue(value)),
                                           ('AttributeBaseAgility', lambda: self.doubleSpinBox_22.setValue(value)),
                                           ('AttributeAgilityGain', lambda: self.doubleSpinBox_23.setValue(value)),
-                                          ('MovementSpeed', lambda: self.doubleSpinBox_12.setValue(value))]
+                                          ('MovementSpeed', lambda: self.doubleSpinBox_12.setValue(value)),
+                                          ('ArmorPhysical', lambda: self.doubleSpinBox_25.setValue(value)),]
 
             for keyword, function in function_list:
                 keyword: str
@@ -334,7 +339,8 @@ class Window(QWidget, Ui_Form):
                                        ('AttributeIntelligenceGain', self.doubleSpinBox_21.value(), 1),
                                        ('AttributeBaseAgility', self.doubleSpinBox_22.value(), 0),
                                        ('AttributeAgilityGain', self.doubleSpinBox_23.value(), 1),
-                                       ('MovementSpeed', self.doubleSpinBox_12.value(), 0)]
+                                       ('MovementSpeed', self.doubleSpinBox_12.value(), 0),
+                                       ('ArmorPhysical', self.doubleSpinBox_25.value(), 0)]
 
             for keyword, value, point in value_list:
                 keyword: str
@@ -408,6 +414,28 @@ class Window(QWidget, Ui_Form):
                 self.doubleSpinBox_13.setValue(self.doubleSpinBox_13.value() + 10)
                 self.doubleSpinBox_14.setValue(self.doubleSpinBox_14.value() + 10)
                 print(self.pushButton_44.text())
+
+    @staticmethod
+    def open_vpk_file():
+        folder_path = r'D:\PycharmProjects\Dota-Tool\vpk\pak01_dir\scripts\npc'
+        print(f'open_vpk_file : {Fore.LIGHTBLUE_EX + folder_path}')
+        os.startfile(folder_path)
+
+    @staticmethod
+    def run_vpk_script():
+        print('run_vpk_script')
+        order = 'echo create vpk file... && "vpk/vpk.exe" "vpk/pak01_dir" && timeout 3'
+        os.system(f'start cmd /k "{order}"')
+
+    def add_attr_2(self):
+        self.pushButton_44.click()  # 攻击+10
+        self.pushButton_40.click()  # 攻击速率-0.1
+        self.pushButton_41.click()  # 攻击前摇-0.1
+        self.pushButton_42.click()  # 攻击范围+100
+        self.pushButton_43.click(), self.pushButton_43.click(), self.pushButton_43.click()  # 弹道速度+300
+        self.pushButton_37.click()  # 全属性+1
+        self.pushButton_38.click()  # 全成长+1
+        self.pushButton_39.click(), self.pushButton_39.click()  # 移速+20
 
 
 if __name__ == '__main__':
