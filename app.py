@@ -12,6 +12,7 @@ import os
 from PyQt6.QtGui import QIcon
 from PyQt6.QtWidgets import QApplication, QWidget, QFileDialog
 from PyQt6.QtCore import Qt
+from PyQt6.QtGui import QDragEnterEvent, QDropEvent
 from colorama import init, Fore
 
 from untitled import Ui_Form
@@ -25,6 +26,7 @@ class Window(QWidget, Ui_Form):
         self.init_ui()
         self.init_button()
         self.init_attr_button()
+        self.setAcceptDrops(True)  # 允许拖放
 
         self.file_url: str = ''
         self.file_content: list[str] = ['']
@@ -41,8 +43,8 @@ class Window(QWidget, Ui_Form):
         self.setupUi(self)
         self.setWindowTitle('Dota Tool')
         self.setWindowIcon(QIcon('app.ico'))
-        self.lineEdit_4.setText('2024/04/16')
-        self.lineEdit_5.setText('1.8.2')
+        self.lineEdit_4.setText('2024/04/17')
+        self.lineEdit_5.setText('1.8.3')
 
     def init_button(self):
         self.pushButton.clicked.connect(self.get_file_url)
@@ -441,6 +443,24 @@ class Window(QWidget, Ui_Form):
         self.pushButton_38.click()  # 全成长+1
         self.pushButton_39.click(), self.pushButton_39.click()  # 移速+20
         self.pushButton_57.click()  # 护甲+1
+
+    def dragEnterEvent(self, event: QDragEnterEvent) -> None:
+        # 当有文件拖入窗口时触发
+        if event.mimeData().hasUrls():
+            event.acceptProposedAction()
+
+    def dropEvent(self, event: QDropEvent) -> None:
+        # 当文件被放下时触发
+        for url in event.mimeData().urls():
+            file_url = url.toLocalFile()
+            print(f'Get file url : {Fore.LIGHTCYAN_EX + file_url}')
+            if 'npc_units.txt' in file_url:
+                self.lineEdit.setText(file_url)  # SENT THE URL - unit
+            elif 'npc_heroes.txt' in file_url:
+                self.lineEdit_8.setText(file_url)  # SENT THE URL - hero
+            elif 'dota 2 beta' in file_url:
+                self.lineEdit_29.setText(file_url)  # SENT THE URL - steam
+            self.file_url = file_url
 
 
 if __name__ == '__main__':
