@@ -1316,6 +1316,9 @@ class Ui_Form(object):
         self.pushButton_36.clicked.connect(self.lineEdit_28.copy) # type: ignore
         self.pushButton_55.clicked.connect(self.lineEdit_30.selectAll) # type: ignore
         self.pushButton_55.clicked.connect(self.lineEdit_30.copy) # type: ignore
+        self.pushButton_61.clicked.connect(self.textEdit_5.selectAll) # type: ignore
+        self.pushButton_61.clicked.connect(self.textEdit_5.copy) # type: ignore
+        self.pushButton_60.clicked.connect(self.textEdit_5.clear) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(Form)
 
     def retranslateUi(self, Form):
