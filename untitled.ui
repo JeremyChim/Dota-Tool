@@ -22,8 +22,22 @@
      <height>771</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">QLineEdit
+{
+	font: 700 italic 10pt &quot;Consolas&quot;;
+}
+QTextEdit
+{
+	font: 700 italic 10pt &quot;Consolas&quot;;
+}
+QDoubleSpinBox
+{
+	font: 700 italic 10pt &quot;Consolas&quot;;
+}</string>
+   </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
@@ -168,7 +182,7 @@
        <x>20</x>
        <y>280</y>
        <width>921</width>
-       <height>301</height>
+       <height>311</height>
       </rect>
      </property>
      <property name="title">
@@ -725,6 +739,8 @@
             <font>
              <family>Consolas</family>
              <pointsize>10</pointsize>
+             <italic>true</italic>
+             <bold>true</bold>
             </font>
            </property>
            <property name="text">
@@ -755,6 +771,9 @@
            <property name="font">
             <font>
              <family>Consolas</family>
+             <pointsize>10</pointsize>
+             <italic>true</italic>
+             <bold>true</bold>
             </font>
            </property>
            <property name="text">
@@ -786,6 +805,8 @@
             <font>
              <family>Consolas</family>
              <pointsize>10</pointsize>
+             <italic>true</italic>
+             <bold>true</bold>
             </font>
            </property>
            <property name="styleSheet">
@@ -793,9 +814,12 @@
            </property>
            <property name="html">
             <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Consolas'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Consolas'; font-size:10pt; font-weight:700; font-style:italic;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&amp;quot;ab_name&amp;quot;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;			{&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;				&amp;quot;value&amp;quot;				&amp;quot;ab_value&amp;quot;&lt;/p&gt;
@@ -837,13 +861,18 @@ p, li { white-space: pre-wrap; }
           <font>
            <family>Consolas</family>
            <pointsize>10</pointsize>
+           <italic>true</italic>
+           <bold>true</bold>
           </font>
          </property>
          <property name="html">
           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Consolas'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Consolas'; font-size:10pt; font-weight:700; font-style:italic;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&amp;quot;ab_name&amp;quot;		&amp;quot;100&amp;quot;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
         </widget>
@@ -879,14 +908,26 @@ p, li { white-space: pre-wrap; }
           <font>
            <family>Consolas</family>
            <pointsize>10</pointsize>
+           <italic>true</italic>
+           <bold>true</bold>
           </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(0, 85, 255);</string>
          </property>
          <property name="html">
           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Consolas'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'苹方 粗体'; font-size:9.75pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Consolas'; font-size:10pt; font-weight:700; font-style:italic;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&amp;quot;ab_name&amp;quot;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;			{&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;				&amp;quot;value&amp;quot;				&amp;quot;100&amp;quot;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;				&amp;quot;special_bonus_shard&amp;quot;			&amp;quot;=0&amp;quot;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;			}&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
         </widget>
        </item>
@@ -904,11 +945,11 @@ p, li { white-space: pre-wrap; }
        <x>20</x>
        <y>20</y>
        <width>911</width>
-       <height>451</height>
+       <height>551</height>
       </rect>
      </property>
      <property name="title">
-      <string>GroupBox</string>
+      <string>模版</string>
      </property>
      <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
@@ -916,36 +957,74 @@ p, li { white-space: pre-wrap; }
         <x>20</x>
         <y>34</y>
         <width>871</width>
-        <height>391</height>
+        <height>451</height>
        </rect>
       </property>
-      <layout class="QVBoxLayout" name="verticalLayout_19" stretch="0,0,0">
+      <layout class="QVBoxLayout" name="verticalLayout_19" stretch="0,0,0,0">
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_20">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_63" stretch="0,0">
+           <item>
+            <widget class="QLineEdit" name="lineEdit_31">
+             <property name="text">
+              <string>&quot;Ability25&quot;     &quot;&quot;</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pushButton_62">
+             <property name="text">
+              <string>复制</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_64" stretch="0,0">
+           <item>
+            <widget class="QLineEdit" name="lineEdit_32">
+             <property name="text">
+              <string>&quot;MaxLevel&quot;            			&quot;6&quot;</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pushButton_63">
+             <property name="text">
+              <string>复制</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
        <item>
         <widget class="QTextEdit" name="textEdit_4">
          <property name="font">
           <font>
            <family>Consolas</family>
            <pointsize>10</pointsize>
+           <italic>true</italic>
+           <bold>true</bold>
           </font>
          </property>
          <property name="html">
           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Consolas'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;	&amp;quot;ab_name&amp;quot;		&amp;quot;100 200 300 400&amp;quot;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Consolas'; font-size:10pt; font-weight:700; font-style:italic;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&amp;quot;ab_name&amp;quot;		&amp;quot;100 200 300 400&amp;quot;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
         </widget>
        </item>
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_62">
-         <item>
-          <widget class="QPushButton" name="pushButton_59">
-           <property name="text">
-            <string>-</string>
-           </property>
-          </widget>
-         </item>
          <item>
           <widget class="QPushButton" name="pushButton_58">
            <property name="text">
@@ -975,7 +1054,22 @@ p, li { white-space: pre-wrap; }
           <font>
            <family>Consolas</family>
            <pointsize>10</pointsize>
+           <italic>true</italic>
+           <bold>true</bold>
           </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(85, 0, 255);</string>
+         </property>
+         <property name="html">
+          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Consolas'; font-size:10pt; font-weight:700; font-style:italic;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&amp;quot;ab_name&amp;quot;		&amp;quot;100 200 300 400 500 600&amp;quot;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
         </widget>
        </item>
@@ -1064,7 +1158,7 @@ p, li { white-space: pre-wrap; }
        <rect>
         <x>20</x>
         <y>30</y>
-        <width>601</width>
+        <width>571</width>
         <height>28</height>
        </rect>
       </property>
@@ -1101,7 +1195,7 @@ p, li { white-space: pre-wrap; }
         <x>20</x>
         <y>70</y>
         <width>891</width>
-        <height>194</height>
+        <height>222</height>
        </rect>
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout_61">
@@ -1118,6 +1212,9 @@ p, li { white-space: pre-wrap; }
            </item>
            <item>
             <widget class="QDoubleSpinBox" name="doubleSpinBox_13">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(170, 0, 0);</string>
+             </property>
              <property name="decimals">
               <number>0</number>
              </property>
@@ -1145,6 +1242,9 @@ p, li { white-space: pre-wrap; }
            </item>
            <item>
             <widget class="QDoubleSpinBox" name="doubleSpinBox_14">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(170, 0, 0);</string>
+             </property>
              <property name="decimals">
               <number>0</number>
              </property>
@@ -1172,6 +1272,9 @@ p, li { white-space: pre-wrap; }
            </item>
            <item>
             <widget class="QDoubleSpinBox" name="doubleSpinBox_15">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(0, 85, 255);</string>
+             </property>
              <property name="decimals">
               <number>1</number>
              </property>
@@ -1199,6 +1302,9 @@ p, li { white-space: pre-wrap; }
            </item>
            <item>
             <widget class="QDoubleSpinBox" name="doubleSpinBox_16">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(0, 85, 255);</string>
+             </property>
              <property name="decimals">
               <number>2</number>
              </property>
@@ -1223,6 +1329,9 @@ p, li { white-space: pre-wrap; }
            </item>
            <item>
             <widget class="QDoubleSpinBox" name="doubleSpinBox_17">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(0, 170, 127);</string>
+             </property>
              <property name="decimals">
               <number>0</number>
              </property>
@@ -1274,6 +1383,9 @@ p, li { white-space: pre-wrap; }
            </item>
            <item>
             <widget class="QDoubleSpinBox" name="doubleSpinBox_25">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(170, 170, 0);</string>
+             </property>
              <property name="decimals">
               <number>0</number>
              </property>
@@ -1308,6 +1420,9 @@ p, li { white-space: pre-wrap; }
            </item>
            <item>
             <widget class="QDoubleSpinBox" name="doubleSpinBox_18">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(255, 0, 0);</string>
+             </property>
              <property name="decimals">
               <number>0</number>
              </property>
@@ -1335,6 +1450,9 @@ p, li { white-space: pre-wrap; }
            </item>
            <item>
             <widget class="QDoubleSpinBox" name="doubleSpinBox_19">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(255, 0, 0);</string>
+             </property>
              <property name="decimals">
               <number>1</number>
              </property>
@@ -1362,6 +1480,9 @@ p, li { white-space: pre-wrap; }
            </item>
            <item>
             <widget class="QDoubleSpinBox" name="doubleSpinBox_20">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(0, 170, 255);</string>
+             </property>
              <property name="decimals">
               <number>0</number>
              </property>
@@ -1389,6 +1510,9 @@ p, li { white-space: pre-wrap; }
            </item>
            <item>
             <widget class="QDoubleSpinBox" name="doubleSpinBox_21">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(0, 170, 255);</string>
+             </property>
              <property name="decimals">
               <number>1</number>
              </property>
@@ -1413,6 +1537,9 @@ p, li { white-space: pre-wrap; }
            </item>
            <item>
             <widget class="QDoubleSpinBox" name="doubleSpinBox_22">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(0, 170, 0);</string>
+             </property>
              <property name="decimals">
               <number>0</number>
              </property>
@@ -1437,6 +1564,9 @@ p, li { white-space: pre-wrap; }
            </item>
            <item>
             <widget class="QDoubleSpinBox" name="doubleSpinBox_23">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(0, 170, 0);</string>
+             </property>
              <property name="decimals">
               <number>1</number>
              </property>
@@ -2665,12 +2795,12 @@ p, li { white-space: pre-wrap; }
    <slot>selectAll()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>151</x>
-     <y>99</y>
+     <x>930</x>
+     <y>137</y>
     </hint>
     <hint type="destinationlabel">
-     <x>151</x>
-     <y>99</y>
+     <x>293</x>
+     <y>134</y>
     </hint>
    </hints>
   </connection>
@@ -2681,12 +2811,12 @@ p, li { white-space: pre-wrap; }
    <slot>selectAll()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>151</x>
-     <y>99</y>
+     <x>930</x>
+     <y>103</y>
     </hint>
     <hint type="destinationlabel">
-     <x>151</x>
-     <y>99</y>
+     <x>293</x>
+     <y>100</y>
     </hint>
    </hints>
   </connection>
@@ -2697,12 +2827,12 @@ p, li { white-space: pre-wrap; }
    <slot>copy()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>151</x>
-     <y>99</y>
+     <x>930</x>
+     <y>137</y>
     </hint>
     <hint type="destinationlabel">
-     <x>151</x>
-     <y>99</y>
+     <x>293</x>
+     <y>134</y>
     </hint>
    </hints>
   </connection>
@@ -2713,12 +2843,12 @@ p, li { white-space: pre-wrap; }
    <slot>copy()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>151</x>
-     <y>99</y>
+     <x>930</x>
+     <y>103</y>
     </hint>
     <hint type="destinationlabel">
-     <x>151</x>
-     <y>99</y>
+     <x>293</x>
+     <y>100</y>
     </hint>
    </hints>
   </connection>
@@ -2729,8 +2859,8 @@ p, li { white-space: pre-wrap; }
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>151</x>
-     <y>360</y>
+     <x>744</x>
+     <y>549</y>
     </hint>
     <hint type="destinationlabel">
      <x>151</x>
@@ -2745,12 +2875,12 @@ p, li { white-space: pre-wrap; }
    <slot>selectAll()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>151</x>
-     <y>360</y>
+     <x>449</x>
+     <y>549</y>
     </hint>
     <hint type="destinationlabel">
-     <x>151</x>
-     <y>360</y>
+     <x>154</x>
+     <y>607</y>
     </hint>
    </hints>
   </connection>
@@ -2761,12 +2891,12 @@ p, li { white-space: pre-wrap; }
    <slot>copy()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>151</x>
-     <y>360</y>
+     <x>449</x>
+     <y>549</y>
     </hint>
     <hint type="destinationlabel">
-     <x>151</x>
-     <y>360</y>
+     <x>154</x>
+     <y>607</y>
     </hint>
    </hints>
   </connection>
@@ -2777,12 +2907,12 @@ p, li { white-space: pre-wrap; }
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>151</x>
-     <y>360</y>
+     <x>744</x>
+     <y>549</y>
     </hint>
     <hint type="destinationlabel">
-     <x>151</x>
-     <y>360</y>
+     <x>154</x>
+     <y>607</y>
     </hint>
    </hints>
   </connection>
@@ -2825,12 +2955,12 @@ p, li { white-space: pre-wrap; }
    <slot>selectAll()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>109</x>
-     <y>100</y>
+     <x>113</x>
+     <y>138</y>
     </hint>
     <hint type="destinationlabel">
-     <x>151</x>
-     <y>100</y>
+     <x>321</x>
+     <y>135</y>
     </hint>
    </hints>
   </connection>
@@ -2841,12 +2971,12 @@ p, li { white-space: pre-wrap; }
    <slot>copy()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>114</x>
-     <y>100</y>
+     <x>118</x>
+     <y>138</y>
     </hint>
     <hint type="destinationlabel">
-     <x>151</x>
-     <y>100</y>
+     <x>321</x>
+     <y>135</y>
     </hint>
    </hints>
   </connection>
@@ -2857,12 +2987,12 @@ p, li { white-space: pre-wrap; }
    <slot>selectAll()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>120</x>
-     <y>100</y>
+     <x>124</x>
+     <y>172</y>
     </hint>
     <hint type="destinationlabel">
-     <x>151</x>
-     <y>100</y>
+     <x>321</x>
+     <y>169</y>
     </hint>
    </hints>
   </connection>
@@ -2873,12 +3003,12 @@ p, li { white-space: pre-wrap; }
    <slot>copy()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>82</x>
-     <y>100</y>
+     <x>86</x>
+     <y>172</y>
     </hint>
     <hint type="destinationlabel">
-     <x>151</x>
-     <y>100</y>
+     <x>321</x>
+     <y>169</y>
     </hint>
    </hints>
   </connection>
@@ -2889,12 +3019,12 @@ p, li { white-space: pre-wrap; }
    <slot>selectAll()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>101</x>
-     <y>100</y>
+     <x>105</x>
+     <y>206</y>
     </hint>
     <hint type="destinationlabel">
-     <x>151</x>
-     <y>100</y>
+     <x>321</x>
+     <y>203</y>
     </hint>
    </hints>
   </connection>
@@ -2905,12 +3035,12 @@ p, li { white-space: pre-wrap; }
    <slot>copy()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>106</x>
-     <y>100</y>
+     <x>110</x>
+     <y>206</y>
     </hint>
     <hint type="destinationlabel">
-     <x>151</x>
-     <y>100</y>
+     <x>321</x>
+     <y>203</y>
     </hint>
    </hints>
   </connection>
@@ -2919,30 +3049,30 @@ p, li { white-space: pre-wrap; }
    <signal>clicked()</signal>
    <receiver>lineEdit_13</receiver>
    <slot>selectAll()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>117</x>
+     <y>240</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>321</x>
+     <y>237</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_21</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_13</receiver>
+   <slot>copy()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>113</x>
-     <y>100</y>
+     <y>240</y>
     </hint>
     <hint type="destinationlabel">
-     <x>151</x>
-     <y>100</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton_21</sender>
-   <signal>clicked()</signal>
-   <receiver>lineEdit_13</receiver>
-   <slot>copy()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>109</x>
-     <y>100</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>151</x>
-     <y>100</y>
+     <x>321</x>
+     <y>237</y>
     </hint>
    </hints>
   </connection>
@@ -2953,12 +3083,12 @@ p, li { white-space: pre-wrap; }
    <slot>selectAll()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>104</x>
-     <y>100</y>
+     <x>108</x>
+     <y>274</y>
     </hint>
     <hint type="destinationlabel">
-     <x>151</x>
-     <y>100</y>
+     <x>321</x>
+     <y>271</y>
     </hint>
    </hints>
   </connection>
@@ -2969,12 +3099,12 @@ p, li { white-space: pre-wrap; }
    <slot>copy()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>103</x>
-     <y>100</y>
+     <x>107</x>
+     <y>274</y>
     </hint>
     <hint type="destinationlabel">
-     <x>151</x>
-     <y>100</y>
+     <x>321</x>
+     <y>271</y>
     </hint>
    </hints>
   </connection>
@@ -2985,12 +3115,12 @@ p, li { white-space: pre-wrap; }
    <slot>selectAll()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>117</x>
-     <y>100</y>
+     <x>121</x>
+     <y>308</y>
     </hint>
     <hint type="destinationlabel">
-     <x>151</x>
-     <y>100</y>
+     <x>321</x>
+     <y>305</y>
     </hint>
    </hints>
   </connection>
@@ -3001,12 +3131,12 @@ p, li { white-space: pre-wrap; }
    <slot>copy()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>117</x>
-     <y>100</y>
+     <x>121</x>
+     <y>308</y>
     </hint>
     <hint type="destinationlabel">
-     <x>151</x>
-     <y>100</y>
+     <x>321</x>
+     <y>305</y>
     </hint>
    </hints>
   </connection>
@@ -3017,12 +3147,12 @@ p, li { white-space: pre-wrap; }
    <slot>selectAll()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>119</x>
-     <y>460</y>
+     <x>123</x>
+     <y>498</y>
     </hint>
     <hint type="destinationlabel">
-     <x>151</x>
-     <y>460</y>
+     <x>321</x>
+     <y>495</y>
     </hint>
    </hints>
   </connection>
@@ -3033,12 +3163,12 @@ p, li { white-space: pre-wrap; }
    <slot>copy()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>116</x>
-     <y>460</y>
+     <x>120</x>
+     <y>498</y>
     </hint>
     <hint type="destinationlabel">
-     <x>151</x>
-     <y>460</y>
+     <x>321</x>
+     <y>495</y>
     </hint>
    </hints>
   </connection>
@@ -3081,12 +3211,12 @@ p, li { white-space: pre-wrap; }
    <slot>selectAll()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>121</x>
-     <y>100</y>
+     <x>125</x>
+     <y>342</y>
     </hint>
     <hint type="destinationlabel">
-     <x>151</x>
-     <y>100</y>
+     <x>321</x>
+     <y>339</y>
     </hint>
    </hints>
   </connection>
@@ -3097,12 +3227,12 @@ p, li { white-space: pre-wrap; }
    <slot>copy()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>112</x>
-     <y>100</y>
+     <x>116</x>
+     <y>342</y>
     </hint>
     <hint type="destinationlabel">
-     <x>151</x>
-     <y>100</y>
+     <x>321</x>
+     <y>339</y>
     </hint>
    </hints>
   </connection>
@@ -3113,12 +3243,12 @@ p, li { white-space: pre-wrap; }
    <slot>selectAll()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>104</x>
-     <y>100</y>
+     <x>108</x>
+     <y>376</y>
     </hint>
     <hint type="destinationlabel">
-     <x>151</x>
-     <y>100</y>
+     <x>321</x>
+     <y>373</y>
     </hint>
    </hints>
   </connection>
@@ -3129,12 +3259,12 @@ p, li { white-space: pre-wrap; }
    <slot>copy()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>93</x>
-     <y>100</y>
+     <x>97</x>
+     <y>376</y>
     </hint>
     <hint type="destinationlabel">
-     <x>151</x>
-     <y>100</y>
+     <x>321</x>
+     <y>373</y>
     </hint>
    </hints>
   </connection>
@@ -3145,12 +3275,12 @@ p, li { white-space: pre-wrap; }
    <slot>selectAll()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>119</x>
-     <y>460</y>
+     <x>123</x>
+     <y>532</y>
     </hint>
     <hint type="destinationlabel">
-     <x>151</x>
-     <y>460</y>
+     <x>321</x>
+     <y>529</y>
     </hint>
    </hints>
   </connection>
@@ -3161,12 +3291,12 @@ p, li { white-space: pre-wrap; }
    <slot>copy()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>67</x>
-     <y>460</y>
+     <x>71</x>
+     <y>532</y>
     </hint>
     <hint type="destinationlabel">
-     <x>151</x>
-     <y>460</y>
+     <x>321</x>
+     <y>529</y>
     </hint>
    </hints>
   </connection>
@@ -3175,46 +3305,46 @@ p, li { white-space: pre-wrap; }
    <signal>clicked()</signal>
    <receiver>lineEdit_23</receiver>
    <slot>selectAll()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>102</x>
-     <y>460</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>151</x>
-     <y>460</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton_29</sender>
-   <signal>clicked()</signal>
-   <receiver>lineEdit_21</receiver>
-   <slot>selectAll()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>121</x>
-     <y>460</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>151</x>
-     <y>460</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton_31</sender>
-   <signal>clicked()</signal>
-   <receiver>lineEdit_23</receiver>
-   <slot>copy()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>106</x>
-     <y>460</y>
+     <y>566</y>
     </hint>
     <hint type="destinationlabel">
-     <x>151</x>
-     <y>460</y>
+     <x>321</x>
+     <y>563</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_29</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_21</receiver>
+   <slot>selectAll()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>125</x>
+     <y>600</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>321</x>
+     <y>597</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_31</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_23</receiver>
+   <slot>copy()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>110</x>
+     <y>566</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>321</x>
+     <y>563</y>
     </hint>
    </hints>
   </connection>
@@ -3225,12 +3355,12 @@ p, li { white-space: pre-wrap; }
    <slot>copy()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>119</x>
-     <y>460</y>
+     <x>123</x>
+     <y>600</y>
     </hint>
     <hint type="destinationlabel">
-     <x>151</x>
-     <y>460</y>
+     <x>321</x>
+     <y>597</y>
     </hint>
    </hints>
   </connection>
@@ -3241,12 +3371,12 @@ p, li { white-space: pre-wrap; }
    <slot>selectAll()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>130</x>
-     <y>460</y>
+     <x>128</x>
+     <y>634</y>
     </hint>
     <hint type="destinationlabel">
-     <x>151</x>
-     <y>460</y>
+     <x>321</x>
+     <y>631</y>
     </hint>
    </hints>
   </connection>
@@ -3257,12 +3387,12 @@ p, li { white-space: pre-wrap; }
    <slot>copy()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>65</x>
-     <y>460</y>
+     <x>69</x>
+     <y>634</y>
     </hint>
     <hint type="destinationlabel">
-     <x>151</x>
-     <y>460</y>
+     <x>321</x>
+     <y>631</y>
     </hint>
    </hints>
   </connection>
@@ -3305,12 +3435,12 @@ p, li { white-space: pre-wrap; }
    <slot>selectAll()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>414</x>
-     <y>100</y>
+     <x>418</x>
+     <y>139</y>
     </hint>
     <hint type="destinationlabel">
-     <x>471</x>
-     <y>100</y>
+     <x>641</x>
+     <y>137</y>
     </hint>
    </hints>
   </connection>
@@ -3321,12 +3451,12 @@ p, li { white-space: pre-wrap; }
    <slot>copy()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>384</x>
-     <y>100</y>
+     <x>388</x>
+     <y>139</y>
     </hint>
     <hint type="destinationlabel">
-     <x>471</x>
-     <y>100</y>
+     <x>641</x>
+     <y>137</y>
     </hint>
    </hints>
   </connection>
@@ -3337,12 +3467,12 @@ p, li { white-space: pre-wrap; }
    <slot>selectAll()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>428</x>
-     <y>100</y>
+     <x>432</x>
+     <y>174</y>
     </hint>
     <hint type="destinationlabel">
-     <x>471</x>
-     <y>100</y>
+     <x>641</x>
+     <y>172</y>
     </hint>
    </hints>
   </connection>
@@ -3350,143 +3480,143 @@ p, li { white-space: pre-wrap; }
    <sender>pushButton_34</sender>
    <signal>clicked()</signal>
    <receiver>lineEdit_26</receiver>
-   <slot>copy()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>423</x>
-     <y>100</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>471</x>
-     <y>100</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton_35</sender>
-   <signal>clicked()</signal>
-   <receiver>lineEdit_27</receiver>
-   <slot>selectAll()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>418</x>
-     <y>100</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>471</x>
-     <y>100</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton_35</sender>
-   <signal>clicked()</signal>
-   <receiver>lineEdit_27</receiver>
-   <slot>copy()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>406</x>
-     <y>100</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>471</x>
-     <y>100</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton_36</sender>
-   <signal>clicked()</signal>
-   <receiver>lineEdit_28</receiver>
-   <slot>selectAll()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>413</x>
-     <y>100</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>471</x>
-     <y>100</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton_36</sender>
-   <signal>clicked()</signal>
-   <receiver>lineEdit_28</receiver>
    <slot>copy()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>427</x>
-     <y>100</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>471</x>
-     <y>100</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton_55</sender>
-   <signal>clicked()</signal>
-   <receiver>lineEdit_30</receiver>
-   <slot>selectAll()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>151</x>
-     <y>450</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>151</x>
-     <y>450</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton_55</sender>
-   <signal>clicked()</signal>
-   <receiver>lineEdit_30</receiver>
-   <slot>copy()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>151</x>
-     <y>450</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>151</x>
-     <y>450</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton_61</sender>
-   <signal>clicked()</signal>
-   <receiver>textEdit_5</receiver>
-   <slot>selectAll()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>622</x>
-     <y>287</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>622</x>
-     <y>326</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton_61</sender>
-   <signal>clicked()</signal>
-   <receiver>textEdit_5</receiver>
-   <slot>copy()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>640</x>
-     <y>284</y>
+     <y>174</y>
     </hint>
     <hint type="destinationlabel">
      <x>641</x>
-     <y>330</y>
+     <y>172</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_35</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_27</receiver>
+   <slot>selectAll()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>422</x>
+     <y>209</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>641</x>
+     <y>207</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_35</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_27</receiver>
+   <slot>copy()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>410</x>
+     <y>209</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>641</x>
+     <y>207</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_36</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_28</receiver>
+   <slot>selectAll()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>417</x>
+     <y>244</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>641</x>
+     <y>242</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_36</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_28</receiver>
+   <slot>copy()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>431</x>
+     <y>244</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>641</x>
+     <y>242</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_55</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_30</receiver>
+   <slot>selectAll()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>867</x>
+     <y>479</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>151</x>
+     <y>450</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_55</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_30</receiver>
+   <slot>copy()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>867</x>
+     <y>479</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>151</x>
+     <y>450</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_61</sender>
+   <signal>clicked()</signal>
+   <receiver>textEdit_5</receiver>
+   <slot>selectAll()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>629</x>
+     <y>363</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>625</x>
+     <y>540</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_61</sender>
+   <signal>clicked()</signal>
+   <receiver>textEdit_5</receiver>
+   <slot>copy()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>629</x>
+     <y>363</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>644</x>
+     <y>540</y>
     </hint>
    </hints>
   </connection>
@@ -3497,12 +3627,76 @@ p, li { white-space: pre-wrap; }
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>795</x>
-     <y>280</y>
+     <x>920</x>
+     <y>363</y>
     </hint>
     <hint type="destinationlabel">
-     <x>790</x>
-     <y>334</y>
+     <x>793</x>
+     <y>540</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_62</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_31</receiver>
+   <slot>selectAll()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>919</x>
+     <y>119</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>342</x>
+     <y>116</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_62</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_31</receiver>
+   <slot>copy()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>919</x>
+     <y>119</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>248</x>
+     <y>116</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_63</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_32</receiver>
+   <slot>selectAll()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>862</x>
+     <y>142</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>783</x>
+     <y>142</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_63</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit_32</receiver>
+   <slot>copy()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>904</x>
+     <y>139</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>695</x>
+     <y>142</y>
     </hint>
    </hints>
   </connection>

@@ -43,8 +43,8 @@ class Window(QWidget, Ui_Form):
         self.setupUi(self)
         self.setWindowTitle('Dota Tool')
         self.setWindowIcon(QIcon('app.ico'))
-        self.lineEdit_4.setText('2024/04/19')
-        self.lineEdit_5.setText('1.9.1')
+        self.lineEdit_4.setText('2024/04/20')
+        self.lineEdit_5.setText('1.9.2')
 
     def init_button(self):
         self.pushButton.clicked.connect(self.get_file_url)
@@ -468,13 +468,13 @@ class Window(QWidget, Ui_Form):
             # 原字符串
             original_string = '     "ab"         "100 205 310 415"'
             print(original_string.split('"'))
-            
-            original_string:str = self.textEdit_4.toPlainText()
-            original_list:list[str] = original_string.split('"')
-            original_string:str = original_list[3]
+
+            original_string: str = self.textEdit_4.toPlainText()
+            original_list: list[str] = original_string.split('"')
+            original_string: str = original_list[3]
 
             # 将原字符串按空格分割成数字列表
-            numbers:list[int] = [int(num) for num in original_string.split()]
+            numbers: list[int] = [int(num) for num in original_string.split()]
 
             # 计算公差
             diff = numbers[1] - numbers[0]
@@ -488,17 +488,16 @@ class Window(QWidget, Ui_Form):
             numbers.append(next_number2)
 
             # 将列表中的数字重新组合成字符串
-            new_string:str = " ".join(map(str, numbers))
+            new_string: str = " ".join(map(str, numbers))
             original_list[3] = new_string
             new = '"'.join(original_list)
 
             # 输出结果
             self.textEdit_5.setText(new)
             print(new)
-        
+
         except:
             print(Fore.LIGHTRED_EX + 'Somthing is worry T_T')
-
 
 
 if __name__ == '__main__':

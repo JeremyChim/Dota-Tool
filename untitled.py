@@ -15,6 +15,18 @@ class Ui_Form(object):
         Form.resize(979, 789)
         self.tabWidget = QtWidgets.QTabWidget(parent=Form)
         self.tabWidget.setGeometry(QtCore.QRect(10, 10, 961, 771))
+        self.tabWidget.setStyleSheet("QLineEdit\n"
+"{\n"
+"    font: 700 italic 10pt \"Consolas\";\n"
+"}\n"
+"QTextEdit\n"
+"{\n"
+"    font: 700 italic 10pt \"Consolas\";\n"
+"}\n"
+"QDoubleSpinBox\n"
+"{\n"
+"    font: 700 italic 10pt \"Consolas\";\n"
+"}")
         self.tabWidget.setObjectName("tabWidget")
         self.tab = QtWidgets.QWidget()
         self.tab.setObjectName("tab")
@@ -81,7 +93,7 @@ class Ui_Form(object):
         self.horizontalLayout.setStretch(3, 1)
         self.horizontalLayout.setStretch(4, 1)
         self.groupBox_7 = QtWidgets.QGroupBox(parent=self.tab)
-        self.groupBox_7.setGeometry(QtCore.QRect(20, 280, 921, 301))
+        self.groupBox_7.setGeometry(QtCore.QRect(20, 280, 921, 311))
         self.groupBox_7.setObjectName("groupBox_7")
         self.groupBox_6 = QtWidgets.QGroupBox(parent=self.groupBox_7)
         self.groupBox_6.setGeometry(QtCore.QRect(20, 170, 281, 121))
@@ -332,6 +344,8 @@ class Ui_Form(object):
         font = QtGui.QFont()
         font.setFamily("Consolas")
         font.setPointSize(10)
+        font.setBold(True)
+        font.setItalic(True)
         self.lineEdit_6.setFont(font)
         self.lineEdit_6.setObjectName("lineEdit_6")
         self.horizontalLayout_17.addWidget(self.lineEdit_6)
@@ -349,6 +363,9 @@ class Ui_Form(object):
         self.lineEdit_7 = QtWidgets.QLineEdit(parent=self.layoutWidget3)
         font = QtGui.QFont()
         font.setFamily("Consolas")
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setItalic(True)
         self.lineEdit_7.setFont(font)
         self.lineEdit_7.setObjectName("lineEdit_7")
         self.horizontalLayout_18.addWidget(self.lineEdit_7)
@@ -367,6 +384,8 @@ class Ui_Form(object):
         font = QtGui.QFont()
         font.setFamily("Consolas")
         font.setPointSize(10)
+        font.setBold(True)
+        font.setItalic(True)
         self.textEdit.setFont(font)
         self.textEdit.setStyleSheet("")
         self.textEdit.setObjectName("textEdit")
@@ -385,6 +404,8 @@ class Ui_Form(object):
         font = QtGui.QFont()
         font.setFamily("Consolas")
         font.setPointSize(10)
+        font.setBold(True)
+        font.setItalic(True)
         self.textEdit_2.setFont(font)
         self.textEdit_2.setObjectName("textEdit_2")
         self.verticalLayout_10.addWidget(self.textEdit_2)
@@ -404,33 +425,56 @@ class Ui_Form(object):
         font = QtGui.QFont()
         font.setFamily("Consolas")
         font.setPointSize(10)
+        font.setBold(True)
+        font.setItalic(True)
         self.textEdit_3.setFont(font)
+        self.textEdit_3.setStyleSheet("color: rgb(0, 85, 255);")
         self.textEdit_3.setObjectName("textEdit_3")
         self.verticalLayout_10.addWidget(self.textEdit_3)
         self.tabWidget.addTab(self.tab_2, "")
         self.tab_6 = QtWidgets.QWidget()
         self.tab_6.setObjectName("tab_6")
         self.groupBox_19 = QtWidgets.QGroupBox(parent=self.tab_6)
-        self.groupBox_19.setGeometry(QtCore.QRect(20, 20, 911, 451))
+        self.groupBox_19.setGeometry(QtCore.QRect(20, 20, 911, 551))
         self.groupBox_19.setObjectName("groupBox_19")
         self.layoutWidget5 = QtWidgets.QWidget(parent=self.groupBox_19)
-        self.layoutWidget5.setGeometry(QtCore.QRect(20, 34, 871, 391))
+        self.layoutWidget5.setGeometry(QtCore.QRect(20, 34, 871, 451))
         self.layoutWidget5.setObjectName("layoutWidget5")
         self.verticalLayout_19 = QtWidgets.QVBoxLayout(self.layoutWidget5)
         self.verticalLayout_19.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_19.setObjectName("verticalLayout_19")
+        self.verticalLayout_20 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_20.setObjectName("verticalLayout_20")
+        self.horizontalLayout_63 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_63.setObjectName("horizontalLayout_63")
+        self.lineEdit_31 = QtWidgets.QLineEdit(parent=self.layoutWidget5)
+        self.lineEdit_31.setObjectName("lineEdit_31")
+        self.horizontalLayout_63.addWidget(self.lineEdit_31)
+        self.pushButton_62 = QtWidgets.QPushButton(parent=self.layoutWidget5)
+        self.pushButton_62.setObjectName("pushButton_62")
+        self.horizontalLayout_63.addWidget(self.pushButton_62)
+        self.verticalLayout_20.addLayout(self.horizontalLayout_63)
+        self.horizontalLayout_64 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_64.setObjectName("horizontalLayout_64")
+        self.lineEdit_32 = QtWidgets.QLineEdit(parent=self.layoutWidget5)
+        self.lineEdit_32.setObjectName("lineEdit_32")
+        self.horizontalLayout_64.addWidget(self.lineEdit_32)
+        self.pushButton_63 = QtWidgets.QPushButton(parent=self.layoutWidget5)
+        self.pushButton_63.setObjectName("pushButton_63")
+        self.horizontalLayout_64.addWidget(self.pushButton_63)
+        self.verticalLayout_20.addLayout(self.horizontalLayout_64)
+        self.verticalLayout_19.addLayout(self.verticalLayout_20)
         self.textEdit_4 = QtWidgets.QTextEdit(parent=self.layoutWidget5)
         font = QtGui.QFont()
         font.setFamily("Consolas")
         font.setPointSize(10)
+        font.setBold(True)
+        font.setItalic(True)
         self.textEdit_4.setFont(font)
         self.textEdit_4.setObjectName("textEdit_4")
         self.verticalLayout_19.addWidget(self.textEdit_4)
         self.horizontalLayout_62 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_62.setObjectName("horizontalLayout_62")
-        self.pushButton_59 = QtWidgets.QPushButton(parent=self.layoutWidget5)
-        self.pushButton_59.setObjectName("pushButton_59")
-        self.horizontalLayout_62.addWidget(self.pushButton_59)
         self.pushButton_58 = QtWidgets.QPushButton(parent=self.layoutWidget5)
         self.pushButton_58.setObjectName("pushButton_58")
         self.horizontalLayout_62.addWidget(self.pushButton_58)
@@ -445,7 +489,10 @@ class Ui_Form(object):
         font = QtGui.QFont()
         font.setFamily("Consolas")
         font.setPointSize(10)
+        font.setBold(True)
+        font.setItalic(True)
         self.textEdit_5.setFont(font)
+        self.textEdit_5.setStyleSheet("color: rgb(85, 0, 255);")
         self.textEdit_5.setObjectName("textEdit_5")
         self.verticalLayout_19.addWidget(self.textEdit_5)
         self.tabWidget.addTab(self.tab_6, "")
@@ -484,7 +531,7 @@ class Ui_Form(object):
         self.groupBox_13.setGeometry(QtCore.QRect(20, 90, 921, 341))
         self.groupBox_13.setObjectName("groupBox_13")
         self.layoutWidget6 = QtWidgets.QWidget(parent=self.groupBox_13)
-        self.layoutWidget6.setGeometry(QtCore.QRect(20, 30, 601, 28))
+        self.layoutWidget6.setGeometry(QtCore.QRect(20, 30, 571, 28))
         self.layoutWidget6.setObjectName("layoutWidget6")
         self.horizontalLayout_21 = QtWidgets.QHBoxLayout(self.layoutWidget6)
         self.horizontalLayout_21.setContentsMargins(0, 0, 0, 0)
@@ -503,7 +550,7 @@ class Ui_Form(object):
         self.horizontalLayout_21.addWidget(self.pushButton_16)
         self.horizontalLayout_21.setStretch(0, 1)
         self.layoutWidget7 = QtWidgets.QWidget(parent=self.groupBox_13)
-        self.layoutWidget7.setGeometry(QtCore.QRect(20, 70, 891, 194))
+        self.layoutWidget7.setGeometry(QtCore.QRect(20, 70, 891, 222))
         self.layoutWidget7.setObjectName("layoutWidget7")
         self.horizontalLayout_61 = QtWidgets.QHBoxLayout(self.layoutWidget7)
         self.horizontalLayout_61.setContentsMargins(0, 0, 0, 0)
@@ -516,6 +563,7 @@ class Ui_Form(object):
         self.label_22.setObjectName("label_22")
         self.horizontalLayout_23.addWidget(self.label_22)
         self.doubleSpinBox_13 = QtWidgets.QDoubleSpinBox(parent=self.layoutWidget7)
+        self.doubleSpinBox_13.setStyleSheet("color: rgb(170, 0, 0);")
         self.doubleSpinBox_13.setDecimals(0)
         self.doubleSpinBox_13.setMinimum(-100000.0)
         self.doubleSpinBox_13.setMaximum(100000.0)
@@ -529,6 +577,7 @@ class Ui_Form(object):
         self.label_23.setObjectName("label_23")
         self.horizontalLayout_24.addWidget(self.label_23)
         self.doubleSpinBox_14 = QtWidgets.QDoubleSpinBox(parent=self.layoutWidget7)
+        self.doubleSpinBox_14.setStyleSheet("color: rgb(170, 0, 0);")
         self.doubleSpinBox_14.setDecimals(0)
         self.doubleSpinBox_14.setMinimum(-100000.0)
         self.doubleSpinBox_14.setMaximum(100000.0)
@@ -542,6 +591,7 @@ class Ui_Form(object):
         self.label_24.setObjectName("label_24")
         self.horizontalLayout_25.addWidget(self.label_24)
         self.doubleSpinBox_15 = QtWidgets.QDoubleSpinBox(parent=self.layoutWidget7)
+        self.doubleSpinBox_15.setStyleSheet("color: rgb(0, 85, 255);")
         self.doubleSpinBox_15.setDecimals(1)
         self.doubleSpinBox_15.setMinimum(0.0)
         self.doubleSpinBox_15.setMaximum(100000.0)
@@ -555,6 +605,7 @@ class Ui_Form(object):
         self.label_25.setObjectName("label_25")
         self.horizontalLayout_26.addWidget(self.label_25)
         self.doubleSpinBox_16 = QtWidgets.QDoubleSpinBox(parent=self.layoutWidget7)
+        self.doubleSpinBox_16.setStyleSheet("color: rgb(0, 85, 255);")
         self.doubleSpinBox_16.setDecimals(2)
         self.doubleSpinBox_16.setMaximum(100000.0)
         self.doubleSpinBox_16.setSingleStep(0.01)
@@ -567,6 +618,7 @@ class Ui_Form(object):
         self.label_27.setObjectName("label_27")
         self.horizontalLayout_28.addWidget(self.label_27)
         self.doubleSpinBox_17 = QtWidgets.QDoubleSpinBox(parent=self.layoutWidget7)
+        self.doubleSpinBox_17.setStyleSheet("color: rgb(0, 170, 127);")
         self.doubleSpinBox_17.setDecimals(0)
         self.doubleSpinBox_17.setMaximum(100000.0)
         self.doubleSpinBox_17.setSingleStep(1.0)
@@ -592,6 +644,7 @@ class Ui_Form(object):
         self.label_35.setObjectName("label_35")
         self.horizontalLayout_59.addWidget(self.label_35)
         self.doubleSpinBox_25 = QtWidgets.QDoubleSpinBox(parent=self.layoutWidget7)
+        self.doubleSpinBox_25.setStyleSheet("color: rgb(170, 170, 0);")
         self.doubleSpinBox_25.setDecimals(0)
         self.doubleSpinBox_25.setMinimum(-100000.0)
         self.doubleSpinBox_25.setMaximum(100000.0)
@@ -609,6 +662,7 @@ class Ui_Form(object):
         self.label_26.setObjectName("label_26")
         self.horizontalLayout_27.addWidget(self.label_26)
         self.doubleSpinBox_18 = QtWidgets.QDoubleSpinBox(parent=self.layoutWidget7)
+        self.doubleSpinBox_18.setStyleSheet("color: rgb(255, 0, 0);")
         self.doubleSpinBox_18.setDecimals(0)
         self.doubleSpinBox_18.setMinimum(0.0)
         self.doubleSpinBox_18.setMaximum(100000.0)
@@ -622,6 +676,7 @@ class Ui_Form(object):
         self.label_28.setObjectName("label_28")
         self.horizontalLayout_29.addWidget(self.label_28)
         self.doubleSpinBox_19 = QtWidgets.QDoubleSpinBox(parent=self.layoutWidget7)
+        self.doubleSpinBox_19.setStyleSheet("color: rgb(255, 0, 0);")
         self.doubleSpinBox_19.setDecimals(1)
         self.doubleSpinBox_19.setMinimum(0.0)
         self.doubleSpinBox_19.setMaximum(100000.0)
@@ -635,6 +690,7 @@ class Ui_Form(object):
         self.label_29.setObjectName("label_29")
         self.horizontalLayout_30.addWidget(self.label_29)
         self.doubleSpinBox_20 = QtWidgets.QDoubleSpinBox(parent=self.layoutWidget7)
+        self.doubleSpinBox_20.setStyleSheet("color: rgb(0, 170, 255);")
         self.doubleSpinBox_20.setDecimals(0)
         self.doubleSpinBox_20.setMinimum(0.0)
         self.doubleSpinBox_20.setMaximum(100000.0)
@@ -648,6 +704,7 @@ class Ui_Form(object):
         self.label_30.setObjectName("label_30")
         self.horizontalLayout_31.addWidget(self.label_30)
         self.doubleSpinBox_21 = QtWidgets.QDoubleSpinBox(parent=self.layoutWidget7)
+        self.doubleSpinBox_21.setStyleSheet("color: rgb(0, 170, 255);")
         self.doubleSpinBox_21.setDecimals(1)
         self.doubleSpinBox_21.setMaximum(100000.0)
         self.doubleSpinBox_21.setSingleStep(0.1)
@@ -660,6 +717,7 @@ class Ui_Form(object):
         self.label_31.setObjectName("label_31")
         self.horizontalLayout_32.addWidget(self.label_31)
         self.doubleSpinBox_22 = QtWidgets.QDoubleSpinBox(parent=self.layoutWidget7)
+        self.doubleSpinBox_22.setStyleSheet("color: rgb(0, 170, 0);")
         self.doubleSpinBox_22.setDecimals(0)
         self.doubleSpinBox_22.setMaximum(100000.0)
         self.doubleSpinBox_22.setSingleStep(1.0)
@@ -672,6 +730,7 @@ class Ui_Form(object):
         self.label_32.setObjectName("label_32")
         self.horizontalLayout_33.addWidget(self.label_32)
         self.doubleSpinBox_23 = QtWidgets.QDoubleSpinBox(parent=self.layoutWidget7)
+        self.doubleSpinBox_23.setStyleSheet("color: rgb(0, 170, 0);")
         self.doubleSpinBox_23.setDecimals(1)
         self.doubleSpinBox_23.setMinimum(0.0)
         self.doubleSpinBox_23.setMaximum(100000.0)
@@ -1265,7 +1324,7 @@ class Ui_Form(object):
         self.verticalLayout_7.addLayout(self.horizontalLayout_16)
 
         self.retranslateUi(Form)
-        self.tabWidget.setCurrentIndex(2)
+        self.tabWidget.setCurrentIndex(0)
         self.pushButton_7.clicked.connect(self.lineEdit_7.selectAll) # type: ignore
         self.pushButton_6.clicked.connect(self.lineEdit_6.selectAll) # type: ignore
         self.pushButton_7.clicked.connect(self.lineEdit_7.copy) # type: ignore
@@ -1319,6 +1378,10 @@ class Ui_Form(object):
         self.pushButton_61.clicked.connect(self.textEdit_5.selectAll) # type: ignore
         self.pushButton_61.clicked.connect(self.textEdit_5.copy) # type: ignore
         self.pushButton_60.clicked.connect(self.textEdit_5.clear) # type: ignore
+        self.pushButton_62.clicked.connect(self.lineEdit_31.selectAll) # type: ignore
+        self.pushButton_62.clicked.connect(self.lineEdit_31.copy) # type: ignore
+        self.pushButton_63.clicked.connect(self.lineEdit_32.selectAll) # type: ignore
+        self.pushButton_63.clicked.connect(self.lineEdit_32.copy) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(Form)
 
     def retranslateUi(self, Form):
@@ -1362,9 +1425,12 @@ class Ui_Form(object):
         self.pushButton_7.setText(_translate("Form", "复制"))
         self.label_19.setText(_translate("Form", "技能替换模版"))
         self.textEdit.setHtml(_translate("Form", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'Consolas\'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:\'Consolas\'; font-size:10pt; font-weight:700; font-style:italic;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">&quot;ab_name&quot;</p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">            {</p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">                &quot;value&quot;                &quot;ab_value&quot;</p>\n"
@@ -1372,29 +1438,53 @@ class Ui_Form(object):
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">            }</p></body></html>"))
         self.groupBox_11.setTitle(_translate("Form", "控制台"))
         self.textEdit_2.setHtml(_translate("Form", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'Consolas\'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:\'Consolas\'; font-size:10pt; font-weight:700; font-style:italic;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">&quot;ab_name&quot;        &quot;100&quot;</p></body></html>"))
         self.pushButton_9.setText(_translate("Form", "替换"))
         self.pushButton_10.setText(_translate("Form", "复制"))
         self.pushButton_8.setText(_translate("Form", "清空"))
         self.textEdit_3.setHtml(_translate("Form", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'Consolas\'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:\'苹方 粗体\'; font-size:9.75pt;\"><br /></p></body></html>"))
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:\'Consolas\'; font-size:10pt; font-weight:700; font-style:italic;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">&quot;ab_name&quot;</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">            {</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">                &quot;value&quot;                &quot;100&quot;</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">                &quot;special_bonus_shard&quot;            &quot;=0&quot;</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">            }</p></body></html>"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), _translate("Form", "技能"))
-        self.groupBox_19.setTitle(_translate("Form", "GroupBox"))
+        self.groupBox_19.setTitle(_translate("Form", "模版"))
+        self.lineEdit_31.setText(_translate("Form", "\"Ability25\"     \"\""))
+        self.pushButton_62.setText(_translate("Form", "复制"))
+        self.lineEdit_32.setText(_translate("Form", "\"MaxLevel\"                        \"6\""))
+        self.pushButton_63.setText(_translate("Form", "复制"))
         self.textEdit_4.setHtml(_translate("Form", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'Consolas\'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">    &quot;ab_name&quot;        &quot;100 200 300 400&quot;</p></body></html>"))
-        self.pushButton_59.setText(_translate("Form", "-"))
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:\'Consolas\'; font-size:10pt; font-weight:700; font-style:italic;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">&quot;ab_name&quot;        &quot;100 200 300 400&quot;</p></body></html>"))
         self.pushButton_58.setText(_translate("Form", "+"))
         self.pushButton_61.setText(_translate("Form", "复制"))
         self.pushButton_60.setText(_translate("Form", "清空"))
+        self.textEdit_5.setHtml(_translate("Form", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:\'Consolas\'; font-size:10pt; font-weight:700; font-style:italic;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">&quot;ab_name&quot;        &quot;100 200 300 400 500 600&quot;</p></body></html>"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_6), _translate("Form", "技能2"))
         self.groupBox_12.setTitle(_translate("Form", "文件"))
         self.label_20.setText(_translate("Form", "路径"))
