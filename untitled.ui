@@ -37,7 +37,7 @@ QDoubleSpinBox
 }</string>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>5</number>
    </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
@@ -2429,7 +2429,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
           </sizepolicy>
          </property>
          <property name="text">
-          <string>生成mod文件夹</string>
+          <string>打开mod文件夹</string>
          </property>
         </widget>
        </item>
@@ -2457,7 +2457,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
           <string/>
          </property>
          <property name="placeholderText">
-          <string>…/SteamLibrary/steamapps/common/dota 2 beta</string>
+          <string>…/SteamLibrary/steamapps/common/dota 2 beta/game</string>
          </property>
         </widget>
        </item>
@@ -2535,6 +2535,19 @@ li.checked::marker { content: &quot;\2612&quot;; }
          </property>
          <property name="text">
           <string>生成vpk</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_59">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>移动vpk至mod文件夹</string>
          </property>
         </widget>
        </item>

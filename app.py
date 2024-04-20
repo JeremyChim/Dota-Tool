@@ -8,6 +8,7 @@ GitHub: https://github.com/JeremyChim
 """
 import sys
 import os
+import shutil
 
 from PyQt6.QtGui import QIcon
 from PyQt6.QtWidgets import QApplication, QWidget, QFileDialog
@@ -27,11 +28,13 @@ class Window(QWidget, Ui_Form):
         self.init_button()
         self.init_attr_button()
         self.setAcceptDrops(True)  # 允许拖放
+        self.lineEdit_29.setText(r'E:\GamePlatform\Steam\steamapps\common\dota 2 beta\game')
 
         self.file_url: str = ''
         self.file_content: list[str] = ['']
         self.hero_name_list: list[str] = []
         self.hero_line_list: list[int] = []
+        self.steam_path: str = ''
         self.good_list: list[int] = [511, 602, 693,
                                      1327, 1418, 1509, 1599, 1689, 1779,
                                      5938, 6031, 6124]
@@ -44,7 +47,7 @@ class Window(QWidget, Ui_Form):
         self.setWindowTitle('Dota Tool')
         self.setWindowIcon(QIcon('app.ico'))
         self.lineEdit_4.setText('2024/04/20')
-        self.lineEdit_5.setText('1.9.2')
+        self.lineEdit_5.setText('1.10.0')
 
     def init_button(self):
         self.pushButton.clicked.connect(self.get_file_url)
@@ -66,6 +69,13 @@ class Window(QWidget, Ui_Form):
         self.pushButton_48.clicked.connect(self.run_vpk_script)
         self.pushButton_56.clicked.connect(self.add_attr_2)
         self.pushButton_58.clicked.connect(self.func)
+        self.pushButton_50.clicked.connect(self.config_steam_path)
+        self.pushButton_53.clicked.connect(self.get_steam_url)
+        self.pushButton_51.clicked.connect(self.open_gi_file)
+        self.pushButton_52.clicked.connect(self.open_gi2_file)
+        self.pushButton_54.clicked.connect(self.open_mod_file)
+        self.pushButton_59.clicked.connect(self.move_vpk_mod)
+        self.pushButton_49.clicked.connect(self.start_dota2)
 
     def get_file_url(self):
         file_url, file_type = QFileDialog.getOpenFileName()  # GET THE URL
@@ -424,14 +434,14 @@ class Window(QWidget, Ui_Form):
 
     @staticmethod
     def open_vpk_file():
-        folder_path = r'D:\PycharmProjects\Dota-Tool\vpk\pak01_dir\scripts\npc'
+        folder_path = os.getcwd() + r'\vpk\pak01_dir\scripts\npc'
         print(f'open_vpk_file : {Fore.LIGHTBLUE_EX + folder_path}')
         os.startfile(folder_path)
 
     @staticmethod
     def run_vpk_script():
         print('run_vpk_script')
-        order = 'echo create vpk file... && "vpk/vpk.exe" "vpk/pak01_dir" && timeout 3'
+        order = 'echo create vpk file... && "vpk/vpk.exe" "vpk/pak01_dir" && timeout 2 && exit'
         os.system(f'start cmd /k "{order}"')
 
     def add_attr_2(self):
@@ -496,6 +506,64 @@ class Window(QWidget, Ui_Form):
             self.textEdit_5.setText(new)
             print(new)
 
+        except:
+            print(Fore.LIGHTRED_EX + 'Somthing is worry T_T')
+
+    def config_steam_path(self):
+        if self.steam_path:
+            self.lineEdit_29.setText(self.steam_path)
+            print(f'steam_path : {Fore.LIGHTBLUE_EX + self.steam_path}')
+        else:
+            print(Fore.LIGHTRED_EX + 'steam_path is empty T_T')
+
+    def get_steam_url(self):
+        # file_url, file_type = QFileDialog.getOpenFileName()  # GET THE URL
+        file_url = r'E:\GamePlatform\Steam\steamapps\common\dota 2 beta\game'
+        if file_url:
+            print(f'Get file url : {Fore.LIGHTCYAN_EX + file_url}')
+            self.lineEdit_29.setText(file_url)  # SENT THE URL
+            self.steam_path = file_url
+        else:
+            print(Fore.LIGHTRED_EX + 'URL is empty T_T')
+
+    def open_gi_file(self):
+        path = self.lineEdit_29.text() + r'\dota\gameinfo.gi'
+        os.startfile(path)
+
+    def open_gi2_file(self):
+        path = self.lineEdit_29.text() + r'\dota\gameinfo_branchspecific.gi'
+        os.startfile(path)
+
+    def open_mod_file(self):
+        folder_name = self.lineEdit_29.text() + r'\mod'
+
+        # 检查文件夹是否存在
+        if os.path.exists(folder_name):
+            print(f"文件夹 {folder_name} 已存在，正在打开")
+            os.startfile(folder_name)
+        else:
+            # 如果文件夹不存在，则创建它
+            try:
+                os.makedirs(folder_name)
+                print(f"文件夹 {folder_name} 已创建，正在打开")
+                os.startfile(folder_name)
+            except OSError as e:
+                print(f"创建文件夹 {folder_name} 时出错: {e}")
+
+    def move_vpk_mod(self):
+        src = os.getcwd() + r'\vpk\pak01_dir.vpk'
+        dst = self.lineEdit_29.text() + r'\mod\pak01_dir.vpk'
+
+        try:
+            shutil.move(src, dst)  # src 是源路径，dst 是目标路径
+            print(f"文件 {src} 已成功移动到 {dst}")
+        except OSError as e:
+            print(f"文件移动失败: {e.strerror}")
+
+    def start_dota2(self):
+        path = self.lineEdit_29.text() + r'\bin\win64\dota2.exe'
+        try:
+            os.startfile(path)
         except:
             print(Fore.LIGHTRED_EX + 'Somthing is worry T_T')
 
