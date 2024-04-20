@@ -9,6 +9,7 @@ GitHub: https://github.com/JeremyChim
 import sys
 import os
 import shutil
+import configparser
 
 from PyQt6.QtGui import QIcon
 from PyQt6.QtWidgets import QApplication, QWidget, QFileDialog
@@ -19,22 +20,27 @@ from colorama import init, Fore
 from untitled import Ui_Form
 
 init(autoreset=True)
+config = configparser.ConfigParser()
 
 
 class Window(QWidget, Ui_Form):
     def __init__(self):
         super().__init__()
-        self.init_ui()
-        self.init_button()
-        self.init_attr_button()
-        self.setAcceptDrops(True)  # 允许拖放
-        self.lineEdit_29.setText(r'E:\GamePlatform\Steam\steamapps\common\dota 2 beta\game')
 
-        self.file_url: str = ''
-        self.file_content: list[str] = ['']
+        self.unit_data: list[str] = ['']  # 单位数据
+        self.hero_data: list[str] = ['']  # 英雄数据
+
+        self.init_ui()  # 初始化ui
+        self.init_button()  # 初始化按钮
+        self.init_attr_button()  # 初始化属性按钮
+        self.init_config()  # 初始化路径配置
+        self.setAcceptDrops(True)  # 允许拖放，拖放路径读取功能
+
         self.hero_name_list: list[str] = []
         self.hero_line_list: list[int] = []
+
         self.steam_path: str = ''
+
         self.good_list: list[int] = [511, 602, 693,
                                      1327, 1418, 1509, 1599, 1689, 1779,
                                      5938, 6031, 6124]
@@ -42,90 +48,137 @@ class Window(QWidget, Ui_Form):
                                     784, 875, 966, 1057, 1147, 1237,
                                     5659, 5752, 5845]
 
+        self.unit_load_pushButton.click()  # 读取单位数据
+        self.hero_load_pushButton.click()  # 读取英雄数据
+
+    def init_config(self):
+        config.read('config.ini')
+        game_path = config.get('path', 'game_path')
+        unit_load_path = config.get('path', 'unit_load_path')
+        unit_save_path = config.get('path', 'unit_save_path')
+        hero_load_path = config.get('path', 'hero_load_path')
+        hero_save_path = config.get('path', 'hero_save_path')
+
+        try:
+            self.game_path_lineEdit.setText(game_path)
+            self.unit_load_path_lineEdit.setText(unit_load_path)
+            self.unit_save_path_lineEdit.setText(unit_save_path)
+            self.hero_load_path_lineEdit.setText(hero_load_path)
+            self.hero_save_path_lineEdit.setText(hero_save_path)
+        except:
+            pass
+
     def init_ui(self):
         self.setupUi(self)
         self.setWindowTitle('Dota Tool')
         self.setWindowIcon(QIcon('app.ico'))
-        self.lineEdit_4.setText('2024/04/20')
-        self.lineEdit_5.setText('1.10.1')
+        self.lineEdit_4.setText('2024/04/21')
+        self.lineEdit_5.setText('1.11.0')
 
     def init_button(self):
-        self.pushButton.clicked.connect(self.get_file_url)
-        self.pushButton_2.clicked.connect(self.get_file_content)
-        self.pushButton_3.clicked.connect(self.save_file)
-        self.pushButton_4.clicked.connect(self.update_xp_other)
-        self.pushButton_5.clicked.connect(self.update_tower_data)
+        self.game_path_pushButton.clicked.connect(lambda: self.get_file_url2(self.game_path_lineEdit))
+
+        self.browse_unit_load_path_pushButton.clicked.connect(lambda: self.get_file_url(self.unit_load_path_lineEdit))
+        self.browse_unit_save_path_pushButton.clicked.connect(lambda: self.get_file_url(self.unit_save_path_lineEdit))
+        self.unit_load_pushButton.clicked.connect(lambda: self.get_unit_data(self.unit_load_path_lineEdit))
+        self.unit_save_pushButton.clicked.connect(
+            lambda: self.save_file(self.unit_save_path_lineEdit.text(), self.unit_data))
+
+        self.good_guy_pushButton.clicked.connect(self.update_good_guy)
+        self.bad_guy_pushButton.clicked.connect(self.update_bad_guy)
+        self.other_guy_pushButton.clicked.connect(self.update_other_guy)
+        self.update_tower_pushButton.clicked.connect(self.update_tower_data)
+
+        self.browse_hero_load_path_pushButton.clicked.connect(lambda: self.get_file_url(self.hero_load_path_lineEdit))
+        self.browse_hero_save_path_pushButton.clicked.connect(lambda: self.get_file_url(self.hero_save_path_lineEdit))
+
+        self.hero_load_pushButton.clicked.connect(lambda: self.get_hero_data(self.hero_load_path_lineEdit))
+        self.hero_save_pushButton.clicked.connect(
+            lambda: self.save_file(self.hero_save_path_lineEdit.text(), self.hero_data))
+
+        self.load_hero_name_pushButton.clicked.connect(self.get_hero_name)
+        self.load_hero_value_pushButton.clicked.connect(self.get_hero_value)
+        self.update_hero_value_pushButton.clicked.connect(self.update_hero_data)
+
         self.pushButton_9.clicked.connect(self.ability_replace)
-        self.pushButton_11.clicked.connect(self.get_file_url)
-        self.pushButton_12.clicked.connect(self.get_file_content)
-        self.pushButton_13.clicked.connect(self.save_file)
-        self.pushButton_14.clicked.connect(self.get_hero_name)
-        self.pushButton_15.clicked.connect(self.get_hero_data)
-        self.pushButton_16.clicked.connect(self.update_hero_data)
+
         self.checkBox.clicked.connect(self.set_to_top)
-        self.pushButton_45.clicked.connect(self.update_xp_good)
-        self.pushButton_46.clicked.connect(self.update_xp_bad)
+
         self.pushButton_47.clicked.connect(self.open_vpk_file)
         self.pushButton_48.clicked.connect(self.run_vpk_script)
         self.pushButton_56.clicked.connect(self.add_attr_2)
-        self.pushButton_58.clicked.connect(self.attr_calc)
-        self.pushButton_50.clicked.connect(self.config_steam_path)
-        self.pushButton_53.clicked.connect(self.get_steam_url)
+        self.pushButton_58.clicked.connect(self.ability_calc)
+        # self.pushButton_50.clicked.connect(self.config_steam_path)
         self.pushButton_51.clicked.connect(self.open_gi_file)
         self.pushButton_52.clicked.connect(self.open_gi2_file)
         self.pushButton_54.clicked.connect(self.open_mod_file)
         self.pushButton_59.clicked.connect(self.move_vpk_mod)
         self.pushButton_49.clicked.connect(self.start_dota2)
 
-    def get_file_url(self):
-        file_url, file_type = QFileDialog.getOpenFileName()  # GET THE URL
+    @staticmethod
+    def get_file_url2(line_edit):
+        file_url = QFileDialog.getExistingDirectory()
         if file_url:
-            print(f'Get file url : {Fore.LIGHTCYAN_EX + file_url}')
-            self.lineEdit.setText(file_url)  # SENT THE URL
-            self.lineEdit_8.setText(file_url)  # SENT THE URL
-            self.file_url = file_url
-            self.get_file_content()
-        else:
-            print(Fore.LIGHTRED_EX + 'URL is empty T_T')
+            line_edit.setText(file_url)
+            print(f'获取文件夹路径：{Fore.LIGHTCYAN_EX + file_url}')
 
-    def get_file_content(self):
+    @staticmethod
+    def get_file_url(line_edit):
+        file_url, file_type = QFileDialog.getOpenFileName()  # 打开文件管理器
+        if file_url:
+            line_edit.setText(file_url)
+            print(f'获取文件路径：{Fore.LIGHTCYAN_EX + file_url}')
+
+    def get_unit_data(self, line_edit):
+        file_url = line_edit.text()
         try:
-            with open(self.file_url, 'r') as f:
-                self.file_content = f.readlines()  # GET CONTENT
-                print(Fore.LIGHTGREEN_EX + 'Get file content success.',
-                      Fore.LIGHTBLUE_EX + f'Content len : {len(self.file_content)}')
+            with open(file_url, 'r') as f:
+                self.unit_data = f.readlines()  # 获取内容，列表类型
+                print(Fore.LIGHTGREEN_EX + '读取单位数据成功，',
+                      Fore.LIGHTBLUE_EX + f'共有{len(self.unit_data)}行，',
+                      Fore.LIGHTCYAN_EX + f'读取路径：{file_url}。')
+        except:
+            print(Fore.LIGHTRED_EX + '读取单位数据失败！')
+
+    def get_hero_data(self, line_edit):
+        file_url = line_edit.text()
+        try:
+            with open(file_url, 'r') as f:
+                self.hero_data = f.readlines()  # 获取内容，列表类型
+                print(Fore.LIGHTGREEN_EX + '读取英雄数据成功，',
+                      Fore.LIGHTBLUE_EX + f'共有{len(self.hero_data)}行，',
+                      Fore.LIGHTCYAN_EX + f'读取路径：{file_url}。')
+        except:
+            print(Fore.LIGHTRED_EX + '读取英雄数据失败！')
+
+    @staticmethod
+    def save_file(save_path, file_content):
+        try:
+            with open(save_path, 'w') as f:
+                f.writelines(file_content)
+                print(Fore.LIGHTGREEN_EX + '保存数据成功，',
+                      Fore.LIGHTBLUE_EX + f'共有{len(file_content)}行，',
+                      Fore.LIGHTCYAN_EX + f'保存路径：{save_path}')
         except:
             print(Fore.LIGHTRED_EX + 'Somthing is worry T_T')
 
-    def save_file(self):
+    def update_good_guy(self):
         try:
-            file_url, file_type = QFileDialog.getSaveFileName()
-            with open(file_url, 'w') as f:
-                f.writelines(self.file_content)
-                print(Fore.LIGHTGREEN_EX + 'Write lines success.',
-                      Fore.LIGHTBLUE_EX + f'Len : {len(self.file_content)}')
-                print(Fore.LIGHTGREEN_EX + 'Save fine success.', Fore.LIGHTCYAN_EX + f'New file url : {file_url}')
-        except:
-            print(Fore.LIGHTRED_EX + 'Somthing is worry T_T')
-
-    def update_xp_good(self):
-        try:
-            self.file_content: list[str]
-            factor: float = self.doubleSpinBox.value()
-            print(Fore.LIGHTBLUE_EX + f'factor : {factor}')
+            factor: float = self.good_guy_doubleSpinBox.value()
+            print(Fore.LIGHTBLUE_EX + f'天辉小兵系数：{factor}')
 
             line_num: int = 1  # MAKE LINE
-            for one_line in self.file_content:
+            for one_line in self.unit_data:
                 one_line: str
 
                 if line_num in self.good_list or line_num - 1 in self.good_list or line_num - 2 in self.good_list:
                     if 'BountyXP' in one_line or 'BountyGoldMin' in one_line or 'BountyGoldMax' in one_line:
                         print(Fore.LIGHTBLACK_EX + str(line_num) + one_line, end='\r')
-                        one_list: list[str] = one_line.split('"')  # OLD DATA
-                        one_list[3] = f'{float(one_list[3]) * factor:.0f}'  # CALC
-                        one_line = '"'.join(one_list)  # NEW DATA
+                        one_list: list[str] = one_line.split('"')  # 旧的数据
+                        one_list[3] = f'{float(one_list[3]) * factor:.0f}'  # 计算
+                        one_line = '"'.join(one_list)  # 新的数据
                         print(Fore.LIGHTYELLOW_EX + str(line_num) + one_line, end='\r')
-                        self.file_content[line_num - 1] = one_line  # Write to Global
+                        self.unit_data[line_num - 1] = one_line  # 全局写入
 
                 elif line_num in self.bad_list or line_num - 1 in self.bad_list or line_num - 2 in self.bad_list:
                     pass
@@ -134,18 +187,17 @@ class Window(QWidget, Ui_Form):
                     pass
 
                 line_num += 1
-            print(Fore.LIGHTGREEN_EX + 'Update success.')
+            print(Fore.LIGHTGREEN_EX + '天辉小兵数据更新成功。')
         except:
-            print(Fore.LIGHTRED_EX + 'Somthing is worry T_T')
+            print(Fore.LIGHTRED_EX + '数据更新失败！')
 
-    def update_xp_bad(self):
+    def update_bad_guy(self):
         try:
-            self.file_content: list[str]
-            factor: float = self.doubleSpinBox.value()
-            print(Fore.LIGHTBLUE_EX + f'factor : {factor}')
+            factor: float = self.bad_guy_doubleSpinBox.value()
+            print(Fore.LIGHTBLUE_EX + f'夜魇小兵系数：{factor}')
 
             line_num: int = 1  # MAKE LINE
-            for one_line in self.file_content:
+            for one_line in self.unit_data:
                 one_line: str
 
                 if line_num in self.good_list or line_num - 1 in self.good_list or line_num - 2 in self.good_list:
@@ -154,28 +206,27 @@ class Window(QWidget, Ui_Form):
                 elif line_num in self.bad_list or line_num - 1 in self.bad_list or line_num - 2 in self.bad_list:
                     if 'BountyXP' in one_line or 'BountyGoldMin' in one_line or 'BountyGoldMax' in one_line:
                         print(Fore.LIGHTBLACK_EX + str(line_num) + one_line, end='\r')
-                        one_list: list[str] = one_line.split('"')  # OLD DATA
-                        one_list[3] = f'{float(one_list[3]) * factor:.0f}'  # CALC
-                        one_line = '"'.join(one_list)  # NEW DATA
+                        one_list: list[str] = one_line.split('"')  # 旧的数据
+                        one_list[3] = f'{float(one_list[3]) * factor:.0f}'  # 计算
+                        one_line = '"'.join(one_list)  # 新的数据
                         print(Fore.LIGHTYELLOW_EX + str(line_num) + one_line, end='\r')
-                        self.file_content[line_num - 1] = one_line  # Write to Global
+                        self.unit_data[line_num - 1] = one_line  # 全局写入
 
                 else:
                     pass
 
                 line_num += 1
-            print(Fore.LIGHTGREEN_EX + 'Update success.')
+            print(Fore.LIGHTGREEN_EX + '夜魇小兵数据更新成功。')
         except:
-            print(Fore.LIGHTRED_EX + 'Somthing is worry T_T')
+            print(Fore.LIGHTRED_EX + '数据更新失败！')
 
-    def update_xp_other(self):
+    def update_other_guy(self):
         try:
-            self.file_content: list[str]
-            factor: float = self.doubleSpinBox.value()
+            factor: float = self.other_guy_doubleSpinBox.value()
             print(Fore.LIGHTBLUE_EX + f'factor : {factor}')
 
             line_num: int = 1  # MAKE LINE
-            for one_line in self.file_content:
+            for one_line in self.unit_data:
                 one_line: str
 
                 if line_num in self.good_list or line_num - 1 in self.good_list or line_num - 2 in self.good_list:
@@ -187,53 +238,47 @@ class Window(QWidget, Ui_Form):
                 else:
                     if 'BountyXP' in one_line or 'BountyGoldMin' in one_line or 'BountyGoldMax' in one_line:
                         print(Fore.LIGHTBLACK_EX + str(line_num) + one_line, end='\r')
-                        one_list: list[str] = one_line.split('"')  # OLD DATA
-                        one_list[3] = f'{float(one_list[3]) * factor:.0f}'  # CALC
-                        one_line = '"'.join(one_list)  # NEW DATA
+                        one_list: list[str] = one_line.split('"')  # 旧的数据
+                        one_list[3] = f'{float(one_list[3]) * factor:.0f}'  # 计算
+                        one_line = '"'.join(one_list)  # 新的数据
                         print(Fore.LIGHTYELLOW_EX + str(line_num) + one_line, end='\r')
-                        self.file_content[line_num - 1] = one_line  # Write to Global
+                        self.unit_data[line_num - 1] = one_line  # 全局写入
 
                 line_num += 1
-            print(Fore.LIGHTGREEN_EX + 'Update success.')
+            print(Fore.LIGHTGREEN_EX + '其他单位数据更新成功。')
         except:
-            print(Fore.LIGHTRED_EX + 'Somthing is worry T_T')
+            print(Fore.LIGHTRED_EX + '数据更新失败！')
 
     def update_tower(self, keyword: str, keyword2: str, mul: float, add: int):
         try:
-            self.file_content: list[str]
-            # mul: float = self.doubleSpinBox_2.value()
-            # add: int = self.spinBox.value()
-            print(Fore.LIGHTBLUE_EX + f'Update tower arg : ')
-            print(Fore.LIGHTBLUE_EX + f'- keyword : {keyword}')
-            print(Fore.LIGHTBLUE_EX + f'- keyword2 : {keyword2}')
-            print(Fore.LIGHTBLUE_EX + f'- mul : {mul}')
-            print(Fore.LIGHTBLUE_EX + f'- add : {add}')
+            print(Fore.LIGHTBLUE_EX + f'更新防御塔数据，',
+                  Fore.LIGHTBLUE_EX + f'一级关键词：{keyword} ，',
+                  Fore.LIGHTBLUE_EX + f'二级关键词：{keyword2} ，',
+                  Fore.LIGHTBLUE_EX + f'乘系数: {mul} ，',
+                  Fore.LIGHTBLUE_EX + f'加系数: {add} 。')
 
             line_num: int = 1  # MAKE LINE
-            for one_line in self.file_content:
+            for one_line in self.unit_data:
                 one_line: str
                 if keyword in one_line:
                     print(Fore.LIGHTMAGENTA_EX + str(line_num) + one_line, end='\r')
                     key_line: str
                     line_num2 = line_num + 1
-                    for key_line in self.file_content[line_num:]:
+                    for key_line in self.unit_data[line_num:]:
                         if keyword2 in key_line:
                             print(Fore.LIGHTBLACK_EX + str(line_num2) + key_line, end='\r')
                             key_list: list[str] = key_line.split('"')  # OLD DATA
                             key_list[3] = f'{float(key_list[3]) * mul + add:.0f}'  # CALC
                             key_line = '"'.join(key_list)  # NEW DATA
                             print(Fore.LIGHTYELLOW_EX + str(line_num2) + key_line, end='\r')
-                            self.file_content[line_num2 - 1] = key_line  # Write to Global
+                            self.unit_data[line_num2 - 1] = key_line  # Write to Global
                             break
                         line_num2 += 1
                 line_num += 1
         except:
-            print(Fore.LIGHTRED_EX + 'Somthing is worry T_T')
+            print(Fore.LIGHTRED_EX + '数据更新失败！')
 
     def update_tower_data(self):
-        # keyword: str = 'StatusHealth'
-        # mul: float = self.doubleSpinBox_2.value()
-        # add: int = self.spinBox.value()
         arg_list: list[tuple] = [('Tower 1', 'StatusHealth', self.doubleSpinBox_2.value(), self.spinBox.value()),
                                  ('Tower 1', 'ArmorPhysical', self.doubleSpinBox_3.value(), self.spinBox_2.value()),
                                  ('Tower 2', 'StatusHealth', self.doubleSpinBox_4.value(), self.spinBox_3.value()),
@@ -246,7 +291,7 @@ class Window(QWidget, Ui_Form):
                                  ('Guys Fort', 'ArmorPhysical', self.doubleSpinBox_11.value(), self.spinBox_10.value())]
         for arg in arg_list:
             arg: tuple
-            if arg[2] == 1 and arg[3] == 0:
+            if arg[2] == 1 and arg[3] == 0:  # 如果乘1加0，就不进行计算了
                 pass
             else:
                 self.update_tower(*arg)
@@ -254,7 +299,6 @@ class Window(QWidget, Ui_Form):
     def ability_replace(self):
         self.textEdit_3.clear()
         mod: str = self.textEdit.toPlainText()
-        # old_ab: str = self.textEdit_2.toPlainText()
         old_content: str = self.textEdit_2.toPlainText()
         old_lines: list[str] = old_content.split('\n')
 
@@ -272,34 +316,33 @@ class Window(QWidget, Ui_Form):
                 print(Fore.LIGHTRED_EX + 'Empty ability T_T')
 
     def get_hero_name(self):
-
         try:
             hero_name_list: list[str] = []
             hero_line_list: list[int] = []
             line_num: int = 1  # MAKE LINE
-            for one_line in self.file_content:
+            for one_line in self.hero_data:
                 one_line: str
                 if '\t"npc_dota_hero_' in one_line and one_line.split('"')[2] == '\n':
                     print(Fore.LIGHTYELLOW_EX + str(line_num), one_line, end='\r')
                     hero_name: str = one_line.split('"')[1]
-                    hero_name_list.append(hero_name)  # Get Name
-                    hero_line_list.append(line_num)  # Get Line Number
+                    hero_name_list.append(hero_name)  # 获取英雄名字，加入列表
+                    hero_line_list.append(line_num)  # 获取所在行号，加入列表
                     self.comboBox.addItem(hero_name)
                 line_num += 1
-            print(Fore.LIGHTGREEN_EX + 'Read hero data success.', Fore.LIGHTBLUE_EX + f'hero : {len(hero_name_list)}')
+            print(Fore.LIGHTGREEN_EX + '读取英雄数据成功，', Fore.LIGHTBLUE_EX + f'共有英雄{len(hero_name_list)}名。')
             self.hero_name_list = hero_name_list
             self.hero_line_list = hero_line_list
         except:
             print(Fore.LIGHTRED_EX + 'Somthing is worry T_T')
 
-    def get_hero_data(self):
+    def get_hero_value(self):
         try:
             hero_name = self.comboBox.currentText()
             hero_name_index = self.hero_name_list.index(hero_name)
             hero_line: int = self.hero_line_list[hero_name_index]
-            print(f'index : {Fore.LIGHTBLUE_EX + str(hero_name_index)}')
-            print(f'name : {Fore.LIGHTMAGENTA_EX + hero_name}')
-            print(f'line : {Fore.LIGHTYELLOW_EX + str(hero_line)}')
+            print(f'英雄名：{Fore.LIGHTMAGENTA_EX + hero_name}',
+                  f'索引：{Fore.LIGHTBLUE_EX + str(hero_name_index)}',
+                  f'行号：{Fore.LIGHTYELLOW_EX + str(hero_line)}。')
 
             function_list: list[tuple] = [('AttackDamageMin', lambda: self.doubleSpinBox_13.setValue(value)),
                                           ('AttackDamageMax', lambda: self.doubleSpinBox_14.setValue(value)),
@@ -320,7 +363,7 @@ class Window(QWidget, Ui_Form):
                 keyword: str
 
                 line_num: int = hero_line + 1
-                for one_line in self.file_content[hero_line:]:
+                for one_line in self.hero_data[hero_line:]:
                     one_line: str
 
                     if keyword in one_line:
@@ -332,7 +375,7 @@ class Window(QWidget, Ui_Form):
 
                     line_num += 1
         except:
-            print(Fore.LIGHTRED_EX + 'Somthing is worry T_T')
+            print(Fore.LIGHTRED_EX + '读取英雄数值失败！')
 
     def update_hero_data(self):
         try:
@@ -361,7 +404,7 @@ class Window(QWidget, Ui_Form):
                 point: int
 
                 line_num: int = hero_line + 1
-                for one_line in self.file_content[hero_line:]:
+                for one_line in self.hero_data[hero_line:]:
                     one_line: str
 
                     if keyword in one_line:
@@ -372,12 +415,12 @@ class Window(QWidget, Ui_Form):
                             one_list[3] = f'{value:.{point}f}'
                             one_line = '"'.join(one_list)
                             print(Fore.LIGHTGREEN_EX + str(line_num), Fore.LIGHTGREEN_EX + one_line, end='\r')
-                            self.file_content[line_num - 1] = one_line
+                            self.hero_data[line_num - 1] = one_line
                             break
 
                     line_num += 1
         except:
-            print(Fore.LIGHTRED_EX + 'Somthing is worry T_T')
+            print(Fore.LIGHTRED_EX + '写入新的数值失败！')
 
     def set_to_top(self):
         if self.checkBox.isChecked() is True:
@@ -434,14 +477,14 @@ class Window(QWidget, Ui_Form):
 
     @staticmethod
     def open_vpk_file():
-        folder_path = os.getcwd() + r'\vpk\pak01_dir\scripts\npc'
-        print(f'open_vpk_file : {Fore.LIGHTBLUE_EX + folder_path}')
+        folder_path = os.getcwd() + '/vpk/pak01_dir/scripts/npc'
+        print(f'正在打开vpk配置文件夹，路径：{Fore.LIGHTBLUE_EX + folder_path}')
         os.startfile(folder_path)
 
     @staticmethod
     def run_vpk_script():
-        print('run_vpk_script')
-        order = 'echo create vpk file... && "vpk/vpk.exe" "vpk/pak01_dir" && timeout 2 && exit'
+        print('正在创建vpk文件中。。。')
+        order = 'echo create vpk file... && "vpk/vpk.exe" "vpk/pak01_dir" && timeout 1 && exit'
         os.system(f'start cmd /k "{order}"')
 
     def add_attr_2(self):
@@ -466,14 +509,13 @@ class Window(QWidget, Ui_Form):
             file_url = url.toLocalFile()
             print(f'Get file url : {Fore.LIGHTCYAN_EX + file_url}')
             if 'npc_units.txt' in file_url:
-                self.lineEdit.setText(file_url)  # SENT THE URL - unit
+                self.unit_load_path_lineEdit.setText(file_url)  # SENT THE URL - unit
             elif 'npc_heroes.txt' in file_url:
-                self.lineEdit_8.setText(file_url)  # SENT THE URL - hero
+                self.hero_load_path_lineEdit.setText(file_url)  # SENT THE URL - hero
             elif 'dota 2 beta' in file_url:
-                self.lineEdit_29.setText(file_url)  # SENT THE URL - steam
-            self.file_url = file_url
+                self.game_path_lineEdit.setText(file_url)  # SENT THE URL - steam
 
-    def attr_calc(self):
+    def ability_calc(self):
         try:
             # 原字符串
             # original_string = '     "ab"         "100 205 310 415"'
@@ -508,35 +550,27 @@ class Window(QWidget, Ui_Form):
             print(new)
 
         except:
-            print(Fore.LIGHTRED_EX + 'Somthing is worry T_T')
+            print(Fore.LIGHTRED_EX + '技能计算失败！')
 
-    def config_steam_path(self):
-        if self.steam_path:
-            self.lineEdit_29.setText(self.steam_path)
-            print(f'steam_path : {Fore.LIGHTBLUE_EX + self.steam_path}')
-        else:
-            print(Fore.LIGHTRED_EX + 'steam_path is empty T_T')
-
-    def get_steam_url(self):
-        # file_url, file_type = QFileDialog.getOpenFileName()  # GET THE URL
-        file_url = r'E:\GamePlatform\Steam\steamapps\common\dota 2 beta\game'
-        if file_url:
-            print(f'Get file url : {Fore.LIGHTCYAN_EX + file_url}')
-            self.lineEdit_29.setText(file_url)  # SENT THE URL
-            self.steam_path = file_url
-        else:
-            print(Fore.LIGHTRED_EX + 'URL is empty T_T')
+    # def config_steam_path(self):
+    #     if self.steam_path:
+    #         self.game_path_lineEdit.setText(self.steam_path)
+    #         print(f'steam_path : {Fore.LIGHTBLUE_EX + self.steam_path}')
+    #     else:
+    #         print(Fore.LIGHTRED_EX + 'steam_path is empty T_T')
 
     def open_gi_file(self):
-        path = self.lineEdit_29.text() + r'\dota\gameinfo.gi'
+        path = self.game_path_lineEdit.text() + r'/dota/gameinfo.gi'
+        print(f'正在打开gameinfo.gi文件，路径：{Fore.LIGHTBLUE_EX + path}')
         os.startfile(path)
 
     def open_gi2_file(self):
-        path = self.lineEdit_29.text() + r'\dota\gameinfo_branchspecific.gi'
+        path = self.game_path_lineEdit.text() + '/dota/gameinfo_branchspecific.gi'
+        print(f'正在打开gameinfo_branchspecific.gi文件，路径：{Fore.LIGHTBLUE_EX + path}')
         os.startfile(path)
 
     def open_mod_file(self):
-        folder_name = self.lineEdit_29.text() + r'\mod'
+        folder_name = self.game_path_lineEdit.text() + '/mod'
 
         # 检查文件夹是否存在
         if os.path.exists(folder_name):
@@ -552,8 +586,8 @@ class Window(QWidget, Ui_Form):
                 print(f"创建文件夹 {folder_name} 时出错: {e}")
 
     def move_vpk_mod(self):
-        src = os.getcwd() + r'\vpk\pak01_dir.vpk'
-        dst = self.lineEdit_29.text() + r'\mod\pak01_dir.vpk'
+        src = os.getcwd() + '/vpk/pak01_dir.vpk'
+        dst = self.game_path_lineEdit.text() + '/mod/pak01_dir.vpk'
 
         try:
             shutil.move(src, dst)  # src 是源路径，dst 是目标路径
@@ -562,12 +596,12 @@ class Window(QWidget, Ui_Form):
             print(f"文件移动失败: {e.strerror}")
 
     def start_dota2(self):
-        path = self.lineEdit_29.text() + r'\bin\win64\dota2.exe'
+        path = self.game_path_lineEdit.text() + r'/bin/win64/dota2.exe'
         try:
             os.startfile(path)
-            print(Fore.LIGHTGREEN_EX + 'start dota2 ...')
+            print(Fore.LIGHTGREEN_EX + '启动Dota2。。。。。。')
         except:
-            print(Fore.LIGHTRED_EX + 'Somthing is worry T_T')
+            print(Fore.LIGHTRED_EX + '启动Dota2失败！')
 
 
 if __name__ == '__main__':
