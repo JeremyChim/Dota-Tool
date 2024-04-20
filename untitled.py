@@ -475,6 +475,17 @@ class Ui_Form(object):
         self.verticalLayout_19.addWidget(self.textEdit_4)
         self.horizontalLayout_62 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_62.setObjectName("horizontalLayout_62")
+        self.spinBox_11 = QtWidgets.QSpinBox(parent=self.layoutWidget5)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.spinBox_11.sizePolicy().hasHeightForWidth())
+        self.spinBox_11.setSizePolicy(sizePolicy)
+        self.spinBox_11.setMinimumSize(QtCore.QSize(0, 0))
+        self.spinBox_11.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.spinBox_11.setMaximum(5)
+        self.spinBox_11.setObjectName("spinBox_11")
+        self.horizontalLayout_62.addWidget(self.spinBox_11)
         self.pushButton_58 = QtWidgets.QPushButton(parent=self.layoutWidget5)
         self.pushButton_58.setObjectName("pushButton_58")
         self.horizontalLayout_62.addWidget(self.pushButton_58)
@@ -1332,7 +1343,7 @@ class Ui_Form(object):
         self.verticalLayout_7.addLayout(self.horizontalLayout_16)
 
         self.retranslateUi(Form)
-        self.tabWidget.setCurrentIndex(5)
+        self.tabWidget.setCurrentIndex(2)
         self.pushButton_7.clicked.connect(self.lineEdit_7.selectAll) # type: ignore
         self.pushButton_6.clicked.connect(self.lineEdit_6.selectAll) # type: ignore
         self.pushButton_7.clicked.connect(self.lineEdit_7.copy) # type: ignore
@@ -1482,7 +1493,7 @@ class Ui_Form(object):
 "li.checked::marker { content: \"\\2612\"; }\n"
 "</style></head><body style=\" font-family:\'Consolas\'; font-size:10pt; font-weight:700; font-style:italic;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">&quot;ab_name&quot;        &quot;100 200 300 400&quot;</p></body></html>"))
-        self.pushButton_58.setText(_translate("Form", "+"))
+        self.pushButton_58.setText(_translate("Form", "计算"))
         self.pushButton_61.setText(_translate("Form", "复制"))
         self.pushButton_60.setText(_translate("Form", "清空"))
         self.textEdit_5.setHtml(_translate("Form", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"

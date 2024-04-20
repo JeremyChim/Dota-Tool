@@ -47,7 +47,7 @@ class Window(QWidget, Ui_Form):
         self.setWindowTitle('Dota Tool')
         self.setWindowIcon(QIcon('app.ico'))
         self.lineEdit_4.setText('2024/04/20')
-        self.lineEdit_5.setText('1.10.0')
+        self.lineEdit_5.setText('1.10.1')
 
     def init_button(self):
         self.pushButton.clicked.connect(self.get_file_url)
@@ -68,7 +68,7 @@ class Window(QWidget, Ui_Form):
         self.pushButton_47.clicked.connect(self.open_vpk_file)
         self.pushButton_48.clicked.connect(self.run_vpk_script)
         self.pushButton_56.clicked.connect(self.add_attr_2)
-        self.pushButton_58.clicked.connect(self.func)
+        self.pushButton_58.clicked.connect(self.attr_calc)
         self.pushButton_50.clicked.connect(self.config_steam_path)
         self.pushButton_53.clicked.connect(self.get_steam_url)
         self.pushButton_51.clicked.connect(self.open_gi_file)
@@ -473,18 +473,18 @@ class Window(QWidget, Ui_Form):
                 self.lineEdit_29.setText(file_url)  # SENT THE URL - steam
             self.file_url = file_url
 
-    def func(self):
+    def attr_calc(self):
         try:
             # 原字符串
-            original_string = '     "ab"         "100 205 310 415"'
-            print(original_string.split('"'))
+            # original_string = '     "ab"         "100 205 310 415"'
+            # print(original_string.split('"'))
 
             original_string: str = self.textEdit_4.toPlainText()
             original_list: list[str] = original_string.split('"')
             original_string: str = original_list[3]
 
             # 将原字符串按空格分割成数字列表
-            numbers: list[int] = [int(num) for num in original_string.split()]
+            numbers: list[float] = [float(num) for num in original_string.split()]
 
             # 计算公差
             diff = numbers[1] - numbers[0]
@@ -496,9 +496,10 @@ class Window(QWidget, Ui_Form):
             # 将新的数字添加到列表中
             numbers.append(next_number1)
             numbers.append(next_number2)
+            numbers2: list[str] = [f'{num:.{self.spinBox_11.value()}f}' for num in numbers]
 
             # 将列表中的数字重新组合成字符串
-            new_string: str = " ".join(map(str, numbers))
+            new_string: str = " ".join(numbers2)
             original_list[3] = new_string
             new = '"'.join(original_list)
 
@@ -564,6 +565,7 @@ class Window(QWidget, Ui_Form):
         path = self.lineEdit_29.text() + r'\bin\win64\dota2.exe'
         try:
             os.startfile(path)
+            print(Fore.LIGHTGREEN_EX + 'start dota2 ...')
         except:
             print(Fore.LIGHTRED_EX + 'Somthing is worry T_T')
 

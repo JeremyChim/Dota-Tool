@@ -37,7 +37,7 @@ QDoubleSpinBox
 }</string>
    </property>
    <property name="currentIndex">
-    <number>5</number>
+    <number>2</number>
    </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
@@ -1026,9 +1026,31 @@ li.checked::marker { content: &quot;\2612&quot;; }
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_62">
          <item>
+          <widget class="QSpinBox" name="spinBox_11">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="maximum">
+            <number>5</number>
+           </property>
+          </widget>
+         </item>
+         <item>
           <widget class="QPushButton" name="pushButton_58">
            <property name="text">
-            <string>+</string>
+            <string>计算</string>
            </property>
           </widget>
          </item>
