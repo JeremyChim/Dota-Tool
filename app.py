@@ -73,7 +73,7 @@ class Window(QWidget, Ui_Form):
         self.setWindowTitle('Dota Tool')
         self.setWindowIcon(QIcon('app.ico'))
         self.lineEdit_4.setText('2024/04/21')
-        self.lineEdit_5.setText('1.11.0')
+        self.lineEdit_5.setText('1.11.1')
 
     def init_button(self):
         self.game_path_pushButton.clicked.connect(lambda: self.get_file_url2(self.game_path_lineEdit))
@@ -114,6 +114,7 @@ class Window(QWidget, Ui_Form):
         self.pushButton_54.clicked.connect(self.open_mod_file)
         self.pushButton_59.clicked.connect(self.move_vpk_mod)
         self.pushButton_49.clicked.connect(self.start_dota2)
+        self.pushButton_67.clicked.connect(self.add_lv25)
 
     @staticmethod
     def get_file_url2(line_edit):
@@ -376,6 +377,24 @@ class Window(QWidget, Ui_Form):
                     line_num += 1
         except:
             print(Fore.LIGHTRED_EX + '读取英雄数值失败！')
+
+    def add_lv25(self):
+        try:
+            hero_name = self.comboBox.currentText()
+            hero_name_index = self.hero_name_list.index(hero_name)
+            hero_line: int = self.hero_line_list[hero_name_index]
+
+            line_num: int = hero_line + 1
+            for one_line in self.hero_data[hero_line:]:
+                if "Ability17" in one_line:
+                    self.hero_data[line_num - 1] = one_line + '\t\t"Ability25"\t\t""\n'
+                    print(Fore.LIGHTYELLOW_EX + str(line_num), self.hero_data[line_num - 1])
+                    break
+
+                line_num += 1
+
+        except:
+            print(Fore.LIGHTRED_EX + '写入新的等级25天赋技能失败！')
 
     def update_hero_data(self):
         try:
