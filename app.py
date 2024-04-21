@@ -77,7 +77,7 @@ class Window(QWidget, Ui_Form):
         self.setWindowTitle('Dota Tool')
         self.setWindowIcon(QIcon('app.ico'))
         self.lineEdit_4.setText('2024/04/21')
-        self.lineEdit_5.setText('1.12.1')
+        self.lineEdit_5.setText('1.12.2')
 
     def init_button(self):
         self.set_top_checkBox.clicked.connect(self.set_to_top)  # 置顶按钮
@@ -516,9 +516,26 @@ class Window(QWidget, Ui_Form):
 
     @staticmethod
     def open_vpk_file():
-        folder_path = os.getcwd() + '/vpk/pak01_dir/scripts/npc'
-        print(f'正在打开vpk配置文件夹，路径：{Fore.LIGHTBLUE_EX + folder_path}')
-        os.startfile(folder_path)
+        # folder_path = os.getcwd() + '/vpk/pak01_dir/scripts/npc'
+        # print(f'正在打开vpk配置文件夹，路径：{Fore.LIGHTBLUE_EX + folder_path}')
+        # os.startfile(folder_path)
+
+        folder_name = os.getcwd() + '/vpk/pak01_dir/scripts/npc'
+        folder_name2 = os.getcwd() + '/vpk/pak01_dir/scripts/npc/heroes'
+
+        # 检查文件夹是否存在
+        if os.path.exists(folder_name):
+            print(f"vpk配置文件夹 {folder_name} 已存在，正在打开")
+            os.startfile(folder_name)
+        else:
+            # 如果文件夹不存在，则创建它
+            try:
+                os.makedirs(folder_name)
+                os.makedirs(folder_name2)
+                print(f"vpk配置文件夹 {folder_name} 已创建，正在打开")
+                os.startfile(folder_name)
+            except OSError as e:
+                print(Fore.LIGHTRED_EX + f"创建文件夹 {folder_name} 时出错: {e}")
 
     @staticmethod
     def run_vpk_script():
