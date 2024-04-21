@@ -48,8 +48,11 @@ class Window(QWidget, Ui_Form):
                                     784, 875, 966, 1057, 1147, 1237,
                                     5659, 5752, 5845]
 
+        # 首次点击
         self.unit_load_pushButton.click()  # 读取单位数据
         self.hero_load_pushButton.click()  # 读取英雄数据
+        self.load_hero_name_pushButton.click()  # 读取英雄列表数据
+        self.load_hero_value_pushButton.click()  # 读取英雄数值
 
     def init_config(self):
         config.read('config.ini')
@@ -59,6 +62,7 @@ class Window(QWidget, Ui_Form):
         hero_load_path = config.get('path', 'hero_load_path')
         hero_save_path = config.get('path', 'hero_save_path')
 
+        # 尝试读取默认配置
         try:
             self.game_path_lineEdit.setText(game_path)
             self.unit_load_path_lineEdit.setText(unit_load_path)
@@ -73,37 +77,42 @@ class Window(QWidget, Ui_Form):
         self.setWindowTitle('Dota Tool')
         self.setWindowIcon(QIcon('app.ico'))
         self.lineEdit_4.setText('2024/04/21')
-        self.lineEdit_5.setText('1.11.1')
+        self.lineEdit_5.setText('1.12.0')
 
     def init_button(self):
-        self.game_path_pushButton.clicked.connect(lambda: self.get_file_url2(self.game_path_lineEdit))
+        self.set_top_checkBox.clicked.connect(self.set_to_top)  # 置顶按钮
 
-        self.browse_unit_load_path_pushButton.clicked.connect(lambda: self.get_file_url(self.unit_load_path_lineEdit))
-        self.browse_unit_save_path_pushButton.clicked.connect(lambda: self.get_file_url(self.unit_save_path_lineEdit))
-        self.unit_load_pushButton.clicked.connect(lambda: self.get_unit_data(self.unit_load_path_lineEdit))
+        self.game_path_pushButton.clicked.connect(lambda: self.get_file_url2(self.game_path_lineEdit))  # 游戏路径
+        self.set_config_pushButton.clicked.connect(self.set_config)
+
+        self.browse_unit_load_path_pushButton.clicked.connect(
+            lambda: self.get_file_url(self.unit_load_path_lineEdit))  # 读取路径，单位
+        self.browse_unit_save_path_pushButton.clicked.connect(
+            lambda: self.get_file_url(self.unit_save_path_lineEdit))  # 保存路径，单位
+        self.unit_load_pushButton.clicked.connect(lambda: self.get_unit_data(self.unit_load_path_lineEdit))  # 读取，单位
         self.unit_save_pushButton.clicked.connect(
-            lambda: self.save_file(self.unit_save_path_lineEdit.text(), self.unit_data))
+            lambda: self.save_file(self.unit_save_path_lineEdit.text(), self.unit_data))  # 保存，单位
 
-        self.good_guy_pushButton.clicked.connect(self.update_good_guy)
-        self.bad_guy_pushButton.clicked.connect(self.update_bad_guy)
-        self.other_guy_pushButton.clicked.connect(self.update_other_guy)
-        self.update_tower_pushButton.clicked.connect(self.update_tower_data)
+        self.good_guy_pushButton.clicked.connect(self.update_good_guy)  # 天辉小兵
+        self.bad_guy_pushButton.clicked.connect(self.update_bad_guy)  # 夜魇小兵
+        self.other_guy_pushButton.clicked.connect(self.update_other_guy)  # 其他单位
+        self.update_tower_pushButton.clicked.connect(self.update_tower_data)  # 防御塔
 
-        self.browse_hero_load_path_pushButton.clicked.connect(lambda: self.get_file_url(self.hero_load_path_lineEdit))
-        self.browse_hero_save_path_pushButton.clicked.connect(lambda: self.get_file_url(self.hero_save_path_lineEdit))
-
-        self.hero_load_pushButton.clicked.connect(lambda: self.get_hero_data(self.hero_load_path_lineEdit))
+        self.browse_hero_load_path_pushButton.clicked.connect(
+            lambda: self.get_file_url(self.hero_load_path_lineEdit))  # 读取路径，英雄
+        self.browse_hero_save_path_pushButton.clicked.connect(
+            lambda: self.get_file_url(self.hero_save_path_lineEdit))  # 保存路径，英雄
+        self.hero_load_pushButton.clicked.connect(lambda: self.get_hero_data(self.hero_load_path_lineEdit))  # 读取，英雄
         self.hero_save_pushButton.clicked.connect(
-            lambda: self.save_file(self.hero_save_path_lineEdit.text(), self.hero_data))
+            lambda: self.save_file(self.hero_save_path_lineEdit.text(), self.hero_data))  # 保存，英雄
 
-        self.load_hero_name_pushButton.clicked.connect(self.get_hero_name)
-        self.load_hero_value_pushButton.clicked.connect(self.get_hero_value)
-        self.update_hero_value_pushButton.clicked.connect(self.update_hero_data)
+        self.load_hero_name_pushButton.clicked.connect(self.get_hero_name)  # 读取英雄名
+        self.load_hero_value_pushButton.clicked.connect(self.get_hero_value)  # 读取英雄数值
+        self.update_hero_value_pushButton.clicked.connect(self.update_hero_data)  # 写入新的数值
+        self.search_hero_lineEdit.textChanged.connect(self.search_hero)  # 搜索英雄名
+        self.hero_name_comboBox.currentIndexChanged.connect(self.load_hero_value_pushButton.click)  # 当英雄名发生变化，自动获取英雄数值
 
         self.pushButton_9.clicked.connect(self.ability_replace)
-
-        self.checkBox.clicked.connect(self.set_to_top)
-
         self.pushButton_47.clicked.connect(self.open_vpk_file)
         self.pushButton_48.clicked.connect(self.run_vpk_script)
         self.pushButton_56.clicked.connect(self.add_attr_2)
@@ -115,6 +124,17 @@ class Window(QWidget, Ui_Form):
         self.pushButton_59.clicked.connect(self.move_vpk_mod)
         self.pushButton_49.clicked.connect(self.start_dota2)
         self.pushButton_67.clicked.connect(self.add_lv25)
+
+    def search_hero(self):
+        try:
+            # 清除当前组合框的选项
+            self.hero_name_comboBox.clear()
+            # 遍历英雄名
+            for name in self.hero_name_list:
+                if self.search_hero_lineEdit.text() in name:
+                    self.hero_name_comboBox.addItem(name)
+        except:
+            pass
 
     @staticmethod
     def get_file_url2(line_edit):
@@ -314,7 +334,7 @@ class Window(QWidget, Ui_Form):
                 # print(mod)
                 print(Fore.LIGHTBLUE_EX + new_ab)
             else:
-                print(Fore.LIGHTRED_EX + 'Empty ability T_T')
+                print(Fore.LIGHTRED_EX + '技能替换失败！')
 
     def get_hero_name(self):
         try:
@@ -328,17 +348,18 @@ class Window(QWidget, Ui_Form):
                     hero_name: str = one_line.split('"')[1]
                     hero_name_list.append(hero_name)  # 获取英雄名字，加入列表
                     hero_line_list.append(line_num)  # 获取所在行号，加入列表
-                    self.comboBox.addItem(hero_name)
+                    self.hero_name_comboBox.addItem(hero_name)
                 line_num += 1
-            print(Fore.LIGHTGREEN_EX + '读取英雄数据成功，', Fore.LIGHTBLUE_EX + f'共有英雄{len(hero_name_list)}名。')
+            print(Fore.LIGHTGREEN_EX + '读取英雄名成功，',
+                  Fore.LIGHTBLUE_EX + f'共有英雄{len(hero_name_list) - 1}名（base是英雄通用模型）。')
             self.hero_name_list = hero_name_list
             self.hero_line_list = hero_line_list
         except:
-            print(Fore.LIGHTRED_EX + 'Somthing is worry T_T')
+            print(Fore.LIGHTRED_EX + '读取英雄名失败！')
 
     def get_hero_value(self):
         try:
-            hero_name = self.comboBox.currentText()
+            hero_name = self.hero_name_comboBox.currentText()
             hero_name_index = self.hero_name_list.index(hero_name)
             hero_line: int = self.hero_line_list[hero_name_index]
             print(f'英雄名：{Fore.LIGHTMAGENTA_EX + hero_name}',
@@ -362,11 +383,10 @@ class Window(QWidget, Ui_Form):
 
             for keyword, function in function_list:
                 keyword: str
-
                 line_num: int = hero_line + 1
+
                 for one_line in self.hero_data[hero_line:]:
                     one_line: str
-
                     if keyword in one_line:
                         one_list: list[str] = one_line.split('"')
                         if len(one_list) == 5 and one_list[4] == '\n':
@@ -376,11 +396,11 @@ class Window(QWidget, Ui_Form):
 
                     line_num += 1
         except:
-            print(Fore.LIGHTRED_EX + '读取英雄数值失败！')
+            print(Fore.LIGHTRED_EX + f'读取英雄数值失败！')
 
     def add_lv25(self):
         try:
-            hero_name = self.comboBox.currentText()
+            hero_name = self.hero_name_comboBox.currentText()
             hero_name_index = self.hero_name_list.index(hero_name)
             hero_line: int = self.hero_line_list[hero_name_index]
 
@@ -398,7 +418,7 @@ class Window(QWidget, Ui_Form):
 
     def update_hero_data(self):
         try:
-            hero_name = self.comboBox.currentText()
+            hero_name = self.hero_name_comboBox.currentText()
             hero_name_index = self.hero_name_list.index(hero_name)
             hero_line: int = self.hero_line_list[hero_name_index]
 
@@ -442,7 +462,7 @@ class Window(QWidget, Ui_Form):
             print(Fore.LIGHTRED_EX + '写入新的数值失败！')
 
     def set_to_top(self):
-        if self.checkBox.isChecked() is True:
+        if self.set_top_checkBox.isChecked() is True:
             self.setWindowFlags(self.windowFlags() | Qt.WindowType.WindowStaysOnTopHint)  # window top
         else:
             self.setWindowFlags(self.windowFlags() & ~Qt.WindowType.WindowStaysOnTopHint)  # cancel
@@ -579,14 +599,20 @@ class Window(QWidget, Ui_Form):
     #         print(Fore.LIGHTRED_EX + 'steam_path is empty T_T')
 
     def open_gi_file(self):
-        path = self.game_path_lineEdit.text() + r'/dota/gameinfo.gi'
-        print(f'正在打开gameinfo.gi文件，路径：{Fore.LIGHTBLUE_EX + path}')
-        os.startfile(path)
+        try:
+            path = self.game_path_lineEdit.text() + r'/dota/gameinfo.gi'
+            print(f'正在打开gameinfo.gi文件，路径：{Fore.LIGHTBLUE_EX + path}')
+            os.startfile(path)
+        except:
+            print(Fore.LIGHTRED_EX + '打开gameinfo.gi文件失败！')
 
     def open_gi2_file(self):
-        path = self.game_path_lineEdit.text() + '/dota/gameinfo_branchspecific.gi'
-        print(f'正在打开gameinfo_branchspecific.gi文件，路径：{Fore.LIGHTBLUE_EX + path}')
-        os.startfile(path)
+        try:
+            path = self.game_path_lineEdit.text() + '/dota/gameinfo_branchspecific.gi'
+            print(f'正在打开gameinfo_branchspecific.gi文件，路径：{Fore.LIGHTBLUE_EX + path}')
+            os.startfile(path)
+        except:
+            print(Fore.LIGHTRED_EX + '打开gameinfo_branchspecific.gi文件失败！')
 
     def open_mod_file(self):
         folder_name = self.game_path_lineEdit.text() + '/mod'
@@ -602,7 +628,7 @@ class Window(QWidget, Ui_Form):
                 print(f"文件夹 {folder_name} 已创建，正在打开")
                 os.startfile(folder_name)
             except OSError as e:
-                print(f"创建文件夹 {folder_name} 时出错: {e}")
+                print(Fore.LIGHTRED_EX + f"创建文件夹 {folder_name} 时出错: {e}")
 
     def move_vpk_mod(self):
         src = os.getcwd() + '/vpk/pak01_dir.vpk'
@@ -610,9 +636,9 @@ class Window(QWidget, Ui_Form):
 
         try:
             shutil.move(src, dst)  # src 是源路径，dst 是目标路径
-            print(f"文件 {src} 已成功移动到 {dst}")
+            print(Fore.LIGHTGREEN_EX + f"文件 {src} 已成功移动到 {dst}")
         except OSError as e:
-            print(f"文件移动失败: {e.strerror}")
+            print(Fore.LIGHTRED_EX + f"文件移动失败: {e.strerror}")
 
     def start_dota2(self):
         path = self.game_path_lineEdit.text() + r'/bin/win64/dota2.exe'
@@ -621,6 +647,15 @@ class Window(QWidget, Ui_Form):
             print(Fore.LIGHTGREEN_EX + '启动Dota2。。。。。。')
         except:
             print(Fore.LIGHTRED_EX + '启动Dota2失败！')
+
+    def set_config(self):
+        try:
+            config['path']['game_path'] = self.game_path_lineEdit.text()
+            with open('config.ini', 'w') as configfile:
+                config.write(configfile)
+
+        except:
+            print(Fore.LIGHTRED_EX + '写入配置失败！')
 
 
 if __name__ == '__main__':
