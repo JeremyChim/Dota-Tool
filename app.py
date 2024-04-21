@@ -78,7 +78,7 @@ class Window(QWidget, Ui_Form):
         self.setWindowTitle('Dota Tool')
         self.setWindowIcon(QIcon('app.ico'))
         self.lineEdit_4.setText('2024/04/21')
-        self.lineEdit_5.setText('1.12.3')
+        self.lineEdit_5.setText('1.12.4')
 
     def init_button(self):
         self.set_top_checkBox.clicked.connect(self.set_to_top)  # 置顶按钮
@@ -139,11 +139,12 @@ class Window(QWidget, Ui_Form):
         print(f'复制文件名：{hero_txt}')
 
         src = self.hero_load_path_lineEdit.text().replace('npc_heroes.txt', f'heroes/{hero_txt}')  # 替换路径
-        dst = self.hero_save_path_lineEdit.text().replace('npc_heroes.txt', 'heroes')  # 替换路径
+        dst = self.hero_save_path_lineEdit.text().replace('npc_heroes.txt', f'heroes/{hero_txt}')  # 替换路径
 
         try:
             shutil.copy(src, dst)  # src 是源路径，dst 是目标路径
-            print(Fore.LIGHTGREEN_EX + f"文件 {src} 已成功复制到 {dst}")
+            os.startfile(dst)
+            print(Fore.LIGHTGREEN_EX + f"文件 {src} 已成功复制到 {dst}，正在打开")
         except OSError as e:
             print(Fore.LIGHTRED_EX + f"文件复制失败: {e.strerror}")
 
