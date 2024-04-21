@@ -11,6 +11,7 @@ import os
 import shutil
 import configparser
 
+from time import sleep
 from PyQt6.QtGui import QIcon
 from PyQt6.QtWidgets import QApplication, QWidget, QFileDialog
 from PyQt6.QtCore import Qt
@@ -77,7 +78,7 @@ class Window(QWidget, Ui_Form):
         self.setWindowTitle('Dota Tool')
         self.setWindowIcon(QIcon('app.ico'))
         self.lineEdit_4.setText('2024/04/21')
-        self.lineEdit_5.setText('1.12.2')
+        self.lineEdit_5.setText('1.12.3')
 
     def init_button(self):
         self.set_top_checkBox.clicked.connect(self.set_to_top)  # 置顶按钮
@@ -124,6 +125,27 @@ class Window(QWidget, Ui_Form):
         self.pushButton_59.clicked.connect(self.move_vpk_mod)
         self.pushButton_49.clicked.connect(self.start_dota2)
         self.pushButton_67.clicked.connect(self.add_lv25)
+        self.copy_hero_ab_pushButton.clicked.connect(self.copy_hero_ab)
+        self.pushButton_50.clicked.connect(self.run_vpk_mod_dota2)
+
+    def run_vpk_mod_dota2(self):
+        self.pushButton_48.click()  # 生成vpk
+        sleep(1)  # 等待1秒
+        self.pushButton_59.click()  # 移动到mod
+        self.pushButton_49.click()  # 启动DOTA2
+
+    def copy_hero_ab(self):
+        hero_txt = self.hero_name_comboBox.currentText() + '.txt'
+        print(f'复制文件名：{hero_txt}')
+
+        src = self.hero_load_path_lineEdit.text().replace('npc_heroes.txt', f'heroes/{hero_txt}')  # 替换路径
+        dst = self.hero_save_path_lineEdit.text().replace('npc_heroes.txt', 'heroes')  # 替换路径
+
+        try:
+            shutil.copy(src, dst)  # src 是源路径，dst 是目标路径
+            print(Fore.LIGHTGREEN_EX + f"文件 {src} 已成功复制到 {dst}")
+        except OSError as e:
+            print(Fore.LIGHTRED_EX + f"文件复制失败: {e.strerror}")
 
     def search_hero(self):
         try:
@@ -516,10 +538,6 @@ class Window(QWidget, Ui_Form):
 
     @staticmethod
     def open_vpk_file():
-        # folder_path = os.getcwd() + '/vpk/pak01_dir/scripts/npc'
-        # print(f'正在打开vpk配置文件夹，路径：{Fore.LIGHTBLUE_EX + folder_path}')
-        # os.startfile(folder_path)
-
         folder_name = os.getcwd() + '/vpk/pak01_dir/scripts/npc'
         folder_name2 = os.getcwd() + '/vpk/pak01_dir/scripts/npc/heroes'
 
@@ -608,13 +626,6 @@ class Window(QWidget, Ui_Form):
         except:
             print(Fore.LIGHTRED_EX + '技能计算失败！')
 
-    # def config_steam_path(self):
-    #     if self.steam_path:
-    #         self.game_path_lineEdit.setText(self.steam_path)
-    #         print(f'steam_path : {Fore.LIGHTBLUE_EX + self.steam_path}')
-    #     else:
-    #         print(Fore.LIGHTRED_EX + 'steam_path is empty T_T')
-
     def open_gi_file(self):
         try:
             path = self.game_path_lineEdit.text() + r'/dota/gameinfo.gi'
@@ -670,6 +681,7 @@ class Window(QWidget, Ui_Form):
             config['path']['game_path'] = self.game_path_lineEdit.text()
             with open('config.ini', 'w') as configfile:
                 config.write(configfile)
+                print(Fore.LIGHTGREEN_EX + '写入配置成功。')
 
         except:
             print(Fore.LIGHTRED_EX + '写入配置失败！')
