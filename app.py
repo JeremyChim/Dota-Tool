@@ -78,7 +78,7 @@ class Window(QWidget, Ui_Form):
         self.setWindowTitle('Dota Tool')
         self.setWindowIcon(QIcon('app.ico'))
         self.lineEdit_4.setText('2024/04/21')
-        self.lineEdit_5.setText('1.12.4')
+        self.lineEdit_5.setText('1.12.5')
 
     def init_button(self):
         self.set_top_checkBox.clicked.connect(self.set_to_top)  # 置顶按钮
@@ -572,6 +572,7 @@ class Window(QWidget, Ui_Form):
         self.pushButton_38.click()  # 全成长+1
         self.pushButton_39.click(), self.pushButton_39.click()  # 移速+20
         self.pushButton_57.click()  # 护甲+1
+        self.update_hero_value_pushButton.click() # 写入
 
     def dragEnterEvent(self, event: QDragEnterEvent) -> None:
         # 当有文件拖入窗口时触发
