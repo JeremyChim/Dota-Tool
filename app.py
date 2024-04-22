@@ -77,8 +77,8 @@ class Window(QWidget, Ui_Form):
         self.setupUi(self)
         self.setWindowTitle('Dota Tool')
         self.setWindowIcon(QIcon('app.ico'))
-        self.lineEdit_4.setText('2024/04/21')
-        self.lineEdit_5.setText('1.12.5')
+        self.lineEdit_4.setText('2024/04/22')
+        self.lineEdit_5.setText('1.12.6')
 
     def init_button(self):
         self.set_top_checkBox.clicked.connect(self.set_to_top)  # 置顶按钮
@@ -127,6 +127,23 @@ class Window(QWidget, Ui_Form):
         self.pushButton_67.clicked.connect(self.add_lv25)
         self.copy_hero_ab_pushButton.clicked.connect(self.copy_hero_ab)
         self.pushButton_50.clicked.connect(self.run_vpk_mod_dota2)
+
+        self.open_load_unitstxt_pushButton.clicked.connect(
+            lambda: self.open_txt(self.unit_load_path_lineEdit.text()))  # 打开旧的npc_units.txt
+        self.open_save_unitstxt_pushButton.clicked.connect(
+            lambda: self.open_txt(self.unit_save_path_lineEdit.text()))  # 打开新的npc_units.txt
+        self.open_load_herotxt_pushButton.clicked.connect(
+            lambda: self.open_txt(self.hero_load_path_lineEdit.text()))  # 打开旧的npc_heroes.txt
+        self.open_save_herotxt_pushButton.clicked.connect(
+            lambda: self.open_txt(self.hero_save_path_lineEdit.text()))  # 打开新的npc_heroes.txt
+
+    @staticmethod
+    def open_txt(path):
+        try:
+            print(f'打开文件，路径： {Fore.LIGHTBLUE_EX + path}')
+            os.startfile(path)
+        except Exception as e:
+            print(Fore.LIGHTRED_EX + f'打开文件{path}错误，错误原因：{e}。')
 
     def run_vpk_mod_dota2(self):
         self.pushButton_48.click()  # 生成vpk
@@ -572,7 +589,7 @@ class Window(QWidget, Ui_Form):
         self.pushButton_38.click()  # 全成长+1
         self.pushButton_39.click(), self.pushButton_39.click()  # 移速+20
         self.pushButton_57.click()  # 护甲+1
-        self.update_hero_value_pushButton.click() # 写入
+        self.update_hero_value_pushButton.click()  # 写入
 
     def dragEnterEvent(self, event: QDragEnterEvent) -> None:
         # 当有文件拖入窗口时触发

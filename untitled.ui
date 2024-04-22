@@ -452,7 +452,7 @@ QDoubleSpinBox
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_21">
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,7,1,1">
+        <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,7,1,1,0">
          <item>
           <widget class="QLabel" name="label">
            <property name="text">
@@ -481,10 +481,17 @@ QDoubleSpinBox
            </property>
           </widget>
          </item>
+         <item>
+          <widget class="QPushButton" name="open_load_unitstxt_pushButton">
+           <property name="text">
+            <string>打开</string>
+           </property>
+          </widget>
+         </item>
         </layout>
        </item>
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_65" stretch="1,7,1,1">
+        <layout class="QHBoxLayout" name="horizontalLayout_65" stretch="1,7,1,1,0">
          <item>
           <widget class="QLabel" name="label_36">
            <property name="text">
@@ -510,6 +517,13 @@ QDoubleSpinBox
           <widget class="QPushButton" name="unit_save_pushButton">
            <property name="text">
             <string>保存</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="open_save_unitstxt_pushButton">
+           <property name="text">
+            <string>打开</string>
            </property>
           </widget>
          </item>
@@ -1067,7 +1081,7 @@ QDoubleSpinBox
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_23">
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_20" stretch="1,7,1,1">
+        <layout class="QHBoxLayout" name="horizontalLayout_20" stretch="1,7,1,1,0">
          <item>
           <widget class="QLabel" name="label_20">
            <property name="text">
@@ -1096,10 +1110,17 @@ QDoubleSpinBox
            </property>
           </widget>
          </item>
+         <item>
+          <widget class="QPushButton" name="open_load_herotxt_pushButton">
+           <property name="text">
+            <string>打开</string>
+           </property>
+          </widget>
+         </item>
         </layout>
        </item>
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_70" stretch="1,7,1,1">
+        <layout class="QHBoxLayout" name="horizontalLayout_70" stretch="1,7,1,1,0">
          <item>
           <widget class="QLabel" name="label_37">
            <property name="text">
@@ -1125,6 +1146,13 @@ QDoubleSpinBox
           <widget class="QPushButton" name="hero_save_pushButton">
            <property name="text">
             <string>保存</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="open_save_herotxt_pushButton">
+           <property name="text">
+            <string>打开</string>
            </property>
           </widget>
          </item>
