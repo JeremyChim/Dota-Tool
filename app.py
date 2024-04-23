@@ -34,7 +34,6 @@ class Window(QWidget, Ui_Form):
         self.init_ui()  # 初始化ui
         self.init_button()  # 初始化按钮
         self.init_attr_button()  # 初始化属性按钮
-        self.init_config()  # 初始化路径配置
         self.setAcceptDrops(True)  # 允许拖放，拖放路径读取功能
 
         self.hero_name_list: list[str] = []
@@ -50,68 +49,69 @@ class Window(QWidget, Ui_Form):
                                     5659, 5752, 5845]
 
         # 首次点击
+        self.read_config_pushButton.click() # 读取配置
         self.unit_load_pushButton.click()  # 读取单位数据
         self.hero_load_pushButton.click()  # 读取英雄数据
         self.load_hero_name_pushButton.click()  # 读取英雄列表数据
         self.load_hero_value_pushButton.click()  # 读取英雄数值
 
-    def init_config(self):
-        config.read('config.ini')
-        game_path = config.get('path', 'game_path')
-        unit_load_path = config.get('path', 'unit_load_path')
-        unit_save_path = config.get('path', 'unit_save_path')
-        hero_load_path = config.get('path', 'hero_load_path')
-        hero_save_path = config.get('path', 'hero_save_path')
-
-        # 尝试读取默认配置
-        try:
-            self.game_path_lineEdit.setText(game_path)
-            self.unit_load_path_lineEdit.setText(unit_load_path)
-            self.unit_save_path_lineEdit.setText(unit_save_path)
-            self.hero_load_path_lineEdit.setText(hero_load_path)
-            self.hero_save_path_lineEdit.setText(hero_save_path)
-        except:
-            pass
-
     def init_ui(self):
         self.setupUi(self)
         self.setWindowTitle('Dota Tool')
         self.setWindowIcon(QIcon('app.ico'))
-        self.lineEdit_4.setText('2024/04/22')
-        self.lineEdit_5.setText('1.12.6')
+        self.lineEdit_4.setText('2024/04/23')
+        self.lineEdit_5.setText('1.12.7')
 
     def init_button(self):
-        self.set_top_checkBox.clicked.connect(self.set_to_top)  # 置顶按钮
+        # 置顶按钮
+        # 游戏路径
+        # 保存配置
+        # 读取配置
 
-        self.game_path_pushButton.clicked.connect(lambda: self.get_file_url2(self.game_path_lineEdit))  # 游戏路径
+        self.set_top_checkBox.clicked.connect(self.set_to_top)
+        self.game_path_pushButton.clicked.connect(lambda: self.get_file_url2(self.game_path_lineEdit))
         self.set_config_pushButton.clicked.connect(self.set_config)
+        self.read_config_pushButton.clicked.connect(self.read_config)
 
-        self.browse_unit_load_path_pushButton.clicked.connect(
-            lambda: self.get_file_url(self.unit_load_path_lineEdit))  # 读取路径，单位
-        self.browse_unit_save_path_pushButton.clicked.connect(
-            lambda: self.get_file_url(self.unit_save_path_lineEdit))  # 保存路径，单位
-        self.unit_load_pushButton.clicked.connect(lambda: self.get_unit_data(self.unit_load_path_lineEdit))  # 读取，单位
+        # 读取路径，单位
+        # 保存路径，单位
+        # 读取，单位
+        # 保存，单位
+        self.browse_unit_load_path_pushButton.clicked.connect(lambda: self.get_file_url(self.unit_load_path_lineEdit))
+        self.browse_unit_save_path_pushButton.clicked.connect(lambda: self.get_file_url(self.unit_save_path_lineEdit))
+        self.unit_load_pushButton.clicked.connect(lambda: self.get_unit_data(self.unit_load_path_lineEdit))
         self.unit_save_pushButton.clicked.connect(
-            lambda: self.save_file(self.unit_save_path_lineEdit.text(), self.unit_data))  # 保存，单位
+            lambda: self.save_file(self.unit_save_path_lineEdit.text(), self.unit_data))
 
-        self.good_guy_pushButton.clicked.connect(self.update_good_guy)  # 天辉小兵
-        self.bad_guy_pushButton.clicked.connect(self.update_bad_guy)  # 夜魇小兵
-        self.other_guy_pushButton.clicked.connect(self.update_other_guy)  # 其他单位
-        self.update_tower_pushButton.clicked.connect(self.update_tower_data)  # 防御塔
+        # 天辉小兵
+        # 夜魇小兵
+        # 其他单位
+        # 防御塔
+        self.good_guy_pushButton.clicked.connect(self.update_good_guy)
+        self.bad_guy_pushButton.clicked.connect(self.update_bad_guy)
+        self.other_guy_pushButton.clicked.connect(self.update_other_guy)
+        self.update_tower_pushButton.clicked.connect(self.update_tower_data)
 
-        self.browse_hero_load_path_pushButton.clicked.connect(
-            lambda: self.get_file_url(self.hero_load_path_lineEdit))  # 读取路径，英雄
-        self.browse_hero_save_path_pushButton.clicked.connect(
-            lambda: self.get_file_url(self.hero_save_path_lineEdit))  # 保存路径，英雄
-        self.hero_load_pushButton.clicked.connect(lambda: self.get_hero_data(self.hero_load_path_lineEdit))  # 读取，英雄
+        # 读取路径，英雄
+        # 保存路径，英雄
+        # 读取，英雄
+        # 保存，英雄
+        self.browse_hero_load_path_pushButton.clicked.connect(lambda: self.get_file_url(self.hero_load_path_lineEdit))
+        self.browse_hero_save_path_pushButton.clicked.connect(lambda: self.get_file_url(self.hero_save_path_lineEdit))
+        self.hero_load_pushButton.clicked.connect(lambda: self.get_hero_data(self.hero_load_path_lineEdit))
         self.hero_save_pushButton.clicked.connect(
-            lambda: self.save_file(self.hero_save_path_lineEdit.text(), self.hero_data))  # 保存，英雄
+            lambda: self.save_file(self.hero_save_path_lineEdit.text(), self.hero_data))
 
-        self.load_hero_name_pushButton.clicked.connect(self.get_hero_name)  # 读取英雄名
-        self.load_hero_value_pushButton.clicked.connect(self.get_hero_value)  # 读取英雄数值
-        self.update_hero_value_pushButton.clicked.connect(self.update_hero_data)  # 写入新的数值
-        self.search_hero_lineEdit.textChanged.connect(self.search_hero)  # 搜索英雄名
-        self.hero_name_comboBox.currentIndexChanged.connect(self.load_hero_value_pushButton.click)  # 当英雄名发生变化，自动获取英雄数值
+        # 读取英雄名
+        # 读取英雄数值
+        # 写入新的数值
+        # 搜索英雄名
+        # 当英雄名发生变化，自动获取英雄数值
+        self.load_hero_name_pushButton.clicked.connect(self.get_hero_name)
+        self.load_hero_value_pushButton.clicked.connect(self.get_hero_value)
+        self.update_hero_value_pushButton.clicked.connect(self.update_hero_data)
+        self.search_hero_lineEdit.textChanged.connect(self.search_hero)
+        self.hero_name_comboBox.currentIndexChanged.connect(self.load_hero_value_pushButton.click)
 
         self.pushButton_9.clicked.connect(self.ability_replace)
         self.pushButton_47.clicked.connect(self.open_vpk_file)
@@ -128,14 +128,34 @@ class Window(QWidget, Ui_Form):
         self.copy_hero_ab_pushButton.clicked.connect(self.copy_hero_ab)
         self.pushButton_50.clicked.connect(self.run_vpk_mod_dota2)
 
-        self.open_load_unitstxt_pushButton.clicked.connect(
-            lambda: self.open_txt(self.unit_load_path_lineEdit.text()))  # 打开旧的npc_units.txt
-        self.open_save_unitstxt_pushButton.clicked.connect(
-            lambda: self.open_txt(self.unit_save_path_lineEdit.text()))  # 打开新的npc_units.txt
-        self.open_load_herotxt_pushButton.clicked.connect(
-            lambda: self.open_txt(self.hero_load_path_lineEdit.text()))  # 打开旧的npc_heroes.txt
-        self.open_save_herotxt_pushButton.clicked.connect(
-            lambda: self.open_txt(self.hero_save_path_lineEdit.text()))  # 打开新的npc_heroes.txt
+        # 打开旧的npc_units.txt
+        # 打开新的npc_units.txt
+        # 打开旧的npc_heroes.txt
+        # 打开新的npc_heroes.txt
+        self.open_load_unitstxt_pushButton.clicked.connect(lambda: self.open_txt(self.unit_load_path_lineEdit.text()))
+        self.open_save_unitstxt_pushButton.clicked.connect(lambda: self.open_txt(self.unit_save_path_lineEdit.text()))
+        self.open_load_herotxt_pushButton.clicked.connect(lambda: self.open_txt(self.hero_load_path_lineEdit.text()))
+        self.open_save_herotxt_pushButton.clicked.connect(lambda: self.open_txt(self.hero_save_path_lineEdit.text()))
+
+    def read_config(self):
+        try:
+            # 读取config.ini
+            config.read('config.ini')
+            game_path = config.get('path', 'game_path')
+            unit_load_path = config.get('path', 'unit_load_path')
+            unit_save_path = config.get('path', 'unit_save_path')
+            hero_load_path = config.get('path', 'hero_load_path')
+            hero_save_path = config.get('path', 'hero_save_path')
+
+            # 尝试读取配置
+            self.game_path_lineEdit.setText(game_path)
+            self.unit_load_path_lineEdit.setText(unit_load_path)
+            self.unit_save_path_lineEdit.setText(unit_save_path)
+            self.hero_load_path_lineEdit.setText(hero_load_path)
+            self.hero_save_path_lineEdit.setText(hero_save_path)
+            print(Fore.LIGHTGREEN_EX + '读取config.ini配置成功。')
+        except Exception as e:
+            print(Fore.LIGHTGREEN_EX + f'读取config.ini配置失败，原因：{e}')
 
     @staticmethod
     def open_txt(path):
@@ -698,10 +718,14 @@ class Window(QWidget, Ui_Form):
     def set_config(self):
         try:
             config['path']['game_path'] = self.game_path_lineEdit.text()
+            config['path']['unit_load_path'] = self.unit_load_path_lineEdit.text()
+            config['path']['unit_save_path'] = self.unit_save_path_lineEdit.text()
+            config['path']['hero_load_path'] = self.hero_load_path_lineEdit.text()
+            config['path']['hero_save_path'] = self.hero_save_path_lineEdit.text()
             with open('config.ini', 'w') as configfile:
                 config.write(configfile)
                 print(Fore.LIGHTGREEN_EX + '写入配置成功。')
-
+            os.startfile('config.ini')
         except:
             print(Fore.LIGHTRED_EX + '写入配置失败！')
 

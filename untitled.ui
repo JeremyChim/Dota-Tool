@@ -31,6 +31,10 @@ QTextEdit
 {
 	font: 700 italic 10pt &quot;Consolas&quot;;
 }
+QSpinBox
+{
+	font: 700 italic 10pt &quot;Consolas&quot;;
+}
 QDoubleSpinBox
 {
 	font: 700 italic 10pt &quot;Consolas&quot;;
@@ -49,114 +53,127 @@ QDoubleSpinBox
        <x>20</x>
        <y>20</y>
        <width>911</width>
-       <height>171</height>
+       <height>231</height>
       </rect>
      </property>
      <property name="title">
       <string>路径</string>
      </property>
-     <widget class="QWidget" name="layoutWidget_8">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>90</y>
-        <width>871</width>
-        <height>61</height>
-       </rect>
-      </property>
-      <layout class="QHBoxLayout" name="horizontalLayout_56">
-       <item>
-        <widget class="QPushButton" name="pushButton_51">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text">
-          <string>配置gi</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pushButton_52">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text">
-          <string>配置gi2</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pushButton_54">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text">
-          <string>打开mod文件夹</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-     <widget class="QWidget" name="layoutWidget">
+     <widget class="QWidget" name="">
       <property name="geometry">
        <rect>
         <x>20</x>
         <y>30</y>
         <width>871</width>
-        <height>41</height>
+        <height>181</height>
        </rect>
       </property>
-      <layout class="QHBoxLayout" name="horizontalLayout_57">
+      <layout class="QVBoxLayout" name="verticalLayout_22">
        <item>
-        <widget class="QLineEdit" name="game_path_lineEdit">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="placeholderText">
-          <string>…/SteamLibrary/steamapps/common/dota 2 beta/game</string>
-         </property>
-        </widget>
+        <layout class="QHBoxLayout" name="horizontalLayout_57">
+         <item>
+          <widget class="QLineEdit" name="game_path_lineEdit">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="placeholderText">
+            <string>…/SteamLibrary/steamapps/common/dota 2 beta/game</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="game_path_pushButton">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>浏览</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </item>
        <item>
-        <widget class="QPushButton" name="game_path_pushButton">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text">
-          <string>浏览</string>
-         </property>
-        </widget>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <widget class="QPushButton" name="read_config_pushButton">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>读取配置</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="set_config_pushButton">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>保存配置</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </item>
        <item>
-        <widget class="QPushButton" name="set_config_pushButton">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text">
-          <string>写入默认配置</string>
-         </property>
-        </widget>
+        <layout class="QHBoxLayout" name="horizontalLayout_56">
+         <item>
+          <widget class="QPushButton" name="pushButton_51">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>配置gi</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_52">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>配置gi2</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_54">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>创建/打开MOD文件夹</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </item>
       </layout>
      </widget>
@@ -165,7 +182,7 @@ QDoubleSpinBox
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>220</y>
+       <y>260</y>
        <width>911</width>
        <height>111</height>
       </rect>
@@ -192,7 +209,7 @@ QDoubleSpinBox
           </sizepolicy>
          </property>
          <property name="text">
-          <string>打开vpk配置文件夹</string>
+          <string>创建/打开VPK配置文件夹</string>
          </property>
         </widget>
        </item>
@@ -205,7 +222,7 @@ QDoubleSpinBox
           </sizepolicy>
          </property>
          <property name="text">
-          <string>生成vpk</string>
+          <string>生成VPK</string>
          </property>
         </widget>
        </item>
@@ -218,7 +235,7 @@ QDoubleSpinBox
           </sizepolicy>
          </property>
          <property name="text">
-          <string>移动vpk至mod文件夹</string>
+          <string>移动VPK至MOD文件夹</string>
          </property>
         </widget>
        </item>
@@ -229,7 +246,7 @@ QDoubleSpinBox
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>360</y>
+       <y>380</y>
        <width>911</width>
        <height>181</height>
       </rect>
@@ -294,30 +311,34 @@ QDoubleSpinBox
         </layout>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton_49">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text">
-          <string>启动Dota</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pushButton_50">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text">
-          <string>生成vpk移动至mod，并启动Dota</string>
-         </property>
-        </widget>
+        <layout class="QHBoxLayout" name="horizontalLayout_68">
+         <item>
+          <widget class="QPushButton" name="pushButton_50">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>生成VPK并启动DOTA</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_49">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>启动DOTA</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </item>
       </layout>
      </widget>
@@ -378,6 +399,9 @@ QDoubleSpinBox
         <layout class="QVBoxLayout" name="verticalLayout_25">
          <item>
           <widget class="QDoubleSpinBox" name="good_guy_doubleSpinBox">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(0, 170, 127);</string>
+           </property>
            <property name="decimals">
             <number>1</number>
            </property>
@@ -394,6 +418,9 @@ QDoubleSpinBox
          </item>
          <item>
           <widget class="QDoubleSpinBox" name="bad_guy_doubleSpinBox">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(170, 0, 0);</string>
+           </property>
            <property name="decimals">
             <number>1</number>
            </property>
@@ -404,12 +431,15 @@ QDoubleSpinBox
             <double>0.100000000000000</double>
            </property>
            <property name="value">
-            <double>2.500000000000000</double>
+            <double>2.000000000000000</double>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QDoubleSpinBox" name="other_guy_doubleSpinBox">
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
            <property name="decimals">
             <number>1</number>
            </property>
@@ -536,7 +566,7 @@ QDoubleSpinBox
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>320</y>
+       <y>280</y>
        <width>921</width>
        <height>311</height>
       </rect>
@@ -3016,6 +3046,17 @@ li.checked::marker { content: &quot;\2612&quot;; }
     </rect>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout_69"/>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>2</width>
+     <height>2</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout"/>
   </widget>
  </widget>
  <resources/>
