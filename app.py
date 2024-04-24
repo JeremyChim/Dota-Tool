@@ -59,8 +59,8 @@ class Window(QWidget, Ui_Form):
         self.setupUi(self)
         self.setWindowTitle('Dota Tool')
         self.setWindowIcon(QIcon('app.ico'))
-        self.lineEdit_4.setText('2024/04/23')
-        self.lineEdit_5.setText('1.12.7')
+        self.lineEdit_4.setText('2024/04/24')
+        self.lineEdit_5.setText('1.12.8')
 
     def init_button(self):
         # 置顶按钮
@@ -583,6 +583,8 @@ class Window(QWidget, Ui_Form):
         if os.path.exists(folder_name):
             print(f"vpk配置文件夹 {folder_name} 已存在，正在打开")
             os.startfile(folder_name)
+            if not os.path.exists(folder_name2):
+                os.makedirs(folder_name2)
         else:
             # 如果文件夹不存在，则创建它
             try:
