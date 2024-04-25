@@ -60,7 +60,7 @@ class Window(QWidget, Ui_Form):
         self.setWindowTitle('Dota Tool')
         self.setWindowIcon(QIcon('app.ico'))
         self.lineEdit_4.setText('2024/04/25')
-        self.lineEdit_5.setText('1.12.12')
+        self.lineEdit_5.setText('1.12.13')
 
     def init_button(self):
         # 置顶按钮
@@ -638,37 +638,39 @@ class Window(QWidget, Ui_Form):
 
     def ability_calc(self):
         try:
-            # 原字符串
-            # original_string = '     "ab"         "100 205 310 415"'
-            # print(original_string.split('"'))
+            self.textEdit_5.clear()
+            for original_string in self.textEdit_4.toPlainText().split('\n'):
+                # 原字符串
+                # original_string = '     "ab"         "100 205 310 415"'
+                # print(original_string.split('"'))
 
-            original_string: str = self.textEdit_4.toPlainText()
-            original_list: list[str] = original_string.split('"')
-            original_string: str = original_list[3]
+                original_string: str
+                original_list: list[str] = original_string.split('"')
+                original_string: str = original_list[3]
 
-            # 将原字符串按空格分割成数字列表
-            numbers: list[float] = [float(num) for num in original_string.split()]
+                # 将原字符串按空格分割成数字列表
+                numbers: list[float] = [float(num) for num in original_string.split()]
 
-            # 计算公差
-            diff = numbers[1] - numbers[0]
+                # 计算公差
+                diff = numbers[1] - numbers[0]
 
-            # 使用计算出的公差来找出接下来的两个数字
-            next_number1 = numbers[-1] + diff
-            next_number2 = next_number1 + diff
+                # 使用计算出的公差来找出接下来的两个数字
+                next_number1 = numbers[-1] + diff
+                next_number2 = next_number1 + diff
 
-            # 将新的数字添加到列表中
-            numbers.append(next_number1)
-            numbers.append(next_number2)
-            numbers2: list[str] = [f'{num:.{self.spinBox_11.value()}f}' for num in numbers]
+                # 将新的数字添加到列表中
+                numbers.append(next_number1)
+                numbers.append(next_number2)
+                numbers2: list[str] = [f'{num:.{self.spinBox_11.value()}f}' for num in numbers]
 
-            # 将列表中的数字重新组合成字符串
-            new_string: str = " ".join(numbers2)
-            original_list[3] = new_string
-            new = '"'.join(original_list)
+                # 将列表中的数字重新组合成字符串
+                new_string: str = " ".join(numbers2)
+                original_list[3] = new_string
+                new = '"'.join(original_list)
 
-            # 输出结果
-            self.textEdit_5.setText(new)
-            print(new)
+                # 输出结果
+                self.textEdit_5.append(new)
+                print(new)
 
         except:
             print(Fore.LIGHTRED_EX + '技能计算失败！')
