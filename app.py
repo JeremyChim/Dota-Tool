@@ -60,7 +60,7 @@ class Window(QWidget, Ui_Form):
         self.setWindowTitle('Dota Tool')
         self.setWindowIcon(QIcon('app.ico'))
         self.lineEdit_4.setText('2024/04/25')
-        self.lineEdit_5.setText('1.12.10')
+        self.lineEdit_5.setText('1.12.11')
 
     def init_button(self):
         # 置顶按钮
@@ -69,7 +69,7 @@ class Window(QWidget, Ui_Form):
         # 读取配置
 
         self.set_top_checkBox.clicked.connect(self.set_to_top)
-        self.game_path_pushButton.clicked.connect(lambda: self.get_file_url2(self.game_path_lineEdit))
+        self.game_path_pushButton.clicked.connect(lambda: self.get_file_url2(self.game_path_lineEdit, ""))
         self.set_config_pushButton.clicked.connect(self.set_config)
         self.read_config_pushButton.clicked.connect(self.read_config)
 
@@ -78,10 +78,9 @@ class Window(QWidget, Ui_Form):
         # 读取，单位
         # 保存，单位
         self.browse_unit_load_path_pushButton.clicked.connect(lambda: self.get_file_url(self.unit_load_path_lineEdit))
-        self.browse_unit_save_path_pushButton.clicked.connect(lambda: self.get_file_url(self.unit_save_path_lineEdit))
+        self.browse_unit_save_path_pushButton.clicked.connect(lambda: self.get_file_url2(self.unit_save_path_lineEdit, "/npc_units.txt"))
         self.unit_load_pushButton.clicked.connect(lambda: self.get_unit_data(self.unit_load_path_lineEdit))
-        self.unit_save_pushButton.clicked.connect(
-            lambda: self.save_file(self.unit_save_path_lineEdit.text(), self.unit_data))
+        self.unit_save_pushButton.clicked.connect(lambda: self.save_file(self.unit_save_path_lineEdit.text(), self.unit_data))
 
         # 天辉小兵
         # 夜魇小兵
@@ -97,7 +96,7 @@ class Window(QWidget, Ui_Form):
         # 读取，英雄
         # 保存，英雄
         self.browse_hero_load_path_pushButton.clicked.connect(lambda: self.get_file_url(self.hero_load_path_lineEdit))
-        self.browse_hero_save_path_pushButton.clicked.connect(lambda: self.get_file_url(self.hero_save_path_lineEdit))
+        self.browse_hero_save_path_pushButton.clicked.connect(lambda: self.get_file_url2(self.hero_save_path_lineEdit, "/npc_heroes.txt"))
         self.hero_load_pushButton.clicked.connect(lambda: self.get_hero_data(self.hero_load_path_lineEdit))
         self.hero_save_pushButton.clicked.connect(
             lambda: self.save_file(self.hero_save_path_lineEdit.text(), self.hero_data))
@@ -199,8 +198,8 @@ class Window(QWidget, Ui_Form):
             pass
 
     @staticmethod
-    def get_file_url2(line_edit):
-        file_url = QFileDialog.getExistingDirectory()
+    def get_file_url2(line_edit, file_name:str):
+        file_url = QFileDialog.getExistingDirectory() + file_name
         if file_url:
             line_edit.setText(file_url)
             print(f'获取文件夹路径：{Fore.LIGHTCYAN_EX + file_url}')

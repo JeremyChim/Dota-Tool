@@ -21,7 +21,7 @@ exe = EXE(
     a.binaries,
     a.datas,
     [],
-    name='Dota Tool v1.12.10',
+    name='Dota Tool v1.12.11',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
