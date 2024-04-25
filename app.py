@@ -49,7 +49,7 @@ class Window(QWidget, Ui_Form):
                                     5659, 5752, 5845]
 
         # 首次点击
-        self.read_config_pushButton.click() # 读取配置
+        self.read_config_pushButton.click()  # 读取配置
         self.unit_load_pushButton.click()  # 读取单位数据
         self.hero_load_pushButton.click()  # 读取英雄数据
         self.load_hero_name_pushButton.click()  # 读取英雄列表数据
@@ -60,7 +60,7 @@ class Window(QWidget, Ui_Form):
         self.setWindowTitle('Dota Tool')
         self.setWindowIcon(QIcon('app.ico'))
         self.lineEdit_4.setText('2024/04/25')
-        self.lineEdit_5.setText('1.12.11')
+        self.lineEdit_5.setText('1.12.12')
 
     def init_button(self):
         # 置顶按钮
@@ -78,9 +78,11 @@ class Window(QWidget, Ui_Form):
         # 读取，单位
         # 保存，单位
         self.browse_unit_load_path_pushButton.clicked.connect(lambda: self.get_file_url(self.unit_load_path_lineEdit))
-        self.browse_unit_save_path_pushButton.clicked.connect(lambda: self.get_file_url2(self.unit_save_path_lineEdit, "/npc_units.txt"))
+        self.browse_unit_save_path_pushButton.clicked.connect(
+            lambda: self.get_file_url2(self.unit_save_path_lineEdit, "/npc_units.txt"))
         self.unit_load_pushButton.clicked.connect(lambda: self.get_unit_data(self.unit_load_path_lineEdit))
-        self.unit_save_pushButton.clicked.connect(lambda: self.save_file(self.unit_save_path_lineEdit.text(), self.unit_data))
+        self.unit_save_pushButton.clicked.connect(
+            lambda: self.save_file(self.unit_save_path_lineEdit.text(), self.unit_data))
 
         # 天辉小兵
         # 夜魇小兵
@@ -96,7 +98,8 @@ class Window(QWidget, Ui_Form):
         # 读取，英雄
         # 保存，英雄
         self.browse_hero_load_path_pushButton.clicked.connect(lambda: self.get_file_url(self.hero_load_path_lineEdit))
-        self.browse_hero_save_path_pushButton.clicked.connect(lambda: self.get_file_url2(self.hero_save_path_lineEdit, "/npc_heroes.txt"))
+        self.browse_hero_save_path_pushButton.clicked.connect(
+            lambda: self.get_file_url2(self.hero_save_path_lineEdit, "/npc_heroes.txt"))
         self.hero_load_pushButton.clicked.connect(lambda: self.get_hero_data(self.hero_load_path_lineEdit))
         self.hero_save_pushButton.clicked.connect(
             lambda: self.save_file(self.hero_save_path_lineEdit.text(), self.hero_data))
@@ -139,9 +142,11 @@ class Window(QWidget, Ui_Form):
     def read_config(self):
         try:
             # 读取项目路径中的NPC文件
-            unit_load_path = (os.getcwd() + '/npc/npc_units.txt').replace('\\', '/') 
+            unit_load_path = (os.getcwd() + '/npc/npc_units.txt').replace('\\', '/')
             hero_load_path = (os.getcwd() + '/npc/npc_heroes.txt').replace('\\', '/')
-            
+            self.unit_load_path_lineEdit.setText(unit_load_path)
+            self.hero_load_path_lineEdit.setText(hero_load_path)
+
             # 读取config.ini
             config.read('config.ini')
             game_path = config.get('path', 'game_path')
@@ -150,9 +155,8 @@ class Window(QWidget, Ui_Form):
 
             # 尝试读取配置
             self.game_path_lineEdit.setText(game_path)
-            self.unit_load_path_lineEdit.setText(unit_load_path)
+
             self.unit_save_path_lineEdit.setText(unit_save_path)
-            self.hero_load_path_lineEdit.setText(hero_load_path)
             self.hero_save_path_lineEdit.setText(hero_save_path)
             print(Fore.LIGHTGREEN_EX + '读取config.ini配置成功。')
         except Exception as e:
@@ -198,9 +202,10 @@ class Window(QWidget, Ui_Form):
             pass
 
     @staticmethod
-    def get_file_url2(line_edit, file_name:str):
-        file_url = QFileDialog.getExistingDirectory() + file_name
+    def get_file_url2(line_edit, file_name: str):
+        file_url = QFileDialog.getExistingDirectory(directory=os.getcwd())
         if file_url:
+            file_url = file_url + file_name
             line_edit.setText(file_url)
             print(f'获取文件夹路径：{Fore.LIGHTCYAN_EX + file_url}')
 
@@ -720,9 +725,14 @@ class Window(QWidget, Ui_Form):
 
     def set_config(self):
         try:
-            config['path']['game_path'] = self.game_path_lineEdit.text()
-            config['path']['unit_save_path'] = self.unit_save_path_lineEdit.text()
-            config['path']['hero_save_path'] = self.hero_save_path_lineEdit.text()
+            config['path'] = {
+                'game_path': self.game_path_lineEdit.text(),
+                'unit_save_path': self.unit_save_path_lineEdit.text(),
+                'hero_save_path': self.hero_save_path_lineEdit.text()}
+            # config['path']['game_path'] = self.game_path_lineEdit.text()
+            # config['path']['unit_save_path'] = self.unit_save_path_lineEdit.text()
+            # config['path']['hero_save_path'] = self.hero_save_path_lineEdit.text()
+
             with open('config.ini', 'w') as configfile:
                 config.write(configfile)
                 print(Fore.LIGHTGREEN_EX + '写入配置成功。')
