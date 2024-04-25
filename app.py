@@ -59,8 +59,8 @@ class Window(QWidget, Ui_Form):
         self.setupUi(self)
         self.setWindowTitle('Dota Tool')
         self.setWindowIcon(QIcon('app.ico'))
-        self.lineEdit_4.setText('2024/04/24')
-        self.lineEdit_5.setText('1.12.8')
+        self.lineEdit_4.setText('2024/04/25')
+        self.lineEdit_5.setText('1.12.9')
 
     def init_button(self):
         # 置顶按钮
@@ -139,12 +139,14 @@ class Window(QWidget, Ui_Form):
 
     def read_config(self):
         try:
+            # 读取项目路径中的NPC文件
+            unit_load_path = (os.getcwd() + '/npc/npc_units.txt').replace('\\', '/') 
+            hero_load_path = os.getcwd() + '/npc/npc_heroes.txt'.replace('\\', '/')
+            
             # 读取config.ini
             config.read('config.ini')
             game_path = config.get('path', 'game_path')
-            unit_load_path = config.get('path', 'unit_load_path')
             unit_save_path = config.get('path', 'unit_save_path')
-            hero_load_path = config.get('path', 'hero_load_path')
             hero_save_path = config.get('path', 'hero_save_path')
 
             # 尝试读取配置
@@ -720,9 +722,7 @@ class Window(QWidget, Ui_Form):
     def set_config(self):
         try:
             config['path']['game_path'] = self.game_path_lineEdit.text()
-            config['path']['unit_load_path'] = self.unit_load_path_lineEdit.text()
             config['path']['unit_save_path'] = self.unit_save_path_lineEdit.text()
-            config['path']['hero_load_path'] = self.hero_load_path_lineEdit.text()
             config['path']['hero_save_path'] = self.hero_save_path_lineEdit.text()
             with open('config.ini', 'w') as configfile:
                 config.write(configfile)
