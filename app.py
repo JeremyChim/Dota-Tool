@@ -60,7 +60,7 @@ class Window(QWidget, Ui_Form):
         self.setWindowTitle('Dota Tool')
         self.setWindowIcon(QIcon('app.ico'))
         self.lineEdit_4.setText('2024/04/25')
-        self.lineEdit_5.setText('1.12.9')
+        self.lineEdit_5.setText('1.12.10')
 
     def init_button(self):
         # 置顶按钮
@@ -141,7 +141,7 @@ class Window(QWidget, Ui_Form):
         try:
             # 读取项目路径中的NPC文件
             unit_load_path = (os.getcwd() + '/npc/npc_units.txt').replace('\\', '/') 
-            hero_load_path = os.getcwd() + '/npc/npc_heroes.txt'.replace('\\', '/')
+            hero_load_path = (os.getcwd() + '/npc/npc_heroes.txt').replace('\\', '/')
             
             # 读取config.ini
             config.read('config.ini')
