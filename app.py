@@ -59,8 +59,8 @@ class Window(QWidget, Ui_Form):
         self.setupUi(self)
         self.setWindowTitle('Dota Tool')
         self.setWindowIcon(QIcon('app.ico'))
-        self.lineEdit_4.setText('2024/04/25')
-        self.lineEdit_5.setText('1.12.13')
+        self.lineEdit_4.setText('2024/04/26')
+        self.lineEdit_5.setText('1.12.14')
 
     def init_button(self):
         # 置顶按钮
@@ -120,6 +120,7 @@ class Window(QWidget, Ui_Form):
         self.pushButton_48.clicked.connect(self.run_vpk_script)
         self.pushButton_56.clicked.connect(self.add_attr_2)
         self.pushButton_58.clicked.connect(self.ability_calc)
+        self.pushButton_64.clicked.connect(lambda: self.ability_calc(is_big_ab=True))
         # self.pushButton_50.clicked.connect(self.config_steam_path)
         self.pushButton_51.clicked.connect(self.open_gi_file)
         self.pushButton_52.clicked.connect(self.open_gi2_file)
@@ -636,7 +637,7 @@ class Window(QWidget, Ui_Form):
             elif 'dota 2 beta' in file_url:
                 self.game_path_lineEdit.setText(file_url)  # SENT THE URL - steam
 
-    def ability_calc(self):
+    def ability_calc(self, is_big_ab: bool = False):
         try:
             self.textEdit_5.clear()
             for original_string in self.textEdit_4.toPlainText().split('\n'):
@@ -660,7 +661,8 @@ class Window(QWidget, Ui_Form):
 
                 # 将新的数字添加到列表中
                 numbers.append(next_number1)
-                numbers.append(next_number2)
+                if is_big_ab is False:
+                    numbers.append(next_number2)
                 numbers2: list[str] = [f'{num:.{self.spinBox_11.value()}f}' for num in numbers]
 
                 # 将列表中的数字重新组合成字符串
