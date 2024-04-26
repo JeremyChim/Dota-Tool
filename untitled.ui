@@ -135,7 +135,7 @@ QDoubleSpinBox
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_56">
          <item>
-          <widget class="QPushButton" name="pushButton_51">
+          <widget class="QPushButton" name="open_gi_pushButton">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
              <horstretch>0</horstretch>
@@ -148,7 +148,7 @@ QDoubleSpinBox
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_52">
+          <widget class="QPushButton" name="open_gi2_pushButton">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
              <horstretch>0</horstretch>
@@ -161,7 +161,7 @@ QDoubleSpinBox
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_54">
+          <widget class="QPushButton" name="open_mod_file_pushButton">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
              <horstretch>0</horstretch>
@@ -201,7 +201,7 @@ QDoubleSpinBox
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout_55">
        <item>
-        <widget class="QPushButton" name="pushButton_47">
+        <widget class="QPushButton" name="open_vpk_file_pushButton">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
            <horstretch>0</horstretch>
@@ -214,7 +214,7 @@ QDoubleSpinBox
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton_48">
+        <widget class="QPushButton" name="create_vpk_pushButton">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
            <horstretch>0</horstretch>
@@ -227,7 +227,7 @@ QDoubleSpinBox
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton_59">
+        <widget class="QPushButton" name="move_vpk_mod_pushButton">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
            <horstretch>0</horstretch>
@@ -296,7 +296,7 @@ QDoubleSpinBox
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_55">
+          <widget class="QPushButton" name="copy_boot_option_pushButton">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
              <horstretch>0</horstretch>
@@ -313,7 +313,7 @@ QDoubleSpinBox
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_68">
          <item>
-          <widget class="QPushButton" name="pushButton_50">
+          <widget class="QPushButton" name="vpk_mod_dota2_pushButton">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
              <horstretch>0</horstretch>
@@ -326,7 +326,7 @@ QDoubleSpinBox
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_49">
+          <widget class="QPushButton" name="start_dota2_pushButton">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
              <horstretch>0</horstretch>
@@ -3829,7 +3829,7 @@ p, li { white-space: pre-wrap; }
    </hints>
   </connection>
   <connection>
-   <sender>pushButton_55</sender>
+   <sender>copy_boot_option_pushButton</sender>
    <signal>clicked()</signal>
    <receiver>lineEdit_30</receiver>
    <slot>selectAll()</slot>
@@ -3845,7 +3845,7 @@ p, li { white-space: pre-wrap; }
    </hints>
   </connection>
   <connection>
-   <sender>pushButton_55</sender>
+   <sender>copy_boot_option_pushButton</sender>
    <signal>clicked()</signal>
    <receiver>lineEdit_30</receiver>
    <slot>copy()</slot>

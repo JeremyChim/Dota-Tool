@@ -25,6 +25,14 @@ config = configparser.ConfigParser()
 
 
 class Window(QWidget, Ui_Form):
+
+    def init_ui(self):
+        self.setupUi(self)
+        self.setWindowTitle('Dota Tool')
+        self.setWindowIcon(QIcon('app.ico'))
+        self.lineEdit_4.setText('2024/04/26')
+        self.lineEdit_5.setText('1.12.15')
+
     def __init__(self):
         super().__init__()
 
@@ -54,13 +62,6 @@ class Window(QWidget, Ui_Form):
         self.hero_load_pushButton.click()  # 读取英雄数据
         self.load_hero_name_pushButton.click()  # 读取英雄列表数据
         self.load_hero_value_pushButton.click()  # 读取英雄数值
-
-    def init_ui(self):
-        self.setupUi(self)
-        self.setWindowTitle('Dota Tool')
-        self.setWindowIcon(QIcon('app.ico'))
-        self.lineEdit_4.setText('2024/04/26')
-        self.lineEdit_5.setText('1.12.14')
 
     def init_button(self):
         # 置顶按钮
@@ -116,20 +117,20 @@ class Window(QWidget, Ui_Form):
         self.hero_name_comboBox.currentIndexChanged.connect(self.load_hero_value_pushButton.click)
 
         self.pushButton_9.clicked.connect(self.ability_replace)
-        self.pushButton_47.clicked.connect(self.open_vpk_file)
-        self.pushButton_48.clicked.connect(self.run_vpk_script)
+        self.open_vpk_file_pushButton.clicked.connect(self.open_vpk_file)
+        self.create_vpk_pushButton.clicked.connect(self.create_vpk)
         self.pushButton_56.clicked.connect(self.add_attr_2)
         self.pushButton_58.clicked.connect(self.ability_calc)
         self.pushButton_64.clicked.connect(lambda: self.ability_calc(is_big_ab=True))
         # self.pushButton_50.clicked.connect(self.config_steam_path)
-        self.pushButton_51.clicked.connect(self.open_gi_file)
-        self.pushButton_52.clicked.connect(self.open_gi2_file)
-        self.pushButton_54.clicked.connect(self.open_mod_file)
-        self.pushButton_59.clicked.connect(self.move_vpk_mod)
-        self.pushButton_49.clicked.connect(self.start_dota2)
+        self.open_gi_pushButton.clicked.connect(self.open_gi_file)
+        self.open_gi2_pushButton.clicked.connect(self.open_gi2_file)
+        self.open_mod_file_pushButton.clicked.connect(self.open_mod_file)
+        self.move_vpk_mod_pushButton.clicked.connect(self.move_vpk_mod)
+        self.start_dota2_pushButton.clicked.connect(self.start_dota2)
         self.pushButton_67.clicked.connect(self.add_lv25)
         self.copy_hero_ab_pushButton.clicked.connect(self.copy_hero_ab)
-        self.pushButton_50.clicked.connect(self.run_vpk_mod_dota2)
+        self.vpk_mod_dota2_pushButton.clicked.connect(self.vpk_mod_dota2)
 
         # 打开旧的npc_units.txt
         # 打开新的npc_units.txt
@@ -171,11 +172,11 @@ class Window(QWidget, Ui_Form):
         except Exception as e:
             print(Fore.LIGHTRED_EX + f'打开文件{path}错误，错误原因：{e}。')
 
-    def run_vpk_mod_dota2(self):
-        self.pushButton_48.click()  # 生成vpk
+    def vpk_mod_dota2(self):
+        self.create_vpk_pushButton.click()  # 生成vpk
         sleep(1)  # 等待1秒
-        self.pushButton_59.click()  # 移动到mod
-        self.pushButton_49.click()  # 启动DOTA2
+        self.move_vpk_mod_pushButton.click()  # 移动到mod
+        self.start_dota2_pushButton.click()  # 启动DOTA2
 
     def copy_hero_ab(self):
         hero_txt = self.hero_name_comboBox.currentText() + '.txt'
@@ -603,7 +604,7 @@ class Window(QWidget, Ui_Form):
                 print(Fore.LIGHTRED_EX + f"创建文件夹 {folder_name} 时出错: {e}")
 
     @staticmethod
-    def run_vpk_script():
+    def create_vpk():
         print('正在创建vpk文件中。。。')
         order = 'echo create vpk file... && "vpk/vpk.exe" "vpk/pak01_dir" && timeout 1 && exit'
         os.system(f'start cmd /k "{order}"')
