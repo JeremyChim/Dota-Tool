@@ -10,6 +10,7 @@ import sys
 import os
 import shutil
 import configparser
+import pyperclip
 
 from time import sleep
 from PyQt6.QtGui import QIcon
@@ -31,7 +32,7 @@ class Window(QWidget, Ui_Form):
         self.setWindowTitle('Dota Tool')
         self.setWindowIcon(QIcon('app.ico'))
         self.lineEdit_4.setText('2024/04/29')
-        self.lineEdit_5.setText('1.12.16')
+        self.lineEdit_5.setText('1.12.17')
 
     def __init__(self):
         super().__init__()
@@ -141,6 +142,9 @@ class Window(QWidget, Ui_Form):
         self.open_load_herotxt_pushButton.clicked.connect(lambda: self.open_txt(self.hero_load_path_lineEdit.text()))
         self.open_save_herotxt_pushButton.clicked.connect(lambda: self.open_txt(self.hero_save_path_lineEdit.text()))
 
+        # 复制英雄名
+        self.copy_hero_name_pushButton.clicked.connect(self.copy_hero_name)
+
     def read_config(self):
         try:
             # 读取项目路径中的NPC文件
@@ -163,6 +167,11 @@ class Window(QWidget, Ui_Form):
             print(Fore.LIGHTGREEN_EX + '读取config.ini配置成功。')
         except Exception as e:
             print(Fore.LIGHTGREEN_EX + f'读取config.ini配置失败，原因：{e}')
+
+    def copy_hero_name(self):
+        name = self.hero_name_comboBox.currentText()
+        print(f'copy name : {name}')
+        pyperclip.copy(name)
 
     @staticmethod
     def open_txt(path):

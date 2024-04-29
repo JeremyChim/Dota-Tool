@@ -41,7 +41,7 @@ QDoubleSpinBox
 }</string>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>2</number>
    </property>
    <widget class="QWidget" name="tab_5">
     <attribute name="title">
@@ -1858,12 +1858,12 @@ QDoubleSpinBox
        </item>
       </layout>
      </widget>
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="copy_hero_name_pushButton">
       <property name="geometry">
        <rect>
         <x>370</x>
         <y>30</y>
-        <width>75</width>
+        <width>241</width>
         <height>23</height>
        </rect>
       </property>

@@ -929,9 +929,9 @@ class Ui_Form(object):
         self.update_hero_value_pushButton.setObjectName("update_hero_value_pushButton")
         self.horizontalLayout_21.addWidget(self.update_hero_value_pushButton)
         self.horizontalLayout_21.setStretch(0, 1)
-        self.pushButton = QtWidgets.QPushButton(parent=self.groupBox_13)
-        self.pushButton.setGeometry(QtCore.QRect(370, 30, 75, 23))
-        self.pushButton.setObjectName("pushButton")
+        self.copy_hero_name_pushButton = QtWidgets.QPushButton(parent=self.groupBox_13)
+        self.copy_hero_name_pushButton.setGeometry(QtCore.QRect(370, 30, 241, 23))
+        self.copy_hero_name_pushButton.setObjectName("copy_hero_name_pushButton")
         self.tabWidget.addTab(self.tab_3, "")
         self.tab_6 = QtWidgets.QWidget()
         self.tab_6.setObjectName("tab_6")
@@ -1491,7 +1491,7 @@ class Ui_Form(object):
         self.verticalLayout.setObjectName("verticalLayout")
 
         self.retranslateUi(Form)
-        self.tabWidget.setCurrentIndex(0)
+        self.tabWidget.setCurrentIndex(2)
         self.pushButton_7.clicked.connect(self.lineEdit_7.selectAll) # type: ignore
         self.pushButton_6.clicked.connect(self.lineEdit_6.selectAll) # type: ignore
         self.pushButton_7.clicked.connect(self.lineEdit_7.copy) # type: ignore
@@ -1648,7 +1648,7 @@ class Ui_Form(object):
         self.load_hero_name_pushButton.setText(_translate("Form", "读取英雄名"))
         self.load_hero_value_pushButton.setText(_translate("Form", "读取英雄数值"))
         self.update_hero_value_pushButton.setText(_translate("Form", "写入新的数值"))
-        self.pushButton.setText(_translate("Form", "复制英雄名"))
+        self.copy_hero_name_pushButton.setText(_translate("Form", "复制英雄名"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), _translate("Form", "英雄"))
         self.groupBox_19.setTitle(_translate("Form", "模版"))
         self.lineEdit_31.setText(_translate("Form", "\"Ability25\"     \"\""))
