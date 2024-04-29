@@ -30,8 +30,8 @@ class Window(QWidget, Ui_Form):
         self.setupUi(self)
         self.setWindowTitle('Dota Tool')
         self.setWindowIcon(QIcon('app.ico'))
-        self.lineEdit_4.setText('2024/04/26')
-        self.lineEdit_5.setText('1.12.15')
+        self.lineEdit_4.setText('2024/04/29')
+        self.lineEdit_5.setText('1.12.16')
 
     def __init__(self):
         super().__init__()
@@ -104,6 +104,8 @@ class Window(QWidget, Ui_Form):
         self.hero_load_pushButton.clicked.connect(lambda: self.get_hero_data(self.hero_load_path_lineEdit))
         self.hero_save_pushButton.clicked.connect(
             lambda: self.save_file(self.hero_save_path_lineEdit.text(), self.hero_data))
+        self.hero_save_pushButton_2.clicked.connect(
+            lambda: self.save_file(self.hero_save_path_lineEdit.text(), self.hero_data))
 
         # 读取英雄名
         # 读取英雄数值
@@ -115,14 +117,12 @@ class Window(QWidget, Ui_Form):
         self.update_hero_value_pushButton.clicked.connect(self.update_hero_data)
         self.search_hero_lineEdit.textChanged.connect(self.search_hero)
         self.hero_name_comboBox.currentIndexChanged.connect(self.load_hero_value_pushButton.click)
-
         self.pushButton_9.clicked.connect(self.ability_replace)
         self.open_vpk_file_pushButton.clicked.connect(self.open_vpk_file)
         self.create_vpk_pushButton.clicked.connect(self.create_vpk)
         self.pushButton_56.clicked.connect(self.add_attr_2)
         self.pushButton_58.clicked.connect(self.ability_calc)
         self.pushButton_64.clicked.connect(lambda: self.ability_calc(is_big_ab=True))
-        # self.pushButton_50.clicked.connect(self.config_steam_path)
         self.open_gi_pushButton.clicked.connect(self.open_gi_file)
         self.open_gi2_pushButton.clicked.connect(self.open_gi2_file)
         self.open_mod_file_pushButton.clicked.connect(self.open_mod_file)
