@@ -1491,7 +1491,7 @@ class Ui_Form(object):
         self.verticalLayout.setObjectName("verticalLayout")
 
         self.retranslateUi(Form)
-        self.tabWidget.setCurrentIndex(2)
+        self.tabWidget.setCurrentIndex(0)
         self.pushButton_7.clicked.connect(self.lineEdit_7.selectAll) # type: ignore
         self.pushButton_6.clicked.connect(self.lineEdit_6.selectAll) # type: ignore
         self.pushButton_7.clicked.connect(self.lineEdit_7.copy) # type: ignore
@@ -1651,7 +1651,7 @@ class Ui_Form(object):
         self.copy_hero_name_pushButton.setText(_translate("Form", "复制英雄名"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), _translate("Form", "英雄"))
         self.groupBox_19.setTitle(_translate("Form", "模版"))
-        self.lineEdit_31.setText(_translate("Form", "\"Ability25\"     \"\""))
+        self.lineEdit_31.setText(_translate("Form", "\"MaxLevel\"                        \"4\""))
         self.pushButton_62.setText(_translate("Form", "复制"))
         self.lineEdit_32.setText(_translate("Form", "\"MaxLevel\"                        \"6\""))
         self.pushButton_63.setText(_translate("Form", "复制"))

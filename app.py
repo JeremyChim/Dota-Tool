@@ -32,24 +32,17 @@ class Window(QWidget, Ui_Form):
         self.setWindowTitle('Dota Tool')
         self.setWindowIcon(QIcon('app.ico'))
         self.lineEdit_4.setText('2024/04/29')
-        self.lineEdit_5.setText('1.12.17')
+        self.lineEdit_5.setText('1.12.18')
 
     def __init__(self):
         super().__init__()
 
         self.unit_data: list[str] = ['']  # 单位数据
         self.hero_data: list[str] = ['']  # 英雄数据
+        self.hero_name_list: list[str] = []  # 英雄列表
+        self.hero_line_list: list[int] = []  # 英雄所在行列表
 
-        self.init_ui()  # 初始化ui
-        self.init_button()  # 初始化按钮
-        self.init_attr_button()  # 初始化属性按钮
-        self.setAcceptDrops(True)  # 允许拖放，拖放路径读取功能
-
-        self.hero_name_list: list[str] = []
-        self.hero_line_list: list[int] = []
-
-        self.steam_path: str = ''
-
+        # 防御塔所在行列表
         self.good_list: list[int] = [511, 602, 693,
                                      1327, 1418, 1509, 1599, 1689, 1779,
                                      5938, 6031, 6124]
@@ -57,7 +50,12 @@ class Window(QWidget, Ui_Form):
                                     784, 875, 966, 1057, 1147, 1237,
                                     5659, 5752, 5845]
 
-        # 首次点击
+        self.init_ui()  # 初始化ui
+        self.init_button()  # 初始化按钮
+        self.init_attr_button()  # 初始化属性按钮
+        self.setAcceptDrops(True)  # 允许拖放，拖放路径读取功能
+
+        # 默认首次点击
         self.read_config_pushButton.click()  # 读取配置
         self.unit_load_pushButton.click()  # 读取单位数据
         self.hero_load_pushButton.click()  # 读取英雄数据
@@ -65,11 +63,11 @@ class Window(QWidget, Ui_Form):
         self.load_hero_value_pushButton.click()  # 读取英雄数值
 
     def init_button(self):
+
         # 置顶按钮
         # 游戏路径
         # 保存配置
         # 读取配置
-
         self.set_top_checkBox.clicked.connect(self.set_to_top)
         self.game_path_pushButton.clicked.connect(lambda: self.get_file_url2(self.game_path_lineEdit, ""))
         self.set_config_pushButton.clicked.connect(self.set_config)
@@ -118,20 +116,40 @@ class Window(QWidget, Ui_Form):
         self.update_hero_value_pushButton.clicked.connect(self.update_hero_data)
         self.search_hero_lineEdit.textChanged.connect(self.search_hero)
         self.hero_name_comboBox.currentIndexChanged.connect(self.load_hero_value_pushButton.click)
+
+        # 魔晶技能替换
+        # 普通技能计算
+        # 终极技能计算
         self.pushButton_9.clicked.connect(self.ability_replace)
-        self.open_vpk_file_pushButton.clicked.connect(self.open_vpk_file)
-        self.create_vpk_pushButton.clicked.connect(self.create_vpk)
-        self.pushButton_56.clicked.connect(self.add_attr_2)
         self.pushButton_58.clicked.connect(self.ability_calc)
         self.pushButton_64.clicked.connect(lambda: self.ability_calc(is_big_ab=True))
+
+        # 打开VPK配置文件夹
+        # 生成VPK文件
+        # 打开gi文件
+        # 打开gi2文件
+        # 打开MOD文件夹
+        self.open_vpk_file_pushButton.clicked.connect(self.open_vpk_file)
+        self.create_vpk_pushButton.clicked.connect(self.create_vpk)
         self.open_gi_pushButton.clicked.connect(self.open_gi_file)
         self.open_gi2_pushButton.clicked.connect(self.open_gi2_file)
         self.open_mod_file_pushButton.clicked.connect(self.open_mod_file)
+
+        # 将VPK文件移动至MOD文件夹
+        # 开始Dota2
+        # 一键生成VPK，移动至MOD，并启动Dota2
         self.move_vpk_mod_pushButton.clicked.connect(self.move_vpk_mod)
         self.start_dota2_pushButton.clicked.connect(self.start_dota2)
+        self.vpk_mod_dota2_pushButton.clicked.connect(self.vpk_mod_dota2)
+
+        # 属性+++
+        # 天赋属性点清空
+        # 复制英雄技能文件至VPK配置文件夹
+        # 复制英雄名
+        self.pushButton_56.clicked.connect(self.add_attr_2)
         self.pushButton_67.clicked.connect(self.add_lv25)
         self.copy_hero_ab_pushButton.clicked.connect(self.copy_hero_ab)
-        self.vpk_mod_dota2_pushButton.clicked.connect(self.vpk_mod_dota2)
+        self.copy_hero_name_pushButton.clicked.connect(self.copy_hero_name)
 
         # 打开旧的npc_units.txt
         # 打开新的npc_units.txt
@@ -142,36 +160,36 @@ class Window(QWidget, Ui_Form):
         self.open_load_herotxt_pushButton.clicked.connect(lambda: self.open_txt(self.hero_load_path_lineEdit.text()))
         self.open_save_herotxt_pushButton.clicked.connect(lambda: self.open_txt(self.hero_save_path_lineEdit.text()))
 
-        # 复制英雄名
-        self.copy_hero_name_pushButton.clicked.connect(self.copy_hero_name)
-
     def read_config(self):
         try:
             # 读取项目路径中的NPC文件
             unit_load_path = (os.getcwd() + '/npc/npc_units.txt').replace('\\', '/')
             hero_load_path = (os.getcwd() + '/npc/npc_heroes.txt').replace('\\', '/')
+            unit_save_path = (os.getcwd() + '/vpk/pak01_dir/scripts/npc/npc_units.txt').replace('\\', '/')
+            hero_save_path = (os.getcwd() + '/vpk/pak01_dir/scripts/npc/npc_heroes.txt').replace('\\', '/')
             self.unit_load_path_lineEdit.setText(unit_load_path)
             self.hero_load_path_lineEdit.setText(hero_load_path)
+            self.unit_save_path_lineEdit.setText(unit_save_path)
+            self.hero_save_path_lineEdit.setText(hero_save_path)
 
             # 读取config.ini
             config.read('config.ini')
             game_path = config.get('path', 'game_path')
-            unit_save_path = config.get('path', 'unit_save_path')
-            hero_save_path = config.get('path', 'hero_save_path')
 
             # 尝试读取配置
             self.game_path_lineEdit.setText(game_path)
-
-            self.unit_save_path_lineEdit.setText(unit_save_path)
-            self.hero_save_path_lineEdit.setText(hero_save_path)
             print(Fore.LIGHTGREEN_EX + '读取config.ini配置成功。')
+
         except Exception as e:
             print(Fore.LIGHTGREEN_EX + f'读取config.ini配置失败，原因：{e}')
 
     def copy_hero_name(self):
-        name = self.hero_name_comboBox.currentText()
-        print(f'copy name : {name}')
-        pyperclip.copy(name)
+        try:
+            name = self.hero_name_comboBox.currentText()
+            print(f'复制英雄名：{Fore.LIGHTMAGENTA_EX + name}')
+            pyperclip.copy(name)
+        except Exception as e:
+            print(f'复制英雄名发生错误，原因：{e}')
 
     @staticmethod
     def open_txt(path):
@@ -189,7 +207,7 @@ class Window(QWidget, Ui_Form):
 
     def copy_hero_ab(self):
         hero_txt = self.hero_name_comboBox.currentText() + '.txt'
-        print(f'复制文件名：{hero_txt}')
+        # print(f'复制文件名：{hero_txt}')
 
         src = self.hero_load_path_lineEdit.text().replace('npc_heroes.txt', f'heroes/{hero_txt}')  # 替换路径
         dst = self.hero_save_path_lineEdit.text().replace('npc_heroes.txt', f'heroes/{hero_txt}')  # 替换路径
@@ -235,8 +253,8 @@ class Window(QWidget, Ui_Form):
                 print(Fore.LIGHTGREEN_EX + '读取单位数据成功，',
                       Fore.LIGHTBLUE_EX + f'共有{len(self.unit_data)}行，',
                       Fore.LIGHTCYAN_EX + f'读取路径：{file_url}。')
-        except:
-            print(Fore.LIGHTRED_EX + '读取单位数据失败！')
+        except Exception as e:
+            print(Fore.LIGHTRED_EX + f'读取单位数据失败！原因是：{e.__str__()}')
 
     def get_hero_data(self, line_edit):
         file_url = line_edit.text()
@@ -246,8 +264,8 @@ class Window(QWidget, Ui_Form):
                 print(Fore.LIGHTGREEN_EX + '读取英雄数据成功，',
                       Fore.LIGHTBLUE_EX + f'共有{len(self.hero_data)}行，',
                       Fore.LIGHTCYAN_EX + f'读取路径：{file_url}。')
-        except:
-            print(Fore.LIGHTRED_EX + '读取英雄数据失败！')
+        except Exception as e:
+            print(Fore.LIGHTRED_EX + f'读取英雄数据失败！原因是：{e.__str__()}')
 
     @staticmethod
     def save_file(save_path, file_content):
@@ -257,8 +275,8 @@ class Window(QWidget, Ui_Form):
                 print(Fore.LIGHTGREEN_EX + '保存数据成功，',
                       Fore.LIGHTBLUE_EX + f'共有{len(file_content)}行，',
                       Fore.LIGHTCYAN_EX + f'保存路径：{save_path}')
-        except:
-            print(Fore.LIGHTRED_EX + 'Somthing is worry T_T')
+        except Exception as e:
+            print(Fore.LIGHTRED_EX + f'保存数据错误，原因是：{e}')
 
     def update_good_guy(self):
         try:
@@ -286,8 +304,8 @@ class Window(QWidget, Ui_Form):
 
                 line_num += 1
             print(Fore.LIGHTGREEN_EX + '天辉小兵数据更新成功。')
-        except:
-            print(Fore.LIGHTRED_EX + '数据更新失败！')
+        except Exception as e:
+            print(Fore.LIGHTRED_EX + f'数据更新失败！原因是：{e}')
 
     def update_bad_guy(self):
         try:
@@ -315,8 +333,8 @@ class Window(QWidget, Ui_Form):
 
                 line_num += 1
             print(Fore.LIGHTGREEN_EX + '夜魇小兵数据更新成功。')
-        except:
-            print(Fore.LIGHTRED_EX + '数据更新失败！')
+        except Exception as e:
+            print(Fore.LIGHTRED_EX + f'数据更新失败！原因是：{e}')
 
     def update_other_guy(self):
         try:
@@ -692,16 +710,16 @@ class Window(QWidget, Ui_Form):
             path = self.game_path_lineEdit.text() + r'/dota/gameinfo.gi'
             print(f'正在打开gameinfo.gi文件，路径：{Fore.LIGHTBLUE_EX + path}')
             os.startfile(path)
-        except:
-            print(Fore.LIGHTRED_EX + '打开gameinfo.gi文件失败！')
+        except Exception as e:
+            print(Fore.LIGHTRED_EX + f'打开gameinfo.gi文件失败！原因是：{e.__str__()}')
 
     def open_gi2_file(self):
         try:
             path = self.game_path_lineEdit.text() + '/dota/gameinfo_branchspecific.gi'
             print(f'正在打开gameinfo_branchspecific.gi文件，路径：{Fore.LIGHTBLUE_EX + path}')
             os.startfile(path)
-        except:
-            print(Fore.LIGHTRED_EX + '打开gameinfo_branchspecific.gi文件失败！')
+        except Exception as e:
+            print(Fore.LIGHTRED_EX + f'打开gameinfo_branchspecific.gi文件失败！原因是：{e.__str__()}')
 
     def open_mod_file(self):
         folder_name = self.game_path_lineEdit.text() + '/mod'
@@ -739,13 +757,7 @@ class Window(QWidget, Ui_Form):
 
     def set_config(self):
         try:
-            config['path'] = {
-                'game_path': self.game_path_lineEdit.text(),
-                'unit_save_path': self.unit_save_path_lineEdit.text(),
-                'hero_save_path': self.hero_save_path_lineEdit.text()}
-            # config['path']['game_path'] = self.game_path_lineEdit.text()
-            # config['path']['unit_save_path'] = self.unit_save_path_lineEdit.text()
-            # config['path']['hero_save_path'] = self.hero_save_path_lineEdit.text()
+            config['path'] = {'game_path': self.game_path_lineEdit.text()}
 
             with open('config.ini', 'w') as configfile:
                 config.write(configfile)

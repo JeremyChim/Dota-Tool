@@ -41,7 +41,7 @@ QDoubleSpinBox
 }</string>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="tab_5">
     <attribute name="title">
@@ -1906,7 +1906,7 @@ QDoubleSpinBox
            <item>
             <widget class="QLineEdit" name="lineEdit_31">
              <property name="text">
-              <string>&quot;Ability25&quot;     &quot;&quot;</string>
+              <string>&quot;MaxLevel&quot;            			&quot;4&quot;</string>
              </property>
             </widget>
            </item>
