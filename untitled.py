@@ -12,7 +12,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.resize(979, 789)
+        Form.resize(975, 789)
         self.tabWidget = QtWidgets.QTabWidget(parent=Form)
         self.tabWidget.setGeometry(QtCore.QRect(10, 10, 961, 771))
         self.tabWidget.setStyleSheet("QLineEdit\n"
@@ -30,6 +30,11 @@ class Ui_Form(object):
 "QDoubleSpinBox\n"
 "{\n"
 "    font: 700 italic 10pt \"Consolas\";\n"
+"}\n"
+"QListView\n"
+"{\n"
+"    \n"
+"    font: 8pt \"Consolas\";\n"
 "}")
         self.tabWidget.setObjectName("tabWidget")
         self.tab_5 = QtWidgets.QWidget()
@@ -933,6 +938,23 @@ class Ui_Form(object):
         self.copy_hero_name_pushButton.setGeometry(QtCore.QRect(370, 30, 241, 23))
         self.copy_hero_name_pushButton.setObjectName("copy_hero_name_pushButton")
         self.tabWidget.addTab(self.tab_3, "")
+        self.tab_7 = QtWidgets.QWidget()
+        self.tab_7.setObjectName("tab_7")
+        self.listView = QtWidgets.QListView(parent=self.tab_7)
+        self.listView.setGeometry(QtCore.QRect(20, 20, 911, 651))
+        font = QtGui.QFont()
+        font.setFamily("Consolas")
+        font.setPointSize(8)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.listView.setFont(font)
+        self.listView.setStyleSheet("font: 8pt \"Consolas\";")
+        self.listView.setObjectName("listView")
+        self.pushButton = QtWidgets.QPushButton(parent=self.tab_7)
+        self.pushButton.setGeometry(QtCore.QRect(20, 680, 911, 51))
+        self.pushButton.setObjectName("pushButton")
+        self.tabWidget.addTab(self.tab_7, "")
         self.tab_6 = QtWidgets.QWidget()
         self.tab_6.setObjectName("tab_6")
         self.groupBox_19 = QtWidgets.QGroupBox(parent=self.tab_6)
@@ -1491,7 +1513,7 @@ class Ui_Form(object):
         self.verticalLayout.setObjectName("verticalLayout")
 
         self.retranslateUi(Form)
-        self.tabWidget.setCurrentIndex(0)
+        self.tabWidget.setCurrentIndex(3)
         self.pushButton_7.clicked.connect(self.lineEdit_7.selectAll) # type: ignore
         self.pushButton_6.clicked.connect(self.lineEdit_6.selectAll) # type: ignore
         self.pushButton_7.clicked.connect(self.lineEdit_7.copy) # type: ignore
@@ -1650,6 +1672,8 @@ class Ui_Form(object):
         self.update_hero_value_pushButton.setText(_translate("Form", "写入新的数值"))
         self.copy_hero_name_pushButton.setText(_translate("Form", "复制英雄名"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), _translate("Form", "英雄"))
+        self.pushButton.setText(_translate("Form", "PushButton"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_7), _translate("Form", "技能修改"))
         self.groupBox_19.setTitle(_translate("Form", "模版"))
         self.lineEdit_31.setText(_translate("Form", "\"MaxLevel\"                        \"4\""))
         self.pushButton_62.setText(_translate("Form", "复制"))

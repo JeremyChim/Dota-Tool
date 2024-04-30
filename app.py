@@ -15,7 +15,7 @@ import pyperclip
 from time import sleep
 from PyQt6.QtGui import QIcon
 from PyQt6.QtWidgets import QApplication, QWidget, QFileDialog
-from PyQt6.QtCore import Qt
+from PyQt6.QtCore import QStringListModel, Qt
 from PyQt6.QtGui import QDragEnterEvent, QDropEvent
 from colorama import init, Fore
 
@@ -31,8 +31,8 @@ class Window(QWidget, Ui_Form):
         self.setupUi(self)
         self.setWindowTitle('Dota Tool')
         self.setWindowIcon(QIcon('app.ico'))
-        self.lineEdit_4.setText('2024/04/29')
-        self.lineEdit_5.setText('1.12.18')
+        self.lineEdit_4.setText('2024/04/30')
+        self.lineEdit_5.setText('1.12.19')
 
     def __init__(self):
         super().__init__()
@@ -159,6 +159,24 @@ class Window(QWidget, Ui_Form):
         self.open_save_unitstxt_pushButton.clicked.connect(lambda: self.open_txt(self.unit_save_path_lineEdit.text()))
         self.open_load_herotxt_pushButton.clicked.connect(lambda: self.open_txt(self.hero_load_path_lineEdit.text()))
         self.open_save_herotxt_pushButton.clicked.connect(lambda: self.open_txt(self.hero_save_path_lineEdit.text()))
+
+        #
+        self.pushButton.clicked.connect(self.load_ab_in_listview)
+
+    def load_ab_in_listview(self):
+        try:
+            hero_txt = self.hero_name_comboBox.currentText() + '.txt'
+            src = self.hero_load_path_lineEdit.text().replace('npc_heroes.txt', f'heroes/{hero_txt}')  # 替换路径
+
+            with open(src) as f:
+                ls: list[str] = f.readlines()
+                model = QStringListModel()
+                model.setStringList(ls)
+                self.listView.setModel(model)
+                print(Fore.LIGHTGREEN_EX + '加载英雄技能数据成功！')
+
+        except Exception as e:
+            print(Fore.LIGHTRED_EX + f'加载英雄技能数据失败，原因：{e.__str__()}')
 
     def read_config(self):
         try:

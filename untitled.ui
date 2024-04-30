@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>979</width>
+    <width>975</width>
     <height>789</height>
    </rect>
   </property>
@@ -38,10 +38,15 @@ QSpinBox
 QDoubleSpinBox
 {
 	font: 700 italic 10pt &quot;Consolas&quot;;
+}
+QListView
+{
+	
+	font: 8pt &quot;Consolas&quot;;
 }</string>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>3</number>
    </property>
    <widget class="QWidget" name="tab_5">
     <attribute name="title">
@@ -1871,6 +1876,46 @@ QDoubleSpinBox
        <string>复制英雄名</string>
       </property>
      </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_7">
+    <attribute name="title">
+     <string>技能修改</string>
+    </attribute>
+    <widget class="QListView" name="listView">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>911</width>
+       <height>651</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Consolas</family>
+       <pointsize>8</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 8pt &quot;Consolas&quot;;</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>680</y>
+       <width>911</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>PushButton</string>
+     </property>
     </widget>
    </widget>
    <widget class="QWidget" name="tab_6">
