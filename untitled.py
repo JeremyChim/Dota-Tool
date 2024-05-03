@@ -938,23 +938,6 @@ class Ui_Form(object):
         self.copy_hero_name_pushButton.setGeometry(QtCore.QRect(370, 30, 241, 23))
         self.copy_hero_name_pushButton.setObjectName("copy_hero_name_pushButton")
         self.tabWidget.addTab(self.tab_3, "")
-        self.tab_7 = QtWidgets.QWidget()
-        self.tab_7.setObjectName("tab_7")
-        self.listView = QtWidgets.QListView(parent=self.tab_7)
-        self.listView.setGeometry(QtCore.QRect(20, 20, 911, 651))
-        font = QtGui.QFont()
-        font.setFamily("Consolas")
-        font.setPointSize(8)
-        font.setBold(False)
-        font.setItalic(False)
-        font.setWeight(50)
-        self.listView.setFont(font)
-        self.listView.setStyleSheet("font: 8pt \"Consolas\";")
-        self.listView.setObjectName("listView")
-        self.pushButton = QtWidgets.QPushButton(parent=self.tab_7)
-        self.pushButton.setGeometry(QtCore.QRect(20, 680, 911, 51))
-        self.pushButton.setObjectName("pushButton")
-        self.tabWidget.addTab(self.tab_7, "")
         self.tab_6 = QtWidgets.QWidget()
         self.tab_6.setObjectName("tab_6")
         self.groupBox_19 = QtWidgets.QGroupBox(parent=self.tab_6)
@@ -993,7 +976,6 @@ class Ui_Form(object):
         font.setPointSize(10)
         font.setBold(True)
         font.setItalic(True)
-        font.setWeight(87)
         self.textEdit_4.setFont(font)
         self.textEdit_4.setObjectName("textEdit_4")
         self.verticalLayout_19.addWidget(self.textEdit_4)
@@ -1029,7 +1011,6 @@ class Ui_Form(object):
         font.setPointSize(10)
         font.setBold(True)
         font.setItalic(True)
-        font.setWeight(87)
         self.textEdit_5.setFont(font)
         self.textEdit_5.setStyleSheet("color: rgb(85, 0, 255);")
         self.textEdit_5.setObjectName("textEdit_5")
@@ -1057,7 +1038,6 @@ class Ui_Form(object):
         font.setPointSize(10)
         font.setBold(True)
         font.setItalic(True)
-        font.setWeight(87)
         self.lineEdit_6.setFont(font)
         self.lineEdit_6.setObjectName("lineEdit_6")
         self.horizontalLayout_17.addWidget(self.lineEdit_6)
@@ -1078,7 +1058,6 @@ class Ui_Form(object):
         font.setPointSize(10)
         font.setBold(True)
         font.setItalic(True)
-        font.setWeight(87)
         self.lineEdit_7.setFont(font)
         self.lineEdit_7.setObjectName("lineEdit_7")
         self.horizontalLayout_18.addWidget(self.lineEdit_7)
@@ -1099,7 +1078,6 @@ class Ui_Form(object):
         font.setPointSize(10)
         font.setBold(True)
         font.setItalic(True)
-        font.setWeight(87)
         self.textEdit.setFont(font)
         self.textEdit.setStyleSheet("")
         self.textEdit.setObjectName("textEdit")
@@ -1120,7 +1098,6 @@ class Ui_Form(object):
         font.setPointSize(10)
         font.setBold(True)
         font.setItalic(True)
-        font.setWeight(87)
         self.textEdit_2.setFont(font)
         self.textEdit_2.setObjectName("textEdit_2")
         self.verticalLayout_10.addWidget(self.textEdit_2)
@@ -1142,7 +1119,6 @@ class Ui_Form(object):
         font.setPointSize(10)
         font.setBold(True)
         font.setItalic(True)
-        font.setWeight(87)
         self.textEdit_3.setFont(font)
         self.textEdit_3.setStyleSheet("color: rgb(0, 85, 255);")
         self.textEdit_3.setObjectName("textEdit_3")
@@ -1415,6 +1391,22 @@ class Ui_Form(object):
         self.horizontalLayout_48.addWidget(self.lineEdit_22)
         self.verticalLayout_14.addLayout(self.horizontalLayout_48)
         self.tabWidget.addTab(self.tab_4, "")
+        self.tab_7 = QtWidgets.QWidget()
+        self.tab_7.setObjectName("tab_7")
+        self.listView = QtWidgets.QListView(parent=self.tab_7)
+        self.listView.setGeometry(QtCore.QRect(20, 20, 911, 651))
+        font = QtGui.QFont()
+        font.setFamily("Consolas")
+        font.setPointSize(8)
+        font.setBold(False)
+        font.setItalic(False)
+        self.listView.setFont(font)
+        self.listView.setStyleSheet("font: 8pt \"Consolas\";")
+        self.listView.setObjectName("listView")
+        self.pushButton = QtWidgets.QPushButton(parent=self.tab_7)
+        self.pushButton.setGeometry(QtCore.QRect(20, 680, 911, 51))
+        self.pushButton.setObjectName("pushButton")
+        self.tabWidget.addTab(self.tab_7, "")
         self.set_top_checkBox = QtWidgets.QCheckBox(parent=Form)
         self.set_top_checkBox.setGeometry(QtCore.QRect(920, 10, 51, 16))
         self.set_top_checkBox.setObjectName("set_top_checkBox")
@@ -1513,7 +1505,7 @@ class Ui_Form(object):
         self.verticalLayout.setObjectName("verticalLayout")
 
         self.retranslateUi(Form)
-        self.tabWidget.setCurrentIndex(3)
+        self.tabWidget.setCurrentIndex(0)
         self.pushButton_7.clicked.connect(self.lineEdit_7.selectAll) # type: ignore
         self.pushButton_6.clicked.connect(self.lineEdit_6.selectAll) # type: ignore
         self.pushButton_7.clicked.connect(self.lineEdit_7.copy) # type: ignore
@@ -1672,27 +1664,31 @@ class Ui_Form(object):
         self.update_hero_value_pushButton.setText(_translate("Form", "写入新的数值"))
         self.copy_hero_name_pushButton.setText(_translate("Form", "复制英雄名"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), _translate("Form", "英雄"))
-        self.pushButton.setText(_translate("Form", "PushButton"))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_7), _translate("Form", "技能修改"))
         self.groupBox_19.setTitle(_translate("Form", "模版"))
         self.lineEdit_31.setText(_translate("Form", "\"MaxLevel\"                        \"4\""))
         self.pushButton_62.setText(_translate("Form", "复制"))
         self.lineEdit_32.setText(_translate("Form", "\"MaxLevel\"                        \"6\""))
         self.pushButton_63.setText(_translate("Form", "复制"))
         self.textEdit_4.setHtml(_translate("Form", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'Consolas\'; font-size:10pt; font-weight:696; font-style:italic;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">&quot;ab_name&quot;        &quot;100 200 300 400&quot;</p></body></html>"))
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:\'Consolas\'; font-size:10pt; font-weight:700; font-style:italic;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:696;\">&quot;ab_name&quot;        &quot;100 200 300 400&quot;</span></p></body></html>"))
         self.pushButton_58.setText(_translate("Form", "普通技能计算"))
         self.pushButton_64.setText(_translate("Form", "终极技能计算"))
         self.pushButton_61.setText(_translate("Form", "复制"))
         self.pushButton_60.setText(_translate("Form", "清空"))
         self.textEdit_5.setHtml(_translate("Form", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'Consolas\'; font-size:10pt; font-weight:696; font-style:italic;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">&quot;ab_name&quot;        &quot;100 200 300 400 500 600&quot;</p></body></html>"))
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:\'Consolas\'; font-size:10pt; font-weight:700; font-style:italic;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:696;\">&quot;ab_name&quot;        &quot;100 200 300 400 500 600&quot;</span></p></body></html>"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_6), _translate("Form", "技能计算"))
         self.groupBox_10.setTitle(_translate("Form", "模版"))
         self.label_17.setText(_translate("Form", "魔晶"))
@@ -1703,32 +1699,41 @@ class Ui_Form(object):
         self.pushButton_7.setText(_translate("Form", "复制"))
         self.label_19.setText(_translate("Form", "技能替换模版"))
         self.textEdit.setHtml(_translate("Form", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'Consolas\'; font-size:10pt; font-weight:696; font-style:italic;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">&quot;ab_name&quot;</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">            {</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">                &quot;value&quot;                &quot;ab_value&quot;</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">                &quot;special_bonus_shard&quot;            &quot;=0&quot;</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">            }</p></body></html>"))
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:\'Consolas\'; font-size:10pt; font-weight:700; font-style:italic;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:696;\">&quot;ab_name&quot;</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:696;\">            {</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:696;\">                &quot;value&quot;                &quot;ab_value&quot;</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:696;\">                &quot;special_bonus_shard&quot;            &quot;=0&quot;</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:696;\">            }</span></p></body></html>"))
         self.groupBox_11.setTitle(_translate("Form", "控制台"))
         self.textEdit_2.setHtml(_translate("Form", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'Consolas\'; font-size:10pt; font-weight:696; font-style:italic;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">&quot;ab_name&quot;        &quot;100&quot;</p></body></html>"))
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:\'Consolas\'; font-size:10pt; font-weight:700; font-style:italic;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:696;\">&quot;ab_name&quot;        &quot;100&quot;</span></p></body></html>"))
         self.pushButton_9.setText(_translate("Form", "替换"))
         self.pushButton_10.setText(_translate("Form", "复制"))
         self.pushButton_8.setText(_translate("Form", "清空"))
         self.textEdit_3.setHtml(_translate("Form", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'Consolas\'; font-size:10pt; font-weight:696; font-style:italic;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">&quot;ab_name&quot;</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">            {</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">                &quot;value&quot;                &quot;100&quot;</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">                &quot;special_bonus_shard&quot;            &quot;=0&quot;</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">            }</p></body></html>"))
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:\'Consolas\'; font-size:10pt; font-weight:700; font-style:italic;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:696;\">&quot;ab_name&quot;</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:696;\">            {</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:696;\">                &quot;value&quot;                &quot;100&quot;</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:696;\">                &quot;special_bonus_shard&quot;            &quot;=0&quot;</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:696;\">            }</span></p></body></html>"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), _translate("Form", "魔晶技能"))
         self.groupBox_14.setTitle(_translate("Form", "操作"))
         self.pushButton_17.setText(_translate("Form", "升5级"))
@@ -1773,6 +1778,8 @@ class Ui_Form(object):
         self.pushButton_30.setText(_translate("Form", "阿哈利姆"))
         self.lineEdit_22.setText(_translate("Form", "-item ultimate_scepter_2"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_4), _translate("Form", "指令"))
+        self.pushButton.setText(_translate("Form", "PushButton"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_7), _translate("Form", "技能修改"))
         self.set_top_checkBox.setText(_translate("Form", "置顶"))
         self.groupBox_9.setTitle(_translate("Form", "关于"))
         self.label_13.setText(_translate("Form", "作者"))
