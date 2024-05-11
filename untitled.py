@@ -1665,9 +1665,9 @@ class Ui_Form(object):
         self.copy_hero_name_pushButton.setText(_translate("Form", "复制英雄名"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), _translate("Form", "英雄"))
         self.groupBox_19.setTitle(_translate("Form", "模版"))
-        self.lineEdit_31.setText(_translate("Form", "\"MaxLevel\"                        \"4\""))
+        self.lineEdit_31.setText(_translate("Form", "\"MaxLevel\"                      \"4\""))
         self.pushButton_62.setText(_translate("Form", "复制"))
-        self.lineEdit_32.setText(_translate("Form", "\"MaxLevel\"                        \"6\""))
+        self.lineEdit_32.setText(_translate("Form", "\"MaxLevel\"                      \"6\""))
         self.pushButton_63.setText(_translate("Form", "复制"))
         self.textEdit_4.setHtml(_translate("Form", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
@@ -1705,10 +1705,10 @@ class Ui_Form(object):
 "li.unchecked::marker { content: \"\\2610\"; }\n"
 "li.checked::marker { content: \"\\2612\"; }\n"
 "</style></head><body style=\" font-family:\'Consolas\'; font-size:10pt; font-weight:700; font-style:italic;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:696;\">&quot;ab_name&quot;</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">            <span style=\" font-weight:696;\">&quot;ab_name&quot;</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:696;\">            {</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:696;\">                &quot;value&quot;                &quot;ab_value&quot;</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:696;\">                &quot;special_bonus_shard&quot;            &quot;=0&quot;</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:696;\">                &quot;value&quot;                        &quot;ab_value&quot;</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:696;\">                &quot;special_bonus_shard&quot;        &quot;=0&quot;</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:696;\">            }</span></p></body></html>"))
         self.groupBox_11.setTitle(_translate("Form", "控制台"))
         self.textEdit_2.setHtml(_translate("Form", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
