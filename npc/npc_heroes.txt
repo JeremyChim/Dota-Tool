@@ -1438,7 +1438,7 @@
 		"Ability5"		"crystal_maiden_blueheart_floe"
 		"Ability6"		"crystal_maiden_freezing_field"
 		"Ability7"		"crystal_maiden_freezing_field_stop"
-		"Ability10"		"special_bonus_hp_250"
+		"Ability10"		"special_bonus_hp_200"
 		"Ability11"		"special_bonus_unique_crystal_maiden_6"
 		"Ability12"		"special_bonus_unique_crystal_maiden_frostbite_castrange"
 		"Ability13"		"special_bonus_unique_crystal_maiden_5"
@@ -2767,6 +2767,15 @@
 		"Ability4"		"mirana_selemenes_faithful"
 		"Ability5"		"generic_hidden"
 		"Ability6"		"generic_hidden"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"mirana_starfall"
+			"Ability2"		"mirana_arrow"
+			"Ability3"		"mirana_leap"
+			"Ability6"		"mirana_invis"
+		}
+
 		"Ability10"		"special_bonus_unique_mirana_3"
 		"Ability11"		"special_bonus_unique_mirana_6"
 		"Ability12"		"special_bonus_unique_mirana_5"
@@ -3512,8 +3521,8 @@
 		"StatusHealthRegen"		"0.5"
 		"StatusManaRegen"		"0.5"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"		"9"
-		"AttackDamageMax"		"18"
+		"AttackDamageMin"		"12"
+		"AttackDamageMax"		"21"
 		"AttackRate"		"1.5000"
 		"AttackAnimationPoint"		"0.500000"
 		"AttackAcquisitionRange"		"800"
@@ -5149,7 +5158,7 @@
 		"AttributeIntelligenceGain"		"3.900000"
 		"AttributeBaseAgility"		"22"
 		"AttributeAgilityGain"		"2.600000"
-		"StatusManaRegen"	"0.6"
+		"StatusManaRegen"	"0.2"
 		"StatusHealthRegen"	"0.5"
 		"MovementSpeed"		"285"
 		"MovementTurnRate"		"0.800000"
@@ -5342,7 +5351,7 @@
 		"AttackRange"		"150"
 		"ProjectileSpeed"		"0"
 		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
-		"AttributeBaseStrength"		"22"
+		"AttributeBaseStrength"		"25"
 		"AttributeStrengthGain"		"3.200000"
 		"AttributeBaseIntelligence"		"16"
 		"AttributeIntelligenceGain"		"1.500000"
@@ -7074,7 +7083,7 @@
 		"Ability14"		"special_bonus_unique_lina_6"
 		"Ability15"		"special_bonus_unique_lina_2"
 		"Ability16"		"special_bonus_unique_lina_7"
-		"Ability17"		"special_bonus_unique_lina_dragon_slave_crits"
+		"Ability17"		"special_bonus_unique_lina_crit_debuff"
 		
 		"Facets"
 		{
@@ -16119,7 +16128,7 @@
 				"GradientID"		"2"
 			}
 		}
-		"ArmorPhysical"		"0"
+		"ArmorPhysical"		"1"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"		"21"
 		"AttackDamageMax"		"26"
@@ -16394,7 +16403,7 @@
 		"AttributeIntelligenceGain"		"1.600000"
 		"AttributeBaseAgility"		"18"
 		"AttributeAgilityGain"		"2.20000"
-		"StatusHealthRegen"		"2.0"
+		"StatusHealthRegen"		"1.5"
 		"StatusManaRegen"	"0.25"
 		"MovementSpeed"		"295"
 		"VisionDaytimeRange"		"800"
@@ -20185,7 +20194,7 @@
 				"GradientID"		"2"
 			}
 		}
-		"ArmorPhysical"		"2"
+		"ArmorPhysical"		"1"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"		"19"
 		"AttackDamageMax"		"31"
@@ -21554,7 +21563,7 @@
 		"StatusHealthRegen"		"0.25"
 		"StatusManaRegen"	"0.25"
 		"VisionDaytimeRange"		"1800"
-		"MovementSpeed"		"330"
+		"MovementSpeed"		"320"
 		"MovementTurnRate"		"0.90000"
 		"particle_folder"		"particles/units/heroes/hero_meepo"
 		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_meepo.vsndevts"
@@ -23029,6 +23038,13 @@
 
 		}
 		"AbilityDraftIgnoreCount" "7"
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"naga_siren_mirror_image"
+			"Ability2"		"naga_siren_ensnare"
+			"Ability3"		"naga_siren_rip_tide"
+			"Ability4"		"naga_siren_song_of_the_siren"
+		}
 		"ArmorPhysical"		"1"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"		"23"
@@ -27830,6 +27846,7 @@
 		"AttributeBaseAgility"		"14"
 		"AttributeAgilityGain"		"1.300000"
 		"StatusManaRegen"	"1.0"
+		"StatusHealthRegen"		"1.0"
 		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
 		"RingRadius"		"70"
 		"particle_folder"		"particles/units/heroes/hero_techies"
@@ -30087,8 +30104,8 @@
 
 		"ArmorPhysical"				"1"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"8"
-		"AttackDamageMax"			"14"
+		"AttackDamageMin"			"11"
+		"AttackDamageMax"			"17"
 		"AttackRate"				"1.8"
 		"AttackAnimationPoint"		"0.350000"
 		"AttackSpeedActivityModifiers"

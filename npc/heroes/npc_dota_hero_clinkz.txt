@@ -119,6 +119,7 @@
 				"affected_by_aoe_increase"	"1"
 			}
 			"archers_use_barrage"		"0"
+
 		}
 	}
 
