@@ -19,7 +19,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"0"
-		"AbilityCastPoint"				"0.3"
+		
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -37,6 +37,11 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
+            "AbilityCastPoint"
+            {
+                "value"                        "0.3"
+                "special_bonus_scepter"        "=0"
+            }
             "speed"
             {
                 "value"                        "3000"
@@ -44,8 +49,8 @@
             }
 			"range"					
 			{
-				"value"				"650 700 750 800 850 900"
-				"special_bonus_scepter"     			"+900"
+				"value"						"650 700 750 800 850 900"
+				"special_bonus_scepter"     "+900"
 				"special_bonus_shard"		"+150"
 			}
 			"AbilityCooldown"
@@ -58,7 +63,6 @@
 			{
 				"value"										"2.0"
 				"special_bonus_scepter"      				"+2.0"
-				
 				"special_bonus_shard"        				"+0.5"
 				"special_bonus_unique_faceless_void_7"		"+0.5"
 			}
@@ -98,8 +102,8 @@
 		{
             "attack_projectile_slow"
             {
-                "value"                        	"25 30 35 40 45"
-                "special_bonus_shard"        				"+45"
+                "value"                     "25 30 35 40 45"
+                "special_bonus_shard"       "+45"
             }
 			"slow_distance_max"				
 			{
@@ -211,13 +215,12 @@
             "chance_pct"
             {
                 "value"                        "12 16 20 24 28 32"
-                "special_bonus_scepter"        					"+32"
+                "special_bonus_scepter"        "+32"
             }
 			"bonus_damage"			
 			{
-				"value"				"10 15 20 25 30 35"
-				"special_bonus_scepter"      		"+35"
-				
+				"value"									"10 15 20 25 30 35"
+				"special_bonus_scepter"        			"+35"
 				"special_bonus_shard"        			"+30"
 				"special_bonus_unique_faceless_void_3" 	"+30"
 			}
@@ -238,15 +241,21 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilitySound"					"Hero_FacelessVoid.TimeDilation.Cast"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"AbilityCastPoint"				"0.1"
+		"MaxLevel"                      "6"
+		
+		
 		"AbilityCooldown"				"28 24 20 16 12 8"
 		"AbilityManaCost"				"90"
-		"MaxLevel"                      "6"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
+            "AbilityCastPoint"
+            {
+                "value"                        "0.1"
+                "special_bonus_scepter"        "=0"
+            }
 			"radius"				
 			{
 				"value"						"775"
@@ -260,11 +269,10 @@
             }
 			"slow"						
 			{	
-				"value"					"7 8 9 10 11 12"
-				"special_bonus_scepter"      		"+12"
-				
-				"special_bonus_shard"        							"+12"
-				"special_bonus_unique_faceless_void_8"					"+12"
+				"value"												"7 8 9 10 11 12"
+				"special_bonus_scepter"      						"+12"
+				"special_bonus_shard"        						"+12"
+				"special_bonus_unique_faceless_void_8"				"+12"
 			}			
             "cooldown_percentage"
             {
@@ -274,8 +282,8 @@
 			"base_damage"			"0"
 			"damage_per_stack"		
 			{
-				"value"				"7 9 11 13 15 17"
-				"special_bonus_scepter"      	"+17"
+				"value"									"7 9 11 13 15 17"
+				"special_bonus_scepter"        			"+17"
 				"special_bonus_shard"        			"+7"
 				"special_bonus_unique_faceless_void_6" 	"+7"
 			}
@@ -301,8 +309,8 @@
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
+		
 
-		"AbilityCastPoint"				"0.35"
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
 
 		// Time		
@@ -326,19 +334,23 @@
                 "value"                        "500"
                 "special_bonus_scepter"        "+500"
             }
+			"AbilityCastPoint"
+            {
+                "value"                        "0.35"
+                "special_bonus_scepter"        "=0"
+            }
 			"radius"				
 			{
 				"value"		"500"
-				"special_bonus_scepter"     "+500"
 				"affected_by_aoe_increase"	"1"
-				
+				"special_bonus_scepter"      			"+500"
 				"special_bonus_shard"        			"+140"
 				"special_bonus_unique_faceless_void_2" 	"+140"
 			}
 			"duration"				
 			{
-				"value"			"3.75 4.25 4.75 5.25"
-				"special_bonus_scepter"        "+5.25"
+				"value"						"3.75 4.25 4.75 5.25"
+				"special_bonus_scepter"     "+5.25"
 			}
 			"vision_radius"			
 			{
@@ -349,8 +361,8 @@
 			"bonus_attack_speed"
 			{					
 				"value" "0"
-				"special_bonus_shard"       		 "+80"
-				"special_bonus_unique_faceless_void" "+80"
+				"special_bonus_shard"        			"+80"
+				"special_bonus_unique_faceless_void" 	"+80"
 			}
 		}
 	}
@@ -396,7 +408,7 @@
 			{
 				"value"		"800"
 				"affected_by_aoe_increase"	"1"
-				"special_bonus_unique_faceless_void_2" "+140"
+				"special_bonus_unique_faceless_void_2" 	"+140"
 			}
 			"duration"				
 			{
