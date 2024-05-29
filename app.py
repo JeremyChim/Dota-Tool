@@ -659,7 +659,8 @@ class Window(QWidget, Ui_Form):
         self.pushButton_40.click()  # 攻击速率-0.1
         self.pushButton_41.click()  # 攻击前摇-0.1
         self.pushButton_42.click()  # 攻击范围+100
-        self.pushButton_43.click(), self.pushButton_43.click(), self.pushButton_43.click()  # 弹道速度+300
+        if self.doubleSpinBox_24.value() != 0: # 如果有弹道速度的话
+            self.pushButton_43.click(), self.pushButton_43.click(), self.pushButton_43.click()  # 弹道速度+300
         self.pushButton_37.click()  # 全属性+1
         self.pushButton_38.click()  # 全成长+1
         self.pushButton_39.click(), self.pushButton_39.click()  # 移速+20
