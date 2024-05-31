@@ -32,7 +32,7 @@ class Window(QWidget, Ui_Form):
         self.setWindowTitle('Dota Tool')
         self.setWindowIcon(QIcon('app.ico'))
         self.lineEdit_4.setText('2024/05/27')
-        self.lineEdit_5.setText('1.15.4')
+        self.lineEdit_5.setText('1.15.10')
 
     def __init__(self):
         super().__init__()
@@ -202,6 +202,7 @@ class Window(QWidget, Ui_Form):
             print(Fore.LIGHTGREEN_EX + f'读取config.ini配置失败，原因：{e}')
 
     def copy_hero_name(self):
+        '''复制英雄名'''
         try:
             name = self.hero_name_comboBox.currentText()
             print(f'复制英雄名：{Fore.LIGHTMAGENTA_EX + name}')
@@ -211,6 +212,7 @@ class Window(QWidget, Ui_Form):
 
     @staticmethod
     def open_txt(path):
+        '''打开txt'''
         try:
             print(f'打开文件，路径： {Fore.LIGHTBLUE_EX + path}')
             os.startfile(path)
@@ -218,6 +220,7 @@ class Window(QWidget, Ui_Form):
             print(Fore.LIGHTRED_EX + f'打开文件{path}错误，错误原因：{e}。')
 
     def vpk_mod_dota2(self):
+        '''生成vpk并移动至mod'''
         self.create_vpk_pushButton.click()  # 生成vpk
         sleep(1)  # 等待1秒
         self.move_vpk_mod_pushButton.click()  # 移动到mod
@@ -238,6 +241,7 @@ class Window(QWidget, Ui_Form):
             print(Fore.LIGHTRED_EX + f"文件复制失败: {e.strerror}")
 
     def search_hero(self):
+        '''搜索英雄名'''
         try:
             # 清除当前组合框的选项
             self.hero_name_comboBox.clear()
@@ -250,6 +254,7 @@ class Window(QWidget, Ui_Form):
 
     @staticmethod
     def get_file_url2(line_edit, file_name: str):
+        '''获取文件路径（选择文件夹）'''
         file_url = QFileDialog.getExistingDirectory(directory=os.getcwd())
         if file_url:
             file_url = file_url + file_name
@@ -258,12 +263,14 @@ class Window(QWidget, Ui_Form):
 
     @staticmethod
     def get_file_url(line_edit):
+        '''获取文件路径（选择文件）'''
         file_url, file_type = QFileDialog.getOpenFileName()  # 打开文件管理器
         if file_url:
             line_edit.setText(file_url)
             print(f'获取文件路径：{Fore.LIGHTCYAN_EX + file_url}')
 
     def get_unit_data(self, line_edit):
+        '''获取单位数据'''
         file_url = line_edit.text()
         try:
             with open(file_url, 'r') as f:
@@ -275,6 +282,7 @@ class Window(QWidget, Ui_Form):
             print(Fore.LIGHTRED_EX + f'读取单位数据失败！原因是：{e.__str__()}')
 
     def get_hero_data(self, line_edit):
+        '''获取英雄数据'''
         file_url = line_edit.text()
         try:
             with open(file_url, 'r') as f:
@@ -287,6 +295,7 @@ class Window(QWidget, Ui_Form):
 
     @staticmethod
     def save_file(save_path, file_content):
+        '''保存文件'''
         try:
             with open(save_path, 'w') as f:
                 f.writelines(file_content)
@@ -297,6 +306,7 @@ class Window(QWidget, Ui_Form):
             print(Fore.LIGHTRED_EX + f'保存数据错误，原因是：{e}')
 
     def update_good_guy(self):
+        '''更新天辉小兵的数据'''
         try:
             factor: float = self.good_guy_doubleSpinBox.value()
             print(Fore.LIGHTBLUE_EX + f'天辉小兵系数：{factor}')
@@ -326,6 +336,7 @@ class Window(QWidget, Ui_Form):
             print(Fore.LIGHTRED_EX + f'数据更新失败！原因是：{e}')
 
     def update_bad_guy(self):
+        '''更新夜宴小兵的数据'''
         try:
             factor: float = self.bad_guy_doubleSpinBox.value()
             print(Fore.LIGHTBLUE_EX + f'夜魇小兵系数：{factor}')
@@ -355,6 +366,7 @@ class Window(QWidget, Ui_Form):
             print(Fore.LIGHTRED_EX + f'数据更新失败！原因是：{e}')
 
     def update_other_guy(self):
+        '''更新野怪的数据'''
         try:
             factor: float = self.other_guy_doubleSpinBox.value()
             print(Fore.LIGHTBLUE_EX + f'factor : {factor}')
@@ -384,6 +396,7 @@ class Window(QWidget, Ui_Form):
             print(Fore.LIGHTRED_EX + '数据更新失败！')
 
     def update_tower(self, keyword: str, keyword2: str, mul: float, add: int):
+        '''更新防御塔和基地的数据'''
         try:
             print(Fore.LIGHTBLUE_EX + f'更新防御塔数据，',
                   Fore.LIGHTBLUE_EX + f'一级关键词：{keyword} ，',
@@ -413,6 +426,7 @@ class Window(QWidget, Ui_Form):
             print(Fore.LIGHTRED_EX + '数据更新失败！')
 
     def update_tower_data(self):
+        '''绑定防御塔数据和文本框'''
         arg_list: list[tuple] = [('Tower 1', 'StatusHealth', self.doubleSpinBox_2.value(), self.spinBox.value()),
                                  ('Tower 1', 'ArmorPhysical', self.doubleSpinBox_3.value(), self.spinBox_2.value()),
                                  ('Tower 2', 'StatusHealth', self.doubleSpinBox_4.value(), self.spinBox_3.value()),
@@ -431,6 +445,7 @@ class Window(QWidget, Ui_Form):
                 self.update_tower(*arg)
 
     def ability_replace(self):
+        '''魔晶技能替换'''
         self.textEdit_3.clear()
         mod: str = self.textEdit.toPlainText()
         old_content: str = self.textEdit_2.toPlainText()
@@ -450,6 +465,7 @@ class Window(QWidget, Ui_Form):
                 print(Fore.LIGHTRED_EX + '技能替换失败！')
 
     def get_hero_name(self):
+        '''获取英雄列表'''
         try:
             hero_name_list: list[str] = []
             hero_line_list: list[int] = []
@@ -471,6 +487,7 @@ class Window(QWidget, Ui_Form):
             print(Fore.LIGHTRED_EX + '读取英雄名失败！')
 
     def get_hero_value(self):
+        '''获取英雄属性值'''
         try:
             hero_name = self.hero_name_comboBox.currentText()
             hero_name_index = self.hero_name_list.index(hero_name)
@@ -512,6 +529,7 @@ class Window(QWidget, Ui_Form):
             print(Fore.LIGHTRED_EX + f'读取英雄数值失败！')
 
     def add_lv25(self):
+        '''添加25级天赋槽'''
         try:
             hero_name = self.hero_name_comboBox.currentText()
             hero_name_index = self.hero_name_list.index(hero_name)
@@ -530,6 +548,7 @@ class Window(QWidget, Ui_Form):
             print(Fore.LIGHTRED_EX + '写入新的等级25天赋技能失败！')
 
     def update_hero_data(self):
+        '''绑定英雄'''
         try:
             hero_name = self.hero_name_comboBox.currentText()
             hero_name_index = self.hero_name_list.index(hero_name)
@@ -650,11 +669,13 @@ class Window(QWidget, Ui_Form):
 
     @staticmethod
     def create_vpk():
+        '''生产vpk'''
         print('正在创建vpk文件中。。。')
         order = 'echo create vpk file... && "vpk/vpk.exe" "vpk/pak01_dir" && timeout 1 && exit'
         os.system(f'start cmd /k "{order}"')
 
     def add_attr_2(self):
+        '''全属性+++'''
         self.pushButton_44.click()  # 攻击+10
         self.pushButton_40.click()  # 攻击速率-0.1
         self.pushButton_41.click()  # 攻击前摇-0.1
@@ -668,11 +689,13 @@ class Window(QWidget, Ui_Form):
         self.update_hero_value_pushButton.click()  # 写入
 
     def dragEnterEvent(self, event: QDragEnterEvent) -> None:
+        '''拖拽功能'''
         # 当有文件拖入窗口时触发
         if event.mimeData().hasUrls():
             event.acceptProposedAction()
 
     def dropEvent(self, event: QDropEvent) -> None:
+        '''拖拽识别路径'''
         # 当文件被放下时触发
         for url in event.mimeData().urls():
             file_url = url.toLocalFile()
@@ -685,6 +708,7 @@ class Window(QWidget, Ui_Form):
                 self.game_path_lineEdit.setText(file_url)  # SENT THE URL - steam
 
     def ability_calc(self, is_big_ab: bool = False):
+        '''技能计算'''
         try:
             self.textEdit_5.clear()
             for original_string in self.textEdit_4.toPlainText().split('\n'):
@@ -725,6 +749,7 @@ class Window(QWidget, Ui_Form):
             print(Fore.LIGHTRED_EX + '技能计算失败！')
 
     def open_gi_file(self):
+        '''打开gi文件'''
         try:
             path = self.game_path_lineEdit.text() + r'/dota/gameinfo.gi'
             print(f'正在打开gameinfo.gi文件，路径：{Fore.LIGHTBLUE_EX + path}')
@@ -733,6 +758,7 @@ class Window(QWidget, Ui_Form):
             print(Fore.LIGHTRED_EX + f'打开gameinfo.gi文件失败！原因是：{e.__str__()}')
 
     def open_gi2_file(self):
+        '''打开gi2文件'''
         try:
             path = self.game_path_lineEdit.text() + '/dota/gameinfo_branchspecific.gi'
             print(f'正在打开gameinfo_branchspecific.gi文件，路径：{Fore.LIGHTBLUE_EX + path}')
@@ -741,6 +767,7 @@ class Window(QWidget, Ui_Form):
             print(Fore.LIGHTRED_EX + f'打开gameinfo_branchspecific.gi文件失败！原因是：{e.__str__()}')
 
     def open_mod_file(self):
+        '''创建/打开mod文件'''
         folder_name = self.game_path_lineEdit.text() + '/mod'
 
         # 检查文件夹是否存在
@@ -757,6 +784,7 @@ class Window(QWidget, Ui_Form):
                 print(Fore.LIGHTRED_EX + f"创建文件夹 {folder_name} 时出错: {e}")
 
     def move_vpk_mod(self):
+        '''移动vpk至mod文件夹'''
         src = os.getcwd() + '/vpk/pak01_dir.vpk'
         dst = self.game_path_lineEdit.text() + '/mod/pak01_dir.vpk'
 
@@ -775,6 +803,7 @@ class Window(QWidget, Ui_Form):
             print(Fore.LIGHTRED_EX + '启动Dota2失败！')
 
     def set_config(self):
+        '''写入配置'''
         try:
             config['path'] = {'game_path': self.game_path_lineEdit.text()}
 
