@@ -227,6 +227,7 @@ class Window(QWidget, Ui_Form):
         self.start_dota2_pushButton.click()  # 启动DOTA2
 
     def copy_hero_ab(self):
+        '''复制npc_heroes.txt到目标路径'''
         hero_txt = self.hero_name_comboBox.currentText() + '.txt'
         # print(f'复制文件名：{hero_txt}')
 
@@ -426,7 +427,7 @@ class Window(QWidget, Ui_Form):
             print(Fore.LIGHTRED_EX + '数据更新失败！')
 
     def update_tower_data(self):
-        '''绑定防御塔数据和文本框'''
+        '''绑定数据框（防御塔）'''
         arg_list: list[tuple] = [('Tower 1', 'StatusHealth', self.doubleSpinBox_2.value(), self.spinBox.value()),
                                  ('Tower 1', 'ArmorPhysical', self.doubleSpinBox_3.value(), self.spinBox_2.value()),
                                  ('Tower 2', 'StatusHealth', self.doubleSpinBox_4.value(), self.spinBox_3.value()),
@@ -456,8 +457,23 @@ class Window(QWidget, Ui_Form):
             # print(old_ab)
             if old_ab:
                 old_ab_list: list[str] = old_ab.split('"')
-                new_ab: str = mod.replace('ab_name', old_ab_list[1]).replace('ab_value', old_ab_list[3])
+
+
+                if old_ab_list[1] == "AbilityCastPoint":
+
+                    # 技能抬手为0
+                    new_ab: str = mod.replace('ab_name', old_ab_list[1]).replace('ab_value', old_ab_list[3])
+
+                else:
+                    #计算技能的最后一个值
+                    v1 = old_ab_list[3]
+                    v2 = v1.split(' ')
+                    v3 = '+' + v2[-1]
+                    new_ab: str = mod.replace('ab_name', old_ab_list[1]).replace('ab_value', old_ab_list[3]).replace('=0',v3)
+
+                #写入文本框
                 self.textEdit_3.append(new_ab)
+
                 print(old_ab)
                 # print(mod)
                 print(Fore.LIGHTBLUE_EX + new_ab)
@@ -548,7 +564,7 @@ class Window(QWidget, Ui_Form):
             print(Fore.LIGHTRED_EX + '写入新的等级25天赋技能失败！')
 
     def update_hero_data(self):
-        '''绑定英雄'''
+        '''绑定数据框（英雄）'''
         try:
             hero_name = self.hero_name_comboBox.currentText()
             hero_name_index = self.hero_name_list.index(hero_name)
