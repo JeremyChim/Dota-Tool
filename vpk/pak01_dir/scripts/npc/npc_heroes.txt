@@ -15384,6 +15384,8 @@
 		"Ability15"		"special_bonus_unique_clinkz_7"
 		"Ability16"		"special_bonus_unique_clinkz_4"
 		"Ability17"		"special_bonus_unique_clinkz_3"
+		"Ability25"		""
+		
 		"Facets"
 		{
 			"clinkz_suppressive_fire" 
