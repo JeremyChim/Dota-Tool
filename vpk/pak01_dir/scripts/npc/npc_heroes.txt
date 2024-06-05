@@ -11610,6 +11610,7 @@
 		"Ability15"		"special_bonus_attack_speed_70"
 		"Ability16"		"special_bonus_unique_wraith_king_10"
 		"Ability17"		"special_bonus_unique_wraith_king_4"
+		"Ability25"		""
 
 		"AbilityDraftAbilities"
 		{
