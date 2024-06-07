@@ -30527,6 +30527,7 @@
 		"Ability15"					"special_bonus_unique_void_spirit_1"
 		"Ability16"					"special_bonus_unique_void_spirit_8"
 		"Ability17"					"special_bonus_unique_void_spirit_3"
+		"Ability25"		""
 		
 		"Facets"
 		{
@@ -30555,28 +30556,28 @@
 		}
 
 		
-		"ArmorPhysical"				"-1"
+		"ArmorPhysical"				"0"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"4"
-		"AttackDamageMax"			"8"
-		"AttackRate"				"1.700000"
-		"AttackAnimationPoint"		"0.350000"
+		"AttackDamageMin"			"14"
+		"AttackDamageMax"			"18"
+		"AttackRate"				"1.6"
+		"AttackAnimationPoint"		"0.25"
 		"AttackSpeedActivityModifiers"
 		{
 			"fast"		"150"
 			"faster"	"200"
 		}
 		"AttackAcquisitionRange"	"600"
-		"AttackRange"				"200"
+		"AttackRange"				"300"
 		"AttributePrimary"			"DOTA_ATTRIBUTE_ALL"
-		"AttributeBaseStrength"		"21"
-		"AttributeStrengthGain"		"2.300000"
-		"AttributeBaseAgility"		"19"
-		"AttributeAgilityGain"		"2.200000"
-		"AttributeBaseIntelligence"	"24"
-		"AttributeIntelligenceGain"	"2.500000"
+		"AttributeBaseStrength"		"22"
+		"AttributeStrengthGain"		"3.3"
+		"AttributeBaseAgility"		"20"
+		"AttributeAgilityGain"		"3.2"
+		"AttributeBaseIntelligence"	"25"
+		"AttributeIntelligenceGain"	"3.5"
 		"StatusManaRegen"			"0.6"
-		"MovementSpeed"				"290"
+		"MovementSpeed"				"310"
 		"MovementTurnRate"			"0.700000"
 		"MovementSpeedActivityModifiers"
 		{
@@ -30789,7 +30790,7 @@
 		"AttackAcquisitionRange"	"800"
 		"AttackRange"				"400"
 		"ProjectileModel"			"particles/units/heroes/hero_snapfire/hero_snapfire_base_attack.vpcf"
-		"ProjectileSpeed"			"1800"
+		"ProjectileSpeed"			"2100"
 		"AttributePrimary"			"DOTA_ATTRIBUTE_ALL"
 		"AttributeBaseStrength"		"21"
 		"AttributeStrengthGain"		"3.2"
