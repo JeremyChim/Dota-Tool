@@ -5276,6 +5276,7 @@
 		"AttributeAgilityGain"		"3.6"
 		"StatusHealthRegen"	"0.5"
 		"MovementSpeed"		"305"
+		"VisionNighttimeRange"		"1800"
 		"MovementTurnRate"		"0.800000"
 		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
 		"particle_folder"		"particles/units/heroes/hero_stormspirit"
@@ -6403,6 +6404,7 @@
 		"StatusManaRegen"	"0.25"
 		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
 		"MovementSpeed"		"310"
+		"VisionNighttimeRange"		"1800"
 		"MovementTurnRate"		"0.800000"
 		"particle_folder"		"particles/units/heroes/hero_windrunner"
 		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_windrunner.vsndevts"
@@ -30578,6 +30580,7 @@
 		"AttributeIntelligenceGain"	"3.5"
 		"StatusManaRegen"			"0.6"
 		"MovementSpeed"				"310"
+		"VisionNighttimeRange"		"1800"
 		"MovementTurnRate"			"0.700000"
 		"MovementSpeedActivityModifiers"
 		{
