@@ -30607,7 +30607,7 @@
 			}
 		}
 		"VisionDaytimeRange"		"1800"
-		"VisionNighttimeRange"		"800"
+		"VisionNighttimeRange"		"1800"
 		"ItemSlots"
 		{
 			"0"
