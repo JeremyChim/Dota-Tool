@@ -703,8 +703,9 @@ class Window(QWidget, Ui_Form):
         self.pushButton_38.click()  # 全成长+1
         self.pushButton_39.click(), self.pushButton_39.click()  # 移速+20
         self.pushButton_57.click()  # 护甲+1
-        self.pushButton.click()     # 夜间视野 1800
         self.update_hero_value_pushButton.click()  # 写入
+        self.pushButton.click()  # 夜间视野 1800
+
 
     def dragEnterEvent(self, event: QDragEnterEvent) -> None:
         """拖拽功能"""
