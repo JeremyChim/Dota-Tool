@@ -240,7 +240,7 @@
 				"max_travel_distance"
 				{
 					"value"                      "800 900 1000 1100"
-					"special_bonus_shard"        "=3500"
+					"special_bonus_shard"        "=2500"
 				}
 				"pop_damage_delay"		
 				{
@@ -304,7 +304,7 @@
 				"radius"
 				{
 					"value"	"500"
-					"special_bonus_shard"       "+1500"
+					"special_bonus_shard"       "=1500"
 					"affected_by_aoe_increase"	"1"		
 				}
 				"speed"					"1200"
