@@ -169,6 +169,7 @@
 			"first_ring_distance_offset"	
 			{
 				"value"		"520"
+				"special_bonus_shard"       "+75"
 				"affected_by_aoe_increase"	"1"		
 			}
 			"damage_radius"	// proportional to distance_offset
