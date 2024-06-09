@@ -346,7 +346,7 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"1200"
+		
 		"AbilityCastPoint"				"0.15"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
@@ -362,7 +362,16 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"speed"					"900.0"
+				"AbilityCastRange"
+				{
+					"value"                      "1200"
+					"special_bonus_shard"        "=2400"
+				}
+				"speed"
+				{
+					"value"                      "900.0"
+					"special_bonus_shard"        "=1800"
+				}
 				"radius"				
 				{
 					"value"						"200"
