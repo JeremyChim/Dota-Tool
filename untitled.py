@@ -1547,7 +1547,7 @@ class Ui_Form(object):
         self.verticalLayout.addWidget(self.tabWidget)
 
         self.retranslateUi(Form)
-        self.tabWidget.setCurrentIndex(0)
+        self.tabWidget.setCurrentIndex(4)
         self.pushButton_66.clicked.connect(self.lineEdit_34.selectAll) # type: ignore
         self.pushButton_35.clicked.connect(self.lineEdit_27.selectAll) # type: ignore
         self.pushButton_30.clicked.connect(self.lineEdit_22.selectAll) # type: ignore
@@ -1778,7 +1778,7 @@ class Ui_Form(object):
 "</style></head><body style=\" font-family:\'Consolas\'; font-size:10pt; font-weight:700; font-style:italic;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:696;\">            &quot;ab_name&quot;</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:696;\">            {</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:696;\">                &quot;value&quot;                        &quot;ab_value&quot;</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:696;\">                &quot;value&quot;                      &quot;ab_value&quot;</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:696;\">                &quot;special_bonus_shard&quot;        &quot;=0&quot;</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:696;\">            }</span></p></body></html>"))
         self.groupBox_11.setTitle(_translate("Form", "控制台"))
