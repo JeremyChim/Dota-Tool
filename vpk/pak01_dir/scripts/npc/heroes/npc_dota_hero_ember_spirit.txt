@@ -35,20 +35,15 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"AbilityCooldown"
-				{
-					"value"									"13 12 11 10 9 8"
-					"special_bonus_shard"					"=0"
-				}
 				"AbilityChargeRestoreTime"
 				{
-					"value"									"0"
+					"value"									"13 12 11 10 9 8"
 					"special_bonus_shard"					"=8"
 				}
 				"AbilityCharges"
 				{
-					"value"									"0"
-					"special_bonus_unique_ember_spirit_4"	"=2"
+					"value"									"1"
+					"special_bonus_shard"					"=2"
 				}
 
 				
@@ -208,6 +203,7 @@
 				"passive_radius"						
 				{
 					"value"		"150"
+					"special_bonus_shard"       "=600"
 					"affected_by_aoe_increase"	"1"
 				}
 				"tick_interval"					"0.2"
@@ -220,7 +216,7 @@
 				"linger_duration"		"0.5"
 				"active_radius"			
 				{
-					"value"				"500"
+					"value"						"500"
 					"special_bonus_shard"       "=1200"
 					"affected_by_aoe_increase"	"1"
 				}
@@ -304,8 +300,9 @@
 				"duration"				"45.0"
 				"scepter_range"
 				{
-					"value"			"3000"
-					"RequiresScepter"	"1"
+					"value"						"3000"
+					"special_bonus_shard"       "=99999"
+					"RequiresScepter"			"1"
 				}
 				"scepter_speed_multiplier"	
 				{
