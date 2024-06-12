@@ -18,6 +18,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_EarthSpirit.BoulderSmash.Target"
+		"MaxLevel"                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -25,11 +26,10 @@
 		"AbilityCastGestureSlot"		"DEFAULT"
 		"AbilityCastRange"				"150"
 		"AbilityCastPoint"				"0"
-		"MaxLevel"                      "6"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"22 18 14 10 6 2"
+		"AbilityChargeRestoreTime"				"22 18 14 10 6 2"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -39,16 +39,21 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
+				"AbilityCharges"
+				{
+					"value"						"1"
+					"special_bonus_shard"		"=2"
+				}
 				"radius"				
 				{
-					"value"	"180"	// NOTE: This radius must match the radius for geomagnetic grip
+					"value"						"180"	// NOTE: This radius must match the radius for geomagnetic grip
 					"special_bonus_shard"       "=300"
 					"affected_by_aoe_increase"	"1"
 				}
 				"rock_search_aoe"				
 				{
-					"value"	"200"
-					"special_bonus_shard"       "=450"
+					"value"						"200"
+					"special_bonus_shard"       "=300"
 					"affected_by_aoe_increase"	"1"
 				}
 				"rock_damage"			
@@ -56,14 +61,11 @@
 					"value"			"120 180 240 300 360 420"
 					"special_bonus_unique_earth_spirit_6"	"+100"
 				}	
-				"move_slow"
-				{
-					"value"                      "50"
-				}
+				"move_slow"				"50"
 				"duration"
 				{
 					"value"                      "1.25 2.50 3.25 4.00 5.25 6.50"
-					"special_bonus_shard"        			"=10.0"
+					"special_bonus_shard"        "=10"
 				}
 				"speed"
 				{
@@ -72,12 +74,13 @@
 				}
 				"unit_distance"			
 				{
-					"value"		"500 600 700 800 900 1000"
+					"value"						"500 600 700 800 900 1000"
+					"special_bonus_shard"       "=2000"
 				}
 				"rock_distance"			
 				{
-					"value"		"2000.0"
-					"special_bonus_shard"        "=30000"
+					"value"						"2000"
+					"special_bonus_shard"       "=4000"
 				}			
 				"remnant_smash_radius_tooltip"			
 				{
@@ -123,24 +126,24 @@
 		{
 				"radius"				
 				{
-					"value"		"160"
-					"special_bonus_shard"       "=300"
+					"value"					"160"
+					"special_bonus_shard"   "=300"
 				}
 				"speed"
 				{
 					"value"                      "1000"
-					"special_bonus_shard"        "+600"
+					"special_bonus_shard"        "=2000"
 				}
 				"rock_speed"
 				{
 					"value"                      "1600"
-					"special_bonus_shard"        "+600"
+					"special_bonus_shard"        "=3200"
 				}
 				"distance"				
 				{
-					"value"									"750"
-					"special_bonus_shard"        			"+750"
-					"special_bonus_unique_earth_spirit_4" 	"+200"
+					"value"						"750"
+					"special_bonus_shard"       "+750"
+					"special_bonus_unique_earth_spirit_4" "+200"
 				}
 				"rock_distance_multiplier"	"2"
 				"delay"
@@ -155,16 +158,27 @@
 				}
 				"stun_duration"			
 				{
-					"value"		"0.3 0.5 0.7 0.9 1.1 1.3"
-					"special_bonus_shard"        	"=5.0"
-					"special_bonus_unique_earth_spirit_3" "+0.5"
+					"value"									"0.3 0.5 0.7 0.9 1.1 1.3"
+					"special_bonus_shard"        			"+1.7"
+					"special_bonus_unique_earth_spirit_3" 	"+0.5"
 				}
-				"rock_bonus_duration"	"0.3 0.5 0.7 0.9 1.1 1.3"
-				"damage_str"			"100"
-				"AbilityCooldown"				
+				"rock_bonus_duration"
 				{
-					"value"				"16 12 8 4 3 2"
+					"value"                      "0.3 0.5 0.7 0.9 1.1 1.3"
+					"special_bonus_shard"        "+0.7"
 				}
+				"damage_str"			"100"
+				
+				"AbilityChargeRestoreTime"				
+				{
+					"value"				"16.0 12.0 8.0 4.0 3.0 2.0"
+				}
+				"AbilityCharges"
+				{
+					"value"									"1"
+					"special_bonus_shard"					"=2"
+				}
+				
 				"destroy_stone"
 				{
 					"value"						"1"
@@ -212,11 +226,11 @@
 				"AbilityCastRange"
 				{
 					"value"                      "1000 1100 1200 1300 1400 1500"
-					"special_bonus_shard"        "=30000"
+					"special_bonus_shard"        "=99999"
 				}
 				"radius"				
 				{
-					"value"		"180"	// NOTE: This radius must match the radius for boulder smash
+					"value"						"180"	// NOTE: This radius must match the radius for boulder smash
 					"special_bonus_shard"       "=300"
 					"affected_by_aoe_increase"	"1"		
 				}
@@ -224,29 +238,38 @@
 				"duration"
 				{
 					"value"                      "2.0 2.5 3.0 3.5 4.0 4.5"
-					"special_bonus_shard"        			"=10.0"
+					"special_bonus_shard"        "=10.0"
 				}
 				"pull_units_per_second_heroes"
 				{
 					"value"                      "600"
-					"special_bonus_shard"        "=1200"
+					"special_bonus_shard"        "=1800"
 				}
 				"pull_units_per_second"
 				{
 					"value"                      "900"
-					"special_bonus_shard"        "=1800"
+					"special_bonus_shard"        "=2700"
 				}
 				"speed"
 				{
 					"value"                      "800"
-					"special_bonus_shard"        "=1600"
+					"special_bonus_shard"        "=2400"
 				}
-				"total_pull_distance"		"1400"
-				"AbilityCooldown"		
+				"total_pull_distance"
 				{
-					"value"		"13"
-					"special_bonus_shard"        			"=2"
+					"value"                      "1400"
+					"special_bonus_shard"        "=99999"
+				}
+				
+				"AbilityChargeRestoreTime"		
+				{
+					"value"									"13"
 					"special_bonus_unique_earth_spirit_5"	"-3"
+				}
+				"AbilityCharges"
+				{
+					"value"									"1"
+					"special_bonus_shard"					"=2"
 				}
 		}
 	}
@@ -284,15 +307,15 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-            "AbilityCastRange"
+			"AbilityCastRange"
             {
                 "value"                      "1100"
-                "special_bonus_shard"        "=30000"
+                "special_bonus_shard"        "=99999"
             }
 			"duration"
 			{
-				"value"						"60.0"
-				"special_bonus_shard"       "=120.0"
+				"value"												"60.0"
+				"special_bonus_shard"       						"=120.0"
 				"special_bonus_facet_earth_spirit_stepping_stone"	"=20.0"
 			}
 			"polarization_distance"
@@ -302,11 +325,12 @@
 			}
 			"vision_radius"				
 			{
-				"value"							"0"
+				"value"						"0"
+				"special_bonus_shard"       "=600"
 			}		
 			"AbilityCharges"
 			{
-				"value"							"7 8 9 10 11 12 13"
+				"value"													"7 8 9 10 11 12 13"
 				"special_bonus_facet_earth_spirit_stepping_stone"		"=0 =0 =0 =0 =0 =0 =0"				
 			}
 			"rolling_offset_distance"			"150"
@@ -319,13 +343,13 @@
 			"AbilityCooldown"
 			{
 				"value"							"0.0"
-				"special_bonus_shard"       							"=0.0"
 				"special_bonus_facet_earth_spirit_stepping_stone"		"=4.0"
+				"special_bonus_shard"        							"-50%"
 			}
 			"AbilityChargeRestoreTime"
 			{
-				"value"							"18"
-				"special_bonus_shard"       	"=2"
+				"value"													"18"
+				"special_bonus_shard"        							"-50%"
 				"special_bonus_facet_earth_spirit_stepping_stone"		"=4"
 			}
 			"is_stepping_stone"
@@ -403,9 +427,8 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"2"
-		"MaxLevel"                      "4"
 		"AbilitySound"					"Hero_EarthSpirit.Magnetize.Cast"
-
+		"MaxLevel"                      "4"
 		"AbilityDraftPreAbility"		"earth_spirit_stone_caller"
 		"AbilityDraftUltScepterAbility" "earth_spirit_petrify"
 
@@ -413,12 +436,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
 		"AbilityCastGestureSlot"		"DEFAULT"
-
+		
 		"AbilityCastPoint"				"0.2"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"100 90 80 70"
+		"AbilityChargeRestoreTime"				"100 90 80 70"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -428,15 +451,20 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-            "AbilityCastRange"
+			"AbilityCharges"
+			{
+				"value"									"1"
+				"special_bonus_shard"					"=2"
+			}
+			"AbilityCastRange"
             {
                 "value"                      "350"
-                "special_bonus_shard"        "=3000"
+                "special_bonus_shard"        "+1000"
             }
 			"cast_radius"			
 			{
 				"value"						"350"
-				"special_bonus_shard"       "=3000"
+				"special_bonus_shard"       "+1000"
 				"affected_by_aoe_increase"	"1"		
 			}
 			"damage_per_second"	
@@ -447,15 +475,15 @@
 			
 			"damage_duration"
 			{
-				"value"			"6.0"
-				"special_bonus_shard"        "=60.0"
+				"value"							"6.0"
+				"special_bonus_shard"        	"=60.0"
 				"special_bonus_unique_earth_spirit_8"			"+30%"
 				"DamageTypeTooltip"				"DAMAGE_TYPE_NONE"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"rock_search_radius"			
 			{
-				"value"						"600"
+				"value"	"600"
 				"affected_by_aoe_increase"	"1"		
 			}
 			"rock_explosion_radius"			
@@ -468,9 +496,9 @@
                 "value"                      "1.0"
                 "special_bonus_shard"        "=0.5"
             }
-			"rock_explosion_delay"			"8.0"
+			"rock_explosion_delay"		"8.0"
 			"silence_duration"			"5.0"
-			"slow_duration"			"2.0"
+			"slow_duration"				"2.0"
 
 			"magnetized_rocks_buff_self"
 			{
