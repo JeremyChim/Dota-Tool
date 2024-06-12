@@ -31,8 +31,8 @@ class Window(QWidget, Ui_Form):
         self.setupUi(self)
         self.setWindowTitle('Dota Tool')
         self.setWindowIcon(QIcon('app.ico'))
-        self.lineEdit_4.setText('2024/06/01')
-        self.lineEdit_5.setText('1.16.1')
+        self.lineEdit_4.setText('2024/06/12')
+        self.lineEdit_5.setText('1.18.0')
 
     def __init__(self):
         super().__init__()
