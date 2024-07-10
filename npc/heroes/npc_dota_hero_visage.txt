@@ -59,7 +59,7 @@
 				"value"			"0"
 				"affected_by_aoe_increase"	"1"
 				"RequiresFacet"	"visage_sepulchre"
-				"special_bonus_facet_visage_sepulchre"		"300"
+				"special_bonus_facet_visage_sepulchre"		"250"
 			}
 			"penalty"
 			{
@@ -360,6 +360,8 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"MaxLevel"						"3"
+		"DependentOnAbility"			"visage_summon_familiars"
+
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -410,6 +412,7 @@
 		"AbilityCastPoint"				"0.0"
 		"MaxLevel"						"3"
 		"AbilitySound"					"Visage_Familiar.StoneForm.Cast"
+		"DependentOnAbility"			"visage_summon_familiars"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------

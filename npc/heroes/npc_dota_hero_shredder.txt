@@ -387,7 +387,6 @@
 				"second_chakram"
 				{
 					"value"			"0"
-					"special_bonus_facet_shredder_second_chakram"	"+1"
 				}
 		}
 	}
@@ -480,7 +479,6 @@
 				"second_chakram"
 				{
 					"value"			"0"
-					"special_bonus_facet_shredder_second_chakram"	"+1"
 				}
 		}
 	}
@@ -550,7 +548,7 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"600"
+		"AbilityCastRange"				"1200"
 		"AbilityCastPoint"				"0.2"
 		
 		// Time		
