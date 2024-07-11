@@ -442,23 +442,27 @@ class Window(QWidget, Ui_Form):
             if old_ab:
                 old_ab_list: list[str] = old_ab.split('"')
 
-                if old_ab_list[1] == "AbilityCastPoint":
-                    # 技能抬手为0
-                    new_ab: str = (mod.
-                                   replace('ab_name', old_ab_list[1]).
-                                   replace('ab_value', old_ab_list[3]))
+                # if old_ab_list[1] == "AbilityCastPoint":
+                #     # 技能抬手为0
+                #     new_ab: str = (mod.
+                #                    replace('ab_name', old_ab_list[1]).
+                #                    replace('ab_value', old_ab_list[3]))
+                #
+                # else:
+                #     # 计算技能的最后一个值
+                #     v1 = old_ab_list[3]
+                #     v2 = v1.split(' ')
+                #     v3 = float(v2[-1]) * 2
+                #     v4 = int(v3) if int(v3) == v3 else v3
+                #     v5 = '=' + str(v4)
+                #     new_ab: str = (mod.
+                #                    replace('ab_name', old_ab_list[1]).
+                #                    replace('ab_value', old_ab_list[3]).
+                #                    replace('=0', v5))
 
-                else:
-                    # 计算技能的最后一个值
-                    v1 = old_ab_list[3]
-                    v2 = v1.split(' ')
-                    v3 = float(v2[-1]) * 2
-                    v4 = int(v3) if int(v3) == v3 else v3
-                    v5 = '=' + str(v4)
-                    new_ab: str = (mod.
-                                   replace('ab_name', old_ab_list[1]).
-                                   replace('ab_value', old_ab_list[3]).
-                                   replace('=0', v5))
+                new_ab: str = (mod.
+                               replace('ab_name', old_ab_list[1]).
+                               replace('ab_value', old_ab_list[3]))
 
                 # 写入文本框
                 self.textEdit_3.append(new_ab)
