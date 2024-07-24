@@ -20,6 +20,7 @@ from PyQt6.QtWidgets import QApplication, QWidget, QFileDialog
 from colorama import init, Fore
 
 from untitled import Ui_Form
+from script.calc_num2 import calculate_next_two_elements_from_string
 
 init(autoreset=True)
 config = configparser.ConfigParser()
@@ -753,32 +754,12 @@ class Window(QWidget, Ui_Form):
         try:
             self.textEdit_5.clear()
             for original_string in self.textEdit_4.toPlainText().split('\n'):
-                # 原字符串
-                # original_string = '     "ab"         "100 205 310 415"'
-                # print(original_string.split('"'))
 
                 original_string: str
                 original_list: list[str] = original_string.split('"')
-                original_string: str = original_list[3]
+                num_string: str = original_list[3]
 
-                # 将原字符串按空格分割成数字列表
-                numbers: list[float] = [float(num) for num in original_string.split()]
-
-                # 计算公差
-                diff = numbers[1] - numbers[0]
-
-                # 使用计算出的公差来找出接下来的两个数字
-                next_number1 = numbers[-1] + diff
-                next_number2 = next_number1 + diff
-
-                # 将新的数字添加到列表中
-                numbers.append(next_number1)
-                if is_big_ab is False:
-                    numbers.append(next_number2)
-                numbers2: list[str] = [f'{num:.{self.spinBox_11.value()}f}' for num in numbers]
-
-                # 将列表中的数字重新组合成字符串
-                new_string: str = " ".join(numbers2)
+                new_string = calculate_next_two_elements_from_string(num_string, is_big_ab)
                 original_list[3] = new_string
                 new = '"'.join(original_list)
 
