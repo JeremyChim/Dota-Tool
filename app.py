@@ -460,9 +460,20 @@ class Window(QWidget, Ui_Form):
                 #                    replace('ab_value', old_ab_list[3]).
                 #                    replace('=0', v5))
 
-                new_ab: str = (mod.
+                v1 = old_ab_list[3]
+                v2 = v1.split(' ')
+                if len(v2) > 1:
+                    v3 = float(v2[1]) - float(v2[0])
+                    v4 = '+' + str(v3)
+                    new_ab: str = (mod.
                                replace('ab_name', old_ab_list[1]).
-                               replace('ab_value', old_ab_list[3]))
+                               replace('ab_value', old_ab_list[3]).
+                               replace('=0', v4)
+                               )
+                else:
+                    new_ab: str = (mod.
+                                replace('ab_name', old_ab_list[1]).
+                                replace('ab_value', old_ab_list[3]))
 
                 # 写入文本框
                 self.textEdit_3.append(new_ab)
