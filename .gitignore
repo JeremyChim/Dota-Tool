@@ -3,3 +3,4 @@ script/__pycache__/*
 vpk/pak01_dir/*
 build
 dist
+.idea
