@@ -32,8 +32,8 @@ class Window(QWidget, Ui_Form):
         self.setupUi(self)
         self.setWindowTitle('Dota Tool')
         self.setWindowIcon(QIcon('app.ico'))
-        self.lineEdit_4.setText('2024/06/12')
-        self.lineEdit_5.setText('1.18.0')
+        self.lineEdit_4.setText('2024/08/04')
+        self.lineEdit_5.setText('1.19.1')
 
     def __init__(self):
         super().__init__()
@@ -439,42 +439,23 @@ class Window(QWidget, Ui_Form):
 
         for old_ab in old_lines:
             old_ab: str
-            # print(old_ab)
+
             if old_ab:
                 old_ab_list: list[str] = old_ab.split('"')
-
-                # if old_ab_list[1] == "AbilityCastPoint":
-                #     # 技能抬手为0
-                #     new_ab: str = (mod.
-                #                    replace('ab_name', old_ab_list[1]).
-                #                    replace('ab_value', old_ab_list[3]))
-                #
-                # else:
-                #     # 计算技能的最后一个值
-                #     v1 = old_ab_list[3]
-                #     v2 = v1.split(' ')
-                #     v3 = float(v2[-1]) * 2
-                #     v4 = int(v3) if int(v3) == v3 else v3
-                #     v5 = '=' + str(v4)
-                #     new_ab: str = (mod.
-                #                    replace('ab_name', old_ab_list[1]).
-                #                    replace('ab_value', old_ab_list[3]).
-                #                    replace('=0', v5))
 
                 v1 = old_ab_list[3]
                 v2 = v1.split(' ')
                 if len(v2) > 1:
-                    v3 = float(v2[1]) - float(v2[0])
-                    v4 = '+' + str(v3)
+                    v3, v4 = calculate_next_two_elements_from_string(v1)
                     new_ab: str = (mod.
-                               replace('ab_name', old_ab_list[1]).
-                               replace('ab_value', old_ab_list[3]).
-                               replace('=0', v4)
-                               )
+                                   replace('ab_name', old_ab_list[1]).
+                                   replace('ab_value', v3).
+                                   replace('=0', f'+{v4}')
+                                   )
                 else:
                     new_ab: str = (mod.
-                                replace('ab_name', old_ab_list[1]).
-                                replace('ab_value', old_ab_list[3]))
+                                   replace('ab_name', old_ab_list[1]).
+                                   replace('ab_value', old_ab_list[3]))
 
                 # 写入文本框
                 self.textEdit_3.append(new_ab)
@@ -729,7 +710,6 @@ class Window(QWidget, Ui_Form):
         self.update_hero_value_pushButton.click()  # 写入
         self.pushButton.click()  # 夜间视野 1800
 
-
     def dragEnterEvent(self, event: QDragEnterEvent) -> None:
         """拖拽功能"""
         # 当有文件拖入窗口时触发
@@ -754,12 +734,11 @@ class Window(QWidget, Ui_Form):
         try:
             self.textEdit_5.clear()
             for original_string in self.textEdit_4.toPlainText().split('\n'):
-
                 original_string: str
                 original_list: list[str] = original_string.split('"')
                 num_string: str = original_list[3]
 
-                new_string = calculate_next_two_elements_from_string(num_string, is_big_ab)
+                new_string, _ = calculate_next_two_elements_from_string(num_string, is_big_ab)
                 original_list[3] = new_string
                 new = '"'.join(original_list)
 
