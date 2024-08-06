@@ -12,7 +12,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.resize(758, 890)
+        Form.resize(726, 800)
         self.verticalLayout = QtWidgets.QVBoxLayout(Form)
         self.verticalLayout.setObjectName("verticalLayout")
         self.set_top_checkBox = QtWidgets.QCheckBox(parent=Form)
@@ -1119,6 +1119,7 @@ class Ui_Form(object):
         font.setPointSize(10)
         font.setBold(True)
         font.setItalic(True)
+        font.setWeight(87)
         self.textEdit_4.setFont(font)
         self.textEdit_4.setObjectName("textEdit_4")
         self.verticalLayout_19.addWidget(self.textEdit_4)
@@ -1154,6 +1155,7 @@ class Ui_Form(object):
         font.setPointSize(10)
         font.setBold(True)
         font.setItalic(True)
+        font.setWeight(87)
         self.textEdit_5.setFont(font)
         self.textEdit_5.setStyleSheet("color: rgb(85, 0, 255);")
         self.textEdit_5.setObjectName("textEdit_5")
@@ -1182,6 +1184,7 @@ class Ui_Form(object):
         font.setPointSize(10)
         font.setBold(True)
         font.setItalic(True)
+        font.setWeight(87)
         self.lineEdit_6.setFont(font)
         self.lineEdit_6.setObjectName("lineEdit_6")
         self.horizontalLayout_17.addWidget(self.lineEdit_6)
@@ -1191,6 +1194,27 @@ class Ui_Form(object):
         self.horizontalLayout_17.setStretch(0, 1)
         self.horizontalLayout_17.setStretch(1, 5)
         self.verticalLayout_9.addLayout(self.horizontalLayout_17)
+        self.horizontalLayout_83 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_83.setObjectName("horizontalLayout_83")
+        self.label_38 = QtWidgets.QLabel(parent=self.groupBox_10)
+        self.label_38.setObjectName("label_38")
+        self.horizontalLayout_83.addWidget(self.label_38)
+        self.lineEdit_8 = QtWidgets.QLineEdit(parent=self.groupBox_10)
+        font = QtGui.QFont()
+        font.setFamily("Consolas")
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setItalic(True)
+        font.setWeight(87)
+        self.lineEdit_8.setFont(font)
+        self.lineEdit_8.setObjectName("lineEdit_8")
+        self.horizontalLayout_83.addWidget(self.lineEdit_8)
+        self.pushButton_11 = QtWidgets.QPushButton(parent=self.groupBox_10)
+        self.pushButton_11.setObjectName("pushButton_11")
+        self.horizontalLayout_83.addWidget(self.pushButton_11)
+        self.horizontalLayout_83.setStretch(0, 1)
+        self.horizontalLayout_83.setStretch(1, 5)
+        self.verticalLayout_9.addLayout(self.horizontalLayout_83)
         self.horizontalLayout_18 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_18.setObjectName("horizontalLayout_18")
         self.label_18 = QtWidgets.QLabel(parent=self.groupBox_10)
@@ -1202,6 +1226,7 @@ class Ui_Form(object):
         font.setPointSize(10)
         font.setBold(True)
         font.setItalic(True)
+        font.setWeight(87)
         self.lineEdit_7.setFont(font)
         self.lineEdit_7.setObjectName("lineEdit_7")
         self.horizontalLayout_18.addWidget(self.lineEdit_7)
@@ -1214,14 +1239,28 @@ class Ui_Form(object):
         self.verticalLayout_8 = QtWidgets.QVBoxLayout()
         self.verticalLayout_8.setObjectName("verticalLayout_8")
         self.label_19 = QtWidgets.QLabel(parent=self.groupBox_10)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.label_19.sizePolicy().hasHeightForWidth())
+        self.label_19.setSizePolicy(sizePolicy)
         self.label_19.setObjectName("label_19")
         self.verticalLayout_8.addWidget(self.label_19)
         self.textEdit = QtWidgets.QTextEdit(parent=self.groupBox_10)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.textEdit.sizePolicy().hasHeightForWidth())
+        self.textEdit.setSizePolicy(sizePolicy)
+        self.textEdit.setMinimumSize(QtCore.QSize(0, 0))
+        self.textEdit.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.textEdit.setSizeIncrement(QtCore.QSize(0, 0))
         font = QtGui.QFont()
         font.setFamily("Consolas")
         font.setPointSize(10)
         font.setBold(True)
         font.setItalic(True)
+        font.setWeight(87)
         self.textEdit.setFont(font)
         self.textEdit.setStyleSheet("")
         self.textEdit.setObjectName("textEdit")
@@ -1241,6 +1280,7 @@ class Ui_Form(object):
         font.setPointSize(10)
         font.setBold(True)
         font.setItalic(True)
+        font.setWeight(87)
         self.textEdit_2.setFont(font)
         self.textEdit_2.setObjectName("textEdit_2")
         self.verticalLayout_10.addWidget(self.textEdit_2)
@@ -1262,6 +1302,7 @@ class Ui_Form(object):
         font.setPointSize(10)
         font.setBold(True)
         font.setItalic(True)
+        font.setWeight(87)
         self.textEdit_3.setFont(font)
         self.textEdit_3.setStyleSheet("color: rgb(0, 85, 255);")
         self.textEdit_3.setObjectName("textEdit_3")
@@ -1750,71 +1791,59 @@ class Ui_Form(object):
         self.lineEdit_36.setText(_translate("Form", "\"Innate\"                        \"1\""))
         self.pushButton_69.setText(_translate("Form", "复制"))
         self.textEdit_4.setHtml(_translate("Form", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:\'Consolas\'; font-size:10pt; font-weight:700; font-style:italic;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:696;\">&quot;ab_name&quot;        &quot;100 200 300 400&quot;</span></p></body></html>"))
+"</style></head><body style=\" font-family:\'Consolas\'; font-size:10pt; font-weight:696; font-style:italic;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">&quot;ab_name&quot;        &quot;100 200 300 400&quot;</p></body></html>"))
         self.pushButton_58.setText(_translate("Form", "普通技能计算"))
         self.pushButton_64.setText(_translate("Form", "终极技能计算"))
         self.pushButton_61.setText(_translate("Form", "复制"))
         self.pushButton_60.setText(_translate("Form", "清空"))
         self.textEdit_5.setHtml(_translate("Form", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:\'Consolas\'; font-size:10pt; font-weight:700; font-style:italic;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:696;\">&quot;ab_name&quot;        &quot;100 200 300 400 500 600&quot;</span></p></body></html>"))
+"</style></head><body style=\" font-family:\'Consolas\'; font-size:10pt; font-weight:696; font-style:italic;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">&quot;ab_name&quot;        &quot;100 200 300 400 500 600&quot;</p></body></html>"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_6), _translate("Form", "技能计算"))
         self.groupBox_10.setTitle(_translate("Form", "模版"))
-        self.label_17.setText(_translate("Form", "魔晶"))
-        self.lineEdit_6.setText(_translate("Form", "\"special_bonus_shard\"        \"=0\""))
+        self.label_17.setText(_translate("Form", "等级"))
+        self.lineEdit_6.setText(_translate("Form", "\"MaxLevel\"                      \"6\""))
         self.pushButton_6.setText(_translate("Form", "复制"))
+        self.label_38.setText(_translate("Form", "魔晶"))
+        self.lineEdit_8.setText(_translate("Form", "\"special_bonus_shard\"        \"=0\""))
+        self.pushButton_11.setText(_translate("Form", "复制"))
         self.label_18.setText(_translate("Form", "A杖"))
         self.lineEdit_7.setText(_translate("Form", "\"special_bonus_scepter\"      \"=0\""))
         self.pushButton_7.setText(_translate("Form", "复制"))
         self.label_19.setText(_translate("Form", "技能替换模版"))
         self.textEdit.setHtml(_translate("Form", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:\'Consolas\'; font-size:10pt; font-weight:700; font-style:italic;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:696;\">&quot;ab_name&quot;</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:696;\">            {</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:696;\">                &quot;value&quot;                      &quot;ab_value&quot;</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:696;\">                &quot;special_bonus_shard&quot;        &quot;=0&quot;</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:696;\">                </span>&quot;special_bonus_scepter&quot;      &quot;=1&quot;</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:696;\">            }</span></p></body></html>"))
+"</style></head><body style=\" font-family:\'Consolas\'; font-size:10pt; font-weight:696; font-style:italic;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">&quot;ab_name&quot;</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">            {</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">                &quot;value&quot;                      &quot;ab_value&quot;</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">                &quot;special_bonus_shard&quot;        &quot;=0&quot;</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">                &quot;special_bonus_scepter&quot;      &quot;=1&quot;    // note: max_value</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">            }</p></body></html>"))
         self.groupBox_11.setTitle(_translate("Form", "控制台"))
         self.textEdit_2.setHtml(_translate("Form", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:\'Consolas\'; font-size:10pt; font-weight:700; font-style:italic;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:696;\">&quot;ab_name&quot;        &quot;100 200 300 400&quot;</span></p></body></html>"))
+"</style></head><body style=\" font-family:\'Consolas\'; font-size:10pt; font-weight:696; font-style:italic;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">&quot;ab_name&quot;        &quot;100 200 300 400&quot;</p></body></html>"))
         self.pushButton_9.setText(_translate("Form", "替换"))
         self.pushButton_10.setText(_translate("Form", "复制"))
         self.pushButton_8.setText(_translate("Form", "清空"))
         self.textEdit_3.setHtml(_translate("Form", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:\'Consolas\'; font-size:10pt; font-weight:700; font-style:italic;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:696;\">&quot;ab_name&quot;</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:696;\">            {</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:696;\">                &quot;value&quot;                &quot;100&quot;</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:696;\">                &quot;special_bonus_shard&quot;            &quot;=0&quot;</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:696;\">            }</span></p></body></html>"))
+"</style></head><body style=\" font-family:\'Consolas\'; font-size:10pt; font-weight:696; font-style:italic;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">&quot;ab_name&quot;</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">            {</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">                &quot;value&quot;                &quot;100&quot;</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">                &quot;special_bonus_shard&quot;            &quot;=0&quot;</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">            }</p></body></html>"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), _translate("Form", "魔晶技能"))
         self.groupBox_14.setTitle(_translate("Form", "操作"))
         self.pushButton_17.setText(_translate("Form", "升5级"))
@@ -1861,33 +1890,27 @@ class Ui_Form(object):
         self.lineEdit_22.setText(_translate("Form", "-item ultimate_scepter_2"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_4), _translate("Form", "指令"))
         self.textEdit_6.setHtml(_translate("Form", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:\'Consolas\'; font-size:10pt; font-weight:700; font-style:italic;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:696;\">&quot;AbilityChargeRestoreTime&quot;        &quot;100 90 80 70&quot;</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:696;\">&quot;AbilityCharges&quot;</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:696;\">{</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:696;\">    &quot;value&quot;            &quot;1&quot;</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:696;\">    &quot;special_bonus_shard&quot;        &quot;=2&quot;</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:696;\">}</span></p></body></html>"))
+"</style></head><body style=\" font-family:\'Consolas\'; font-size:10pt; font-weight:696; font-style:italic;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">&quot;AbilityChargeRestoreTime&quot;        &quot;100 90 80 70&quot;</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">&quot;AbilityCharges&quot;</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">{</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">    &quot;value&quot;            &quot;1&quot;</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">    &quot;special_bonus_shard&quot;        &quot;=2&quot;</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">}</p></body></html>"))
         self.textEdit_7.setHtml(_translate("Form", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:\'Consolas\'; font-size:10pt; font-weight:700; font-style:italic;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:696;\">&quot;AbilityChargeRestoreTime&quot;</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:696;\">{</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:696;\">    &quot;value&quot;            &quot;100 90 80 70&quot;</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:696;\">    &quot;special_bonus_shard&quot;        &quot;-50%&quot;</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:696;\">}</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:696;\">&quot;AbilityCharges&quot;</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:696;\">{</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:696;\">    &quot;value&quot;            &quot;1&quot;</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:696;\">    &quot;special_bonus_shard&quot;        &quot;=2&quot;</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:696;\">}</span></p></body></html>"))
+"</style></head><body style=\" font-family:\'Consolas\'; font-size:10pt; font-weight:696; font-style:italic;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">&quot;AbilityChargeRestoreTime&quot;</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">{</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">    &quot;value&quot;            &quot;100 90 80 70&quot;</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">    &quot;special_bonus_shard&quot;        &quot;-50%&quot;</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">}</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">&quot;AbilityCharges&quot;</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">{</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">    &quot;value&quot;            &quot;1&quot;</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">    &quot;special_bonus_shard&quot;        &quot;=2&quot;</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">}</p></body></html>"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_7), _translate("Form", "充能模版"))
