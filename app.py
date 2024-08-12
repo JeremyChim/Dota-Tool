@@ -12,7 +12,6 @@ import shutil
 import sys
 from time import sleep
 
-
 import pyperclip
 from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QDragEnterEvent, QDropEvent
@@ -21,7 +20,7 @@ from PyQt6.QtWidgets import QApplication, QWidget, QFileDialog
 from colorama import init, Fore
 
 from untitled import Ui_Form
-from script.calc_num2 import calculate_next_two_elements_from_string as calc2
+from script import calc2
 from script import scepter
 
 init(autoreset=True)
@@ -445,17 +444,17 @@ class Window(QWidget, Ui_Form):
             if old_ab:
                 old_ab_list: list[str] = old_ab.split('"')
 
-                v1 = old_ab_list[3]
-                v2 = v1.split(' ')
-                if len(v2) > 1:
-                    v3, v4 = calc2(v1)
-                    scepter_value, max_value = scepter.func(float(v2[-1]), float(v4))
+                abv = old_ab_list[3]
+                als = abv.split(' ')
+                if len(als) > 1:
+                    v3, diff, poi = calc2.func(abv)
+                    scepter_value, max_value = scepter.func(float(als[-1]), float(diff))
 
                     new_ab: str = (mod.
                                    replace('ab_name', old_ab_list[1]).
                                    replace('ab_value', v3).
-                                   replace('=0', f'+{v4}').
-                                   replace('=1', f'={scepter_value}').
+                                   replace('=0', f'+{diff}').
+                                   replace('=1', f'={scepter_value:.{poi}f}').
                                    replace('max_value', f'{max_value}')
                                    )
 
@@ -746,7 +745,7 @@ class Window(QWidget, Ui_Form):
                 original_list: list[str] = original_string.split('"')
                 num_string: str = original_list[3]
 
-                new_string, _ = calc2(num_string, is_big_ab)
+                new_string, _ = calc2.func(num_string, 1)
                 original_list[3] = new_string
                 new = '"'.join(original_list)
 

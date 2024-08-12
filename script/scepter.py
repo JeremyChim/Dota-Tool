@@ -1,5 +1,6 @@
 def func(arg, arg2=0):
     """
+    计算A杖值
     :param arg: 技能最大值
     :param arg2: 魔晶加成
     :return: A杖值，注释值
