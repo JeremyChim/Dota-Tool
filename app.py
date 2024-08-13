@@ -122,9 +122,10 @@ class Window(QWidget, Ui_Form):
         # 魔晶技能替换
         # 普通技能计算
         # 终极技能计算
-        self.pushButton_9.clicked.connect(self.ability_replace)
-        self.pushButton_58.clicked.connect(self.ability_calc)
-        self.pushButton_64.clicked.connect(lambda: self.ability_calc(is_big_ab=True))
+        self.pushButton_9.clicked.connect(lambda: self.ability_replace(1))
+        self.pushButton_14.clicked.connect(lambda: self.ability_replace(2))
+        # self.pushButton_58.clicked.connect(self.ability_calc)
+        # self.pushButton_64.clicked.connect(lambda: self.ability_calc(is_big_ab=True))
 
         # 打开VPK配置文件夹
         # 生成VPK文件
@@ -431,8 +432,12 @@ class Window(QWidget, Ui_Form):
             else:
                 self.update_tower(*arg)
 
-    def ability_replace(self):
-        """魔晶技能替换"""
+    def ability_replace(self, arg):
+        """
+        魔晶技能替换
+        :param arg: 计算后几位
+        :return:
+        """
         self.textEdit_3.clear()
         mod: str = self.textEdit.toPlainText()
         old_content: str = self.textEdit_2.toPlainText()
@@ -443,11 +448,11 @@ class Window(QWidget, Ui_Form):
 
             if old_ab:
                 old_ab_list: list[str] = old_ab.split('"')
-
                 abv = old_ab_list[3]
                 als = abv.split(' ')
+
                 if len(als) > 1:
-                    v3, diff, poi = calc2.func(abv)
+                    v3, diff, poi = calc2.func(abv, arg)
                     scepter_value, max_value = scepter.func(float(als[-1]), float(diff))
 
                     new_ab: str = (mod.
@@ -458,8 +463,8 @@ class Window(QWidget, Ui_Form):
                                    replace('max_value', f'{max_value}')
                                    )
 
-
                 else:
+
                     new_ab: str = (mod.
                                    replace('ab_name', old_ab_list[1]).
                                    replace('ab_value', old_ab_list[3]))
@@ -470,6 +475,7 @@ class Window(QWidget, Ui_Form):
                 print(old_ab)
                 # print(mod)
                 print(Fore.LIGHTBLUE_EX + new_ab)
+
             else:
                 print(Fore.LIGHTRED_EX + '技能替换失败！')
 
@@ -736,25 +742,25 @@ class Window(QWidget, Ui_Form):
             elif 'dota 2 beta' in file_url:
                 self.game_path_lineEdit.setText(file_url)  # SENT THE URL - steam
 
-    def ability_calc(self, is_big_ab: bool = False):
-        """技能计算"""
-        try:
-            self.textEdit_5.clear()
-            for original_string in self.textEdit_4.toPlainText().split('\n'):
-                original_string: str
-                original_list: list[str] = original_string.split('"')
-                num_string: str = original_list[3]
-
-                new_string, _ = calc2.func(num_string, 1)
-                original_list[3] = new_string
-                new = '"'.join(original_list)
-
-                # 输出结果
-                self.textEdit_5.append(new)
-                print(new)
-
-        except:
-            print(Fore.LIGHTRED_EX + '技能计算失败！')
+    # def ability_calc(self, is_big_ab: bool = False):
+    #     """技能计算"""
+    #     try:
+    #         self.textEdit_5.clear()
+    #         for original_string in self.textEdit_4.toPlainText().split('\n'):
+    #             original_string: str
+    #             original_list: list[str] = original_string.split('"')
+    #             num_string: str = original_list[3]
+    #
+    #             new_string, _ = calc2.func(num_string, 1)
+    #             original_list[3] = new_string
+    #             new = '"'.join(original_list)
+    #
+    #             # 输出结果
+    #             self.textEdit_5.append(new)
+    #             print(new)
+    #
+    #     except:
+    #         print(Fore.LIGHTRED_EX + '技能计算失败！')
 
     def open_gi_file(self):
         """打开gi文件"""

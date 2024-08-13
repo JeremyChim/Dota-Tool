@@ -5,7 +5,8 @@ def func(arg, arg2=0):
     :param arg2: 魔晶加成
     :return: A杖值，注释值
     """
-    ls = [1, 10, 100, 1000, 10000]
+    ls = [10 ** i for i in range(10)]
+    # print(ls)
 
     for i in ls:
         if arg > i:
@@ -14,6 +15,6 @@ def func(arg, arg2=0):
 
 
 if __name__ == '__main__':
-    scepter, note = func(700, 400)
+    scepter, note = func(1500, 400)
     print(f'scepter: {scepter}')
     print(f'note: {note}')

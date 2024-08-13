@@ -1223,6 +1223,9 @@ class Ui_Form(object):
         self.pushButton_9 = QtWidgets.QPushButton(parent=self.groupBox_11)
         self.pushButton_9.setObjectName("pushButton_9")
         self.horizontalLayout_19.addWidget(self.pushButton_9)
+        self.pushButton_14 = QtWidgets.QPushButton(parent=self.groupBox_11)
+        self.pushButton_14.setObjectName("pushButton_14")
+        self.horizontalLayout_19.addWidget(self.pushButton_14)
         self.pushButton_10 = QtWidgets.QPushButton(parent=self.groupBox_11)
         self.pushButton_10.setObjectName("pushButton_10")
         self.horizontalLayout_19.addWidget(self.pushButton_10)
@@ -1528,190 +1531,68 @@ class Ui_Form(object):
         self.textEdit_7.setGeometry(QtCore.QRect(20, 200, 691, 171))
         self.textEdit_7.setObjectName("textEdit_7")
         self.tabWidget.addTab(self.tab_7, "")
-        self.tab_6 = QtWidgets.QWidget()
-        self.tab_6.setObjectName("tab_6")
-        self.verticalLayout_37 = QtWidgets.QVBoxLayout(self.tab_6)
-        self.verticalLayout_37.setObjectName("verticalLayout_37")
-        self.groupBox_19 = QtWidgets.QGroupBox(parent=self.tab_6)
-        self.groupBox_19.setObjectName("groupBox_19")
-        self.verticalLayout_38 = QtWidgets.QVBoxLayout(self.groupBox_19)
-        self.verticalLayout_38.setObjectName("verticalLayout_38")
-        self.verticalLayout_19 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_19.setObjectName("verticalLayout_19")
-        self.verticalLayout_20 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_20.setObjectName("verticalLayout_20")
-        self.horizontalLayout_63 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_63.setObjectName("horizontalLayout_63")
-        self.lineEdit_31 = QtWidgets.QLineEdit(parent=self.groupBox_19)
-        self.lineEdit_31.setObjectName("lineEdit_31")
-        self.horizontalLayout_63.addWidget(self.lineEdit_31)
-        self.pushButton_62 = QtWidgets.QPushButton(parent=self.groupBox_19)
-        self.pushButton_62.setObjectName("pushButton_62")
-        self.horizontalLayout_63.addWidget(self.pushButton_62)
-        self.verticalLayout_20.addLayout(self.horizontalLayout_63)
-        self.horizontalLayout_64 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_64.setObjectName("horizontalLayout_64")
-        self.lineEdit_32 = QtWidgets.QLineEdit(parent=self.groupBox_19)
-        self.lineEdit_32.setObjectName("lineEdit_32")
-        self.horizontalLayout_64.addWidget(self.lineEdit_32)
-        self.pushButton_63 = QtWidgets.QPushButton(parent=self.groupBox_19)
-        self.pushButton_63.setObjectName("pushButton_63")
-        self.horizontalLayout_64.addWidget(self.pushButton_63)
-        self.verticalLayout_20.addLayout(self.horizontalLayout_64)
-        self.verticalLayout_19.addLayout(self.verticalLayout_20)
-        self.horizontalLayout_73 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_73.setObjectName("horizontalLayout_73")
-        self.lineEdit_34 = QtWidgets.QLineEdit(parent=self.groupBox_19)
-        self.lineEdit_34.setObjectName("lineEdit_34")
-        self.horizontalLayout_73.addWidget(self.lineEdit_34)
-        self.pushButton_66 = QtWidgets.QPushButton(parent=self.groupBox_19)
-        self.pushButton_66.setObjectName("pushButton_66")
-        self.horizontalLayout_73.addWidget(self.pushButton_66)
-        self.verticalLayout_19.addLayout(self.horizontalLayout_73)
-        self.horizontalLayout_74 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_74.setObjectName("horizontalLayout_74")
-        self.lineEdit_35 = QtWidgets.QLineEdit(parent=self.groupBox_19)
-        self.lineEdit_35.setObjectName("lineEdit_35")
-        self.horizontalLayout_74.addWidget(self.lineEdit_35)
-        self.pushButton_68 = QtWidgets.QPushButton(parent=self.groupBox_19)
-        self.pushButton_68.setObjectName("pushButton_68")
-        self.horizontalLayout_74.addWidget(self.pushButton_68)
-        self.verticalLayout_19.addLayout(self.horizontalLayout_74)
-        self.horizontalLayout_75 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_75.setObjectName("horizontalLayout_75")
-        self.lineEdit_36 = QtWidgets.QLineEdit(parent=self.groupBox_19)
-        self.lineEdit_36.setObjectName("lineEdit_36")
-        self.horizontalLayout_75.addWidget(self.lineEdit_36)
-        self.pushButton_69 = QtWidgets.QPushButton(parent=self.groupBox_19)
-        self.pushButton_69.setObjectName("pushButton_69")
-        self.horizontalLayout_75.addWidget(self.pushButton_69)
-        self.verticalLayout_19.addLayout(self.horizontalLayout_75)
-        self.textEdit_4 = QtWidgets.QTextEdit(parent=self.groupBox_19)
-        font = QtGui.QFont()
-        font.setFamily("Consolas")
-        font.setPointSize(10)
-        font.setBold(True)
-        font.setItalic(True)
-        font.setWeight(87)
-        self.textEdit_4.setFont(font)
-        self.textEdit_4.setObjectName("textEdit_4")
-        self.verticalLayout_19.addWidget(self.textEdit_4)
-        self.horizontalLayout_62 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_62.setObjectName("horizontalLayout_62")
-        self.spinBox_11 = QtWidgets.QSpinBox(parent=self.groupBox_19)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.spinBox_11.sizePolicy().hasHeightForWidth())
-        self.spinBox_11.setSizePolicy(sizePolicy)
-        self.spinBox_11.setMinimumSize(QtCore.QSize(0, 0))
-        self.spinBox_11.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
-        self.spinBox_11.setMaximum(5)
-        self.spinBox_11.setObjectName("spinBox_11")
-        self.horizontalLayout_62.addWidget(self.spinBox_11)
-        self.pushButton_58 = QtWidgets.QPushButton(parent=self.groupBox_19)
-        self.pushButton_58.setObjectName("pushButton_58")
-        self.horizontalLayout_62.addWidget(self.pushButton_58)
-        self.pushButton_64 = QtWidgets.QPushButton(parent=self.groupBox_19)
-        self.pushButton_64.setObjectName("pushButton_64")
-        self.horizontalLayout_62.addWidget(self.pushButton_64)
-        self.pushButton_61 = QtWidgets.QPushButton(parent=self.groupBox_19)
-        self.pushButton_61.setObjectName("pushButton_61")
-        self.horizontalLayout_62.addWidget(self.pushButton_61)
-        self.pushButton_60 = QtWidgets.QPushButton(parent=self.groupBox_19)
-        self.pushButton_60.setObjectName("pushButton_60")
-        self.horizontalLayout_62.addWidget(self.pushButton_60)
-        self.verticalLayout_19.addLayout(self.horizontalLayout_62)
-        self.textEdit_5 = QtWidgets.QTextEdit(parent=self.groupBox_19)
-        font = QtGui.QFont()
-        font.setFamily("Consolas")
-        font.setPointSize(10)
-        font.setBold(True)
-        font.setItalic(True)
-        font.setWeight(87)
-        self.textEdit_5.setFont(font)
-        self.textEdit_5.setStyleSheet("color: rgb(85, 0, 255);")
-        self.textEdit_5.setObjectName("textEdit_5")
-        self.verticalLayout_19.addWidget(self.textEdit_5)
-        self.verticalLayout_38.addLayout(self.verticalLayout_19)
-        self.verticalLayout_37.addWidget(self.groupBox_19)
-        self.tabWidget.addTab(self.tab_6, "")
         self.verticalLayout.addWidget(self.tabWidget)
 
         self.retranslateUi(Form)
         self.tabWidget.setCurrentIndex(3)
-        self.pushButton_66.clicked.connect(self.lineEdit_34.selectAll) # type: ignore
-        self.pushButton_35.clicked.connect(self.lineEdit_27.selectAll) # type: ignore
-        self.pushButton_30.clicked.connect(self.lineEdit_22.selectAll) # type: ignore
-        self.pushButton_28.clicked.connect(self.lineEdit_20.selectAll) # type: ignore
-        self.pushButton_20.clicked.connect(self.lineEdit_12.selectAll) # type: ignore
-        self.copy_boot_option_pushButton.clicked.connect(self.lineEdit_30.selectAll) # type: ignore
-        self.pushButton_24.clicked.connect(self.lineEdit_16.selectAll) # type: ignore
-        self.pushButton_29.clicked.connect(self.lineEdit_21.selectAll) # type: ignore
-        self.pushButton_27.clicked.connect(self.lineEdit_19.selectAll) # type: ignore
-        self.pushButton_69.clicked.connect(self.lineEdit_36.selectAll) # type: ignore
-        self.pushButton_61.clicked.connect(self.textEdit_5.selectAll) # type: ignore
-        self.pushButton_18.clicked.connect(self.lineEdit_10.selectAll) # type: ignore
-        self.pushButton_22.clicked.connect(self.lineEdit_14.selectAll) # type: ignore
-        self.pushButton_60.clicked.connect(self.textEdit_5.clear) # type: ignore
-        self.pushButton_28.clicked.connect(self.lineEdit_20.copy) # type: ignore
-        self.pushButton_31.clicked.connect(self.lineEdit_23.selectAll) # type: ignore
-        self.pushButton_19.clicked.connect(self.lineEdit_11.selectAll) # type: ignore
-        self.pushButton_62.clicked.connect(self.lineEdit_31.selectAll) # type: ignore
-        self.pushButton_63.clicked.connect(self.lineEdit_32.selectAll) # type: ignore
-        self.pushButton_2.clicked.connect(self.lineEdit.selectAll) # type: ignore
-        self.pushButton_36.clicked.connect(self.lineEdit_28.selectAll) # type: ignore
-        self.pushButton_61.clicked.connect(self.textEdit_5.copy) # type: ignore
-        self.pushButton_17.clicked.connect(self.lineEdit_9.selectAll) # type: ignore
-        self.pushButton_10.clicked.connect(self.textEdit_3.selectAll) # type: ignore
-        self.pushButton_19.clicked.connect(self.lineEdit_11.copy) # type: ignore
-        self.pushButton_7.clicked.connect(self.lineEdit_7.selectAll) # type: ignore
-        self.pushButton_68.clicked.connect(self.lineEdit_35.selectAll) # type: ignore
-        self.pushButton_68.clicked.connect(self.lineEdit_35.copy) # type: ignore
-        self.pushButton_21.clicked.connect(self.lineEdit_13.selectAll) # type: ignore
-        self.pushButton_32.clicked.connect(self.lineEdit_24.selectAll) # type: ignore
-        self.pushButton_34.clicked.connect(self.lineEdit_26.selectAll) # type: ignore
-        self.pushButton_33.clicked.connect(self.lineEdit_25.selectAll) # type: ignore
-        self.pushButton_22.clicked.connect(self.lineEdit_14.copy) # type: ignore
         self.pushButton_2.clicked.connect(self.lineEdit.copy) # type: ignore
-        self.pushButton_34.clicked.connect(self.lineEdit_26.copy) # type: ignore
-        self.pushButton_62.clicked.connect(self.lineEdit_31.copy) # type: ignore
-        self.pushButton_6.clicked.connect(self.lineEdit_6.selectAll) # type: ignore
-        self.pushButton_33.clicked.connect(self.lineEdit_25.copy) # type: ignore
-        self.pushButton_31.clicked.connect(self.lineEdit_23.copy) # type: ignore
-        self.pushButton_63.clicked.connect(self.lineEdit_32.copy) # type: ignore
-        self.pushButton_8.clicked.connect(self.textEdit_3.clear) # type: ignore
-        self.pushButton_26.clicked.connect(self.lineEdit_18.selectAll) # type: ignore
-        self.pushButton_24.clicked.connect(self.lineEdit_16.copy) # type: ignore
-        self.pushButton_29.clicked.connect(self.lineEdit_21.copy) # type: ignore
-        self.pushButton_25.clicked.connect(self.lineEdit_17.selectAll) # type: ignore
-        self.pushButton_7.clicked.connect(self.lineEdit_7.copy) # type: ignore
+        self.pushButton_34.clicked.connect(self.lineEdit_26.selectAll) # type: ignore
         self.pushButton_30.clicked.connect(self.lineEdit_22.copy) # type: ignore
-        self.pushButton_69.clicked.connect(self.lineEdit_36.copy) # type: ignore
-        self.pushButton_26.clicked.connect(self.lineEdit_18.copy) # type: ignore
-        self.pushButton_23.clicked.connect(self.lineEdit_15.selectAll) # type: ignore
-        self.pushButton_25.clicked.connect(self.lineEdit_17.copy) # type: ignore
-        self.pushButton_21.clicked.connect(self.lineEdit_13.copy) # type: ignore
-        self.pushButton_36.clicked.connect(self.lineEdit_28.copy) # type: ignore
-        self.pushButton_27.clicked.connect(self.lineEdit_19.copy) # type: ignore
-        self.pushButton_35.clicked.connect(self.lineEdit_27.copy) # type: ignore
-        self.pushButton_32.clicked.connect(self.lineEdit_24.copy) # type: ignore
-        self.pushButton_10.clicked.connect(self.textEdit_3.copy) # type: ignore
-        self.pushButton_8.clicked.connect(self.textEdit_2.clear) # type: ignore
-        self.copy_boot_option_pushButton.clicked.connect(self.lineEdit_30.copy) # type: ignore
-        self.pushButton_17.clicked.connect(self.lineEdit_9.copy) # type: ignore
-        self.pushButton_23.clicked.connect(self.lineEdit_15.copy) # type: ignore
-        self.pushButton_20.clicked.connect(self.lineEdit_12.copy) # type: ignore
-        self.pushButton_60.clicked.connect(self.textEdit_4.clear) # type: ignore
-        self.pushButton_66.clicked.connect(self.lineEdit_34.copy) # type: ignore
-        self.pushButton_6.clicked.connect(self.lineEdit_6.copy) # type: ignore
-        self.pushButton_18.clicked.connect(self.lineEdit_10.copy) # type: ignore
-        self.pushButton_11.clicked.connect(self.lineEdit_8.selectAll) # type: ignore
+        self.pushButton_35.clicked.connect(self.lineEdit_27.selectAll) # type: ignore
+        self.pushButton_36.clicked.connect(self.lineEdit_28.selectAll) # type: ignore
+        self.pushButton_2.clicked.connect(self.lineEdit.selectAll) # type: ignore
+        self.pushButton_31.clicked.connect(self.lineEdit_23.selectAll) # type: ignore
+        self.pushButton_28.clicked.connect(self.lineEdit_20.selectAll) # type: ignore
         self.pushButton_11.clicked.connect(self.lineEdit_8.copy) # type: ignore
+        self.pushButton_26.clicked.connect(self.lineEdit_18.copy) # type: ignore
+        self.pushButton_19.clicked.connect(self.lineEdit_11.selectAll) # type: ignore
+        self.copy_boot_option_pushButton.clicked.connect(self.lineEdit_30.copy) # type: ignore
+        self.pushButton_23.clicked.connect(self.lineEdit_15.copy) # type: ignore
+        self.pushButton_28.clicked.connect(self.lineEdit_20.copy) # type: ignore
+        self.pushButton_21.clicked.connect(self.lineEdit_13.selectAll) # type: ignore
+        self.pushButton_33.clicked.connect(self.lineEdit_25.copy) # type: ignore
+        self.pushButton_17.clicked.connect(self.lineEdit_9.copy) # type: ignore
+        self.pushButton_6.clicked.connect(self.lineEdit_6.copy) # type: ignore
+        self.pushButton_22.clicked.connect(self.lineEdit_14.selectAll) # type: ignore
+        self.pushButton_25.clicked.connect(self.lineEdit_17.copy) # type: ignore
+        self.pushButton_10.clicked.connect(self.textEdit_3.selectAll) # type: ignore
+        self.pushButton_7.clicked.connect(self.lineEdit_7.copy) # type: ignore
+        self.pushButton_20.clicked.connect(self.lineEdit_12.copy) # type: ignore
+        self.pushButton_19.clicked.connect(self.lineEdit_11.copy) # type: ignore
+        self.pushButton_10.clicked.connect(self.textEdit_3.copy) # type: ignore
         self.pushButton_12.clicked.connect(self.lineEdit_29.selectAll) # type: ignore
-        self.pushButton_12.clicked.connect(self.lineEdit_29.copy) # type: ignore
+        self.pushButton_29.clicked.connect(self.lineEdit_21.selectAll) # type: ignore
+        self.pushButton_32.clicked.connect(self.lineEdit_24.copy) # type: ignore
+        self.copy_boot_option_pushButton.clicked.connect(self.lineEdit_30.selectAll) # type: ignore
+        self.pushButton_20.clicked.connect(self.lineEdit_12.selectAll) # type: ignore
+        self.pushButton_11.clicked.connect(self.lineEdit_8.selectAll) # type: ignore
+        self.pushButton_32.clicked.connect(self.lineEdit_24.selectAll) # type: ignore
+        self.pushButton_33.clicked.connect(self.lineEdit_25.selectAll) # type: ignore
+        self.pushButton_24.clicked.connect(self.lineEdit_16.selectAll) # type: ignore
+        self.pushButton_22.clicked.connect(self.lineEdit_14.copy) # type: ignore
+        self.pushButton_34.clicked.connect(self.lineEdit_26.copy) # type: ignore
+        self.pushButton_21.clicked.connect(self.lineEdit_13.copy) # type: ignore
+        self.pushButton_29.clicked.connect(self.lineEdit_21.copy) # type: ignore
+        self.pushButton_31.clicked.connect(self.lineEdit_23.copy) # type: ignore
+        self.pushButton_23.clicked.connect(self.lineEdit_15.selectAll) # type: ignore
         self.pushButton_13.clicked.connect(self.lineEdit_33.selectAll) # type: ignore
+        self.pushButton_26.clicked.connect(self.lineEdit_18.selectAll) # type: ignore
+        self.pushButton_8.clicked.connect(self.textEdit_3.clear) # type: ignore
         self.pushButton_13.clicked.connect(self.lineEdit_33.copy) # type: ignore
+        self.pushButton_17.clicked.connect(self.lineEdit_9.selectAll) # type: ignore
+        self.pushButton_27.clicked.connect(self.lineEdit_19.selectAll) # type: ignore
+        self.pushButton_6.clicked.connect(self.lineEdit_6.selectAll) # type: ignore
+        self.pushButton_8.clicked.connect(self.textEdit_2.clear) # type: ignore
+        self.pushButton_7.clicked.connect(self.lineEdit_7.selectAll) # type: ignore
+        self.pushButton_36.clicked.connect(self.lineEdit_28.copy) # type: ignore
+        self.pushButton_30.clicked.connect(self.lineEdit_22.selectAll) # type: ignore
+        self.pushButton_25.clicked.connect(self.lineEdit_17.selectAll) # type: ignore
+        self.pushButton_18.clicked.connect(self.lineEdit_10.selectAll) # type: ignore
+        self.pushButton_12.clicked.connect(self.lineEdit_29.copy) # type: ignore
+        self.pushButton_27.clicked.connect(self.lineEdit_19.copy) # type: ignore
+        self.pushButton_18.clicked.connect(self.lineEdit_10.copy) # type: ignore
+        self.pushButton_35.clicked.connect(self.lineEdit_27.copy) # type: ignore
+        self.pushButton_24.clicked.connect(self.lineEdit_16.copy) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(Form)
 
     def retranslateUi(self, Form):
@@ -1860,7 +1741,8 @@ class Ui_Form(object):
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'Consolas\'; font-size:10pt; font-weight:696; font-style:italic;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">&quot;ab_name&quot;        &quot;1.75 2.5 3.25 4&quot;</p></body></html>"))
-        self.pushButton_9.setText(_translate("Form", "替换"))
+        self.pushButton_9.setText(_translate("Form", "+1"))
+        self.pushButton_14.setText(_translate("Form", "+2"))
         self.pushButton_10.setText(_translate("Form", "复制"))
         self.pushButton_8.setText(_translate("Form", "清空"))
         self.textEdit_3.setHtml(_translate("Form", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
@@ -1942,29 +1824,3 @@ class Ui_Form(object):
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">    &quot;special_bonus_shard&quot;        &quot;=2&quot;</p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">}</p></body></html>"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_7), _translate("Form", "充能模版"))
-        self.groupBox_19.setTitle(_translate("Form", "模版"))
-        self.lineEdit_31.setText(_translate("Form", "\"MaxLevel\"                      \"4\""))
-        self.pushButton_62.setText(_translate("Form", "复制"))
-        self.lineEdit_32.setText(_translate("Form", "\"MaxLevel\"                      \"5\""))
-        self.pushButton_63.setText(_translate("Form", "复制"))
-        self.lineEdit_34.setText(_translate("Form", "\"MaxLevel\"                      \"6\""))
-        self.pushButton_66.setText(_translate("Form", "复制"))
-        self.lineEdit_35.setText(_translate("Form", "\"RequiredLevel\"                 \"-1\""))
-        self.pushButton_68.setText(_translate("Form", "复制"))
-        self.lineEdit_36.setText(_translate("Form", "\"Innate\"                        \"1\""))
-        self.pushButton_69.setText(_translate("Form", "复制"))
-        self.textEdit_4.setHtml(_translate("Form", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'Consolas\'; font-size:10pt; font-weight:696; font-style:italic;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">&quot;ab_name&quot;        &quot;100 200 300 400&quot;</p></body></html>"))
-        self.pushButton_58.setText(_translate("Form", "普通技能计算"))
-        self.pushButton_64.setText(_translate("Form", "终极技能计算"))
-        self.pushButton_61.setText(_translate("Form", "复制"))
-        self.pushButton_60.setText(_translate("Form", "清空"))
-        self.textEdit_5.setHtml(_translate("Form", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'Consolas\'; font-size:10pt; font-weight:696; font-style:italic;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">&quot;ab_name&quot;        &quot;100 200 300 400 500 600&quot;</p></body></html>"))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_6), _translate("Form", "技能计算"))
