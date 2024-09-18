@@ -684,6 +684,7 @@ class Window(QWidget, Ui_Form):
     def open_vpk_file():
         folder_name = os.getcwd() + '/vpk/pak01_dir/scripts/npc'
         folder_name2 = os.getcwd() + '/vpk/pak01_dir/scripts/npc/heroes'
+        folder_name3 = os.getcwd() + '/vpk/pak01_dir/scripts/npc/heroes/ban'
 
         # 检查文件夹是否存在
         if os.path.exists(folder_name):
@@ -696,6 +697,7 @@ class Window(QWidget, Ui_Form):
             try:
                 os.makedirs(folder_name)
                 os.makedirs(folder_name2)
+                os.makedirs(folder_name3)
                 print(f"vpk配置文件夹 {folder_name} 已创建，正在打开")
                 os.startfile(folder_name)
             except OSError as e:
