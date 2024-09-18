@@ -1,14 +1,34 @@
+# import os
+# import sys
+#
+# from PyQt6.QtCore import QStringListModel, Qt
+# from PyQt6.QtWidgets import QApplication, QWidget, QFileDialog
+#
+# from ab_script import ab_func
+# from lv_script import lv_func
+# from tab_script import tab_func
+# from try_script import try_func
+# from untitled import Ui_Form
+
 import os
 import sys
 
 from PyQt6.QtCore import QStringListModel, Qt
 from PyQt6.QtWidgets import QApplication, QWidget, QFileDialog
 
-from ab_script import ab_func
-from lv_script import lv_func
-from tab_script import tab_func
-from try_script import try_func
-from untitled import Ui_Form
+try:
+    from ab_script import ab_func
+    from lv_script import lv_func
+    from tab_script import tab_func
+    from try_script import try_func
+    from untitled import Ui_Form
+
+except:
+    from .ab_script import ab_func
+    from .lv_script import lv_func
+    from .tab_script import tab_func
+    from .try_script import try_func
+    from .untitled import Ui_Form
 
 
 class Win(QWidget, Ui_Form):

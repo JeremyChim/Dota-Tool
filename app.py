@@ -10,6 +10,7 @@ import configparser
 import os
 import shutil
 import sys
+import threading as th
 from time import sleep
 
 import pyperclip
@@ -22,9 +23,15 @@ from colorama import init, Fore
 from untitled import Ui_Form
 from script import calc2
 from script import scepter
+from ab_tool.main import Win
 
 init(autoreset=True)
 config = configparser.ConfigParser()
+
+
+class AbWin(Win):
+    def __init__(self):
+        super().__init__()
 
 
 class Window(QWidget, Ui_Form):
@@ -34,7 +41,7 @@ class Window(QWidget, Ui_Form):
         self.setWindowTitle('Dota Tool')
         self.setWindowIcon(QIcon('app.ico'))
         self.lineEdit_4.setText('2024/09/18')
-        self.lineEdit_5.setText('1.19.5')
+        self.lineEdit_5.setText('1.20.4')
 
     def __init__(self):
         super().__init__()
@@ -64,8 +71,26 @@ class Window(QWidget, Ui_Form):
         self.load_hero_name_pushButton.click()  # 读取英雄列表数据
         self.load_hero_value_pushButton.click()  # 读取英雄数值
 
-    def init_button(self):
+        # 单位 XP & GOLD
+        self.good_guy_doubleSpinBox.setValue(2)
+        self.bad_guy_doubleSpinBox.setValue(1.5)
+        self.other_guy_doubleSpinBox.setValue(1.5)
 
+        # 防御塔数据 *倍数
+        self.doubleSpinBox_2.setValue(1)  # 1塔生命
+        self.doubleSpinBox_3.setValue(1)  # 1塔护甲
+        self.doubleSpinBox_4.setValue(1.5)  # 2塔生命
+        self.doubleSpinBox_5.setValue(1.5)  # 2塔护甲
+        self.doubleSpinBox_6.setValue(2)  # 3塔生命
+        self.doubleSpinBox_7.setValue(2)  # 3塔护甲
+
+        self.doubleSpinBox_8.setValue(2)  # 4塔生命
+        self.doubleSpinBox_9.setValue(2)  # 4塔护甲
+
+        self.doubleSpinBox_10.setValue(2)  # 基地生命
+        self.doubleSpinBox_11.setValue(2)  # 基地护甲
+
+    def init_button(self):
         # 置顶按钮
         # 游戏路径
         # 保存配置
@@ -164,6 +189,24 @@ class Window(QWidget, Ui_Form):
         self.open_save_unitstxt_pushButton.clicked.connect(lambda: self.open_txt(self.unit_save_path_lineEdit.text()))
         self.open_load_herotxt_pushButton.clicked.connect(lambda: self.open_txt(self.hero_load_path_lineEdit.text()))
         self.open_save_herotxt_pushButton.clicked.connect(lambda: self.open_txt(self.hero_save_path_lineEdit.text()))
+
+        # 打开ab_tool工具
+        self.pushButton_3.clicked.connect(lambda: self.open_ab_tool())
+
+    @staticmethod
+    def open_ab_tool():
+        try:
+            def ab_th():
+                ab_app = QApplication(sys.argv)
+                ab_win = AbWin()
+                ab_win.show()
+                ab_app.exec()
+
+            th1 = th.Thread(target=ab_th)
+            th1.start()
+
+        except Exception as e:
+            print(e)
 
     def read_config(self):
         try:

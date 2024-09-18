@@ -1993,6 +1993,13 @@ QListView
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_41">
           <item>
+           <widget class="QPushButton" name="pushButton_3">
+            <property name="text">
+             <string>ab_tool</string>
+            </property>
+           </widget>
+          </item>
+          <item>
            <layout class="QVBoxLayout" name="verticalLayout_9">
             <item>
              <layout class="QHBoxLayout" name="horizontalLayout_17" stretch="1,5,0">
