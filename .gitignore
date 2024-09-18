@@ -1,7 +1,10 @@
+.idea
+
 __pycache__
 script/__pycache__
-vpk/pak01_dir
+ab_tool/__pycache__
+
 build
 dist
-.idea
-ab_tool/__pycache__
+
+vpk/pak01_dir

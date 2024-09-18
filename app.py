@@ -10,7 +10,7 @@ import configparser
 import os
 import shutil
 import sys
-import threading as th
+# import threading as th
 from time import sleep
 
 import pyperclip
@@ -23,15 +23,15 @@ from colorama import init, Fore
 from untitled import Ui_Form
 from script import calc2
 from script import scepter
-from ab_tool.main import Win
+# from ab_tool.package import Win
 
 init(autoreset=True)
 config = configparser.ConfigParser()
 
 
-class AbWin(Win):
-    def __init__(self):
-        super().__init__()
+# class AbWin(Win):
+#     def __init__(self):
+#         super().__init__()
 
 
 class Window(QWidget, Ui_Form):
@@ -195,18 +195,19 @@ class Window(QWidget, Ui_Form):
 
     @staticmethod
     def open_ab_tool():
-        try:
-            def ab_th():
-                ab_app = QApplication(sys.argv)
-                ab_win = AbWin()
-                ab_win.show()
-                ab_app.exec()
-
-            th1 = th.Thread(target=ab_th)
-            th1.start()
-
-        except Exception as e:
-            print(e)
+        print('Bug ! ! !')
+        # try:
+        #     def ab_th():
+        #         ab_app = QApplication(sys.argv)
+        #         ab_win = AbWin()
+        #         ab_win.show()
+        #         ab_app.exec()
+        #
+        #     th1 = th.Thread(target=ab_th)
+        #     th1.start()
+        #
+        # except Exception as e:
+        #     print(e)
 
     def read_config(self):
         try:
