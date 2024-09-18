@@ -1534,7 +1534,7 @@ class Ui_Form(object):
         self.verticalLayout.addWidget(self.tabWidget)
 
         self.retranslateUi(Form)
-        self.tabWidget.setCurrentIndex(3)
+        self.tabWidget.setCurrentIndex(0)
         self.pushButton_2.clicked.connect(self.lineEdit.copy) # type: ignore
         self.pushButton_34.clicked.connect(self.lineEdit_26.selectAll) # type: ignore
         self.pushButton_30.clicked.connect(self.lineEdit_22.copy) # type: ignore

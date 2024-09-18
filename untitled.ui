@@ -47,7 +47,7 @@ QListView
 }</string>
      </property>
      <property name="currentIndex">
-      <number>3</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="tab_5">
       <attribute name="title">
@@ -421,7 +421,7 @@ QListView
               <item>
                <widget class="QLineEdit" name="lineEdit_4">
                 <property name="text">
-                 <string>2024/03/29</string>
+                 <string>2024/09/18</string>
                 </property>
                 <property name="echoMode">
                  <enum>QLineEdit::Normal</enum>
@@ -451,7 +451,7 @@ QListView
               <item>
                <widget class="QLineEdit" name="lineEdit_5">
                 <property name="text">
-                 <string>1.6.3</string>
+                 <string>1.9.5</string>
                 </property>
                 <property name="echoMode">
                  <enum>QLineEdit::Normal</enum>
