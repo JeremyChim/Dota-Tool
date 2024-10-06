@@ -282,7 +282,7 @@ def ab_func(ab: str, x: int = 2, y: int = None):
             else:
                 ab_float = func3(abl, x)  # 算
                 abv, *_ = func7(mp, *ab_float)  # 转字符串
-            ab_str = [abv, '-50%', '-50%', '-75%']  # 技能值，魔晶值，魔杖值，注释值（全str）
+            ab_str = [abv, '-50%', '-50%', '---']  # 技能值，魔晶值，魔杖值，注释值（全str）
 
         case 'AbilityManaCost':
             if len(abl) == 1:  # 只有一个技能值
@@ -298,7 +298,7 @@ def ab_func(ab: str, x: int = 2, y: int = None):
             else:
                 ab_float = func3(abl, x)  # 算
                 abv, *_ = func7(mp, *ab_float)  # 转字符串
-            ab_str = [abv, '+100%', '+100%', '---']  # 技能值，魔晶值，魔杖值，注释值（全str）
+            ab_str = [abv, '+50%', '+100%', '---']  # 技能值，魔晶值，魔杖值，注释值（全str）
 
     ab2 = func5(mod, abn, *ab_str)  # 技能信息（替换好的）
     return ab2
